@@ -1,0 +1,3 @@
+/home/gas/Desktop/project/chat/testmuduo/CMakeFiles/sever.dir
+/home/gas/Desktop/project/chat/testmuduo/CMakeFiles/edit_cache.dir
+/home/gas/Desktop/project/chat/testmuduo/CMakeFiles/rebuild_cache.dir

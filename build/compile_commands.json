@@ -1,0 +1,57 @@
+[
+{
+  "directory": "/home/gas/Desktop/project/chat/build/src/server",
+  "command": "/usr/bin/g++  -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty -g -g -o CMakeFiles/server.dir/chatserver.cpp.o -c /home/gas/Desktop/project/chat/src/server/chatserver.cpp",
+  "file": "/home/gas/Desktop/project/chat/src/server/chatserver.cpp"
+},
+{
+  "directory": "/home/gas/Desktop/project/chat/build/src/server",
+  "command": "/usr/bin/g++  -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty -g -g -o CMakeFiles/server.dir/chatservice.cpp.o -c /home/gas/Desktop/project/chat/src/server/chatservice.cpp",
+  "file": "/home/gas/Desktop/project/chat/src/server/chatservice.cpp"
+},
+{
+  "directory": "/home/gas/Desktop/project/chat/build/src/server",
+  "command": "/usr/bin/g++  -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty -g -g -o CMakeFiles/server.dir/main.cpp.o -c /home/gas/Desktop/project/chat/src/server/main.cpp",
+  "file": "/home/gas/Desktop/project/chat/src/server/main.cpp"
+},
+{
+  "directory": "/home/gas/Desktop/project/chat/build/src/server",
+  "command": "/usr/bin/g++  -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty -g -g -o CMakeFiles/server.dir/model/firendmodel.cpp.o -c /home/gas/Desktop/project/chat/src/server/model/firendmodel.cpp",
+  "file": "/home/gas/Desktop/project/chat/src/server/model/firendmodel.cpp"
+},
+{
+  "directory": "/home/gas/Desktop/project/chat/build/src/server",
+  "command": "/usr/bin/g++  -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty -g -g -o CMakeFiles/server.dir/model/groupmodel.cpp.o -c /home/gas/Desktop/project/chat/src/server/model/groupmodel.cpp",
+  "file": "/home/gas/Desktop/project/chat/src/server/model/groupmodel.cpp"
+},
+{
+  "directory": "/home/gas/Desktop/project/chat/build/src/server",
+  "command": "/usr/bin/g++  -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty -g -g -o CMakeFiles/server.dir/model/offlinemsgmodel.cpp.o -c /home/gas/Desktop/project/chat/src/server/model/offlinemsgmodel.cpp",
+  "file": "/home/gas/Desktop/project/chat/src/server/model/offlinemsgmodel.cpp"
+},
+{
+  "directory": "/home/gas/Desktop/project/chat/build/src/server",
+  "command": "/usr/bin/g++  -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty -g -g -o CMakeFiles/server.dir/model/usermodel.cpp.o -c /home/gas/Desktop/project/chat/src/server/model/usermodel.cpp",
+  "file": "/home/gas/Desktop/project/chat/src/server/model/usermodel.cpp"
+},
+{
+  "directory": "/home/gas/Desktop/project/chat/build/src/server",
+  "command": "/usr/bin/g++  -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty -g -g -o CMakeFiles/server.dir/db/connectionpool.cpp.o -c /home/gas/Desktop/project/chat/src/server/db/connectionpool.cpp",
+  "file": "/home/gas/Desktop/project/chat/src/server/db/connectionpool.cpp"
+},
+{
+  "directory": "/home/gas/Desktop/project/chat/build/src/server",
+  "command": "/usr/bin/g++  -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty -g -g -o CMakeFiles/server.dir/db/db.cpp.o -c /home/gas/Desktop/project/chat/src/server/db/db.cpp",
+  "file": "/home/gas/Desktop/project/chat/src/server/db/db.cpp"
+},
+{
+  "directory": "/home/gas/Desktop/project/chat/build/src/server",
+  "command": "/usr/bin/g++  -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty -g -g -o CMakeFiles/server.dir/redis/redis.cpp.o -c /home/gas/Desktop/project/chat/src/server/redis/redis.cpp",
+  "file": "/home/gas/Desktop/project/chat/src/server/redis/redis.cpp"
+},
+{
+  "directory": "/home/gas/Desktop/project/chat/build/src/client",
+  "command": "/usr/bin/g++  -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty -g -g -o CMakeFiles/client.dir/main.cpp.o -c /home/gas/Desktop/project/chat/src/client/main.cpp",
+  "file": "/home/gas/Desktop/project/chat/src/client/main.cpp"
+}
+]
