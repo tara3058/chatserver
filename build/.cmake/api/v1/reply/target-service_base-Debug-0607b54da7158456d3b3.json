@@ -1,0 +1,186 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "/home/gas/Desktop/project/chat/lib/libservice_base.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include_directories",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"src/servicePro/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 18,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 19,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 20,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 21,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 22,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 23,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 24,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 25,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-I/usr/local/include -g -g"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/home/gas/Desktop/project/chat/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/gas/Desktop/project/chat/include/server"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/home/gas/Desktop/project/chat/include/server/db"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/gas/Desktop/project/chat/include/server/model"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/home/gas/Desktop/project/chat/include/server/redis"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/gas/Desktop/project/chat/include/serverpro"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "/home/gas/Desktop/project/chat/thirdparty"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "/home/gas/Desktop/project/chat/rpc/include"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "/home/gas/Desktop/project/chat/rpc/include/mprpclog"
+				},
+				{
+					"backtrace" : 12,
+					"path" : "/home/gas/Desktop/project/chat/src/servicePro"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "service_base::@a77772547969e962a77b",
+	"name" : "service_base",
+	"nameOnDisk" : "libservice_base.a",
+	"paths" : 
+	{
+		"build" : "src/servicePro",
+		"source" : "src/servicePro"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/servicePro/serverbase.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

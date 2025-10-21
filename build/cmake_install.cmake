@@ -45,6 +45,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/gas/Desktop/project/chat/build/src/cmake_install.cmake")
+  include("/home/gas/Desktop/project/chat/build/rpc/cmake_install.cmake")
+  include("/home/gas/Desktop/project/chat/build/dist/cmake_install.cmake")
 
 endif()
 

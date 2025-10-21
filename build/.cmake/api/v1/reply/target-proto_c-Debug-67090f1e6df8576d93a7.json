@@ -1,0 +1,275 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "/home/gas/Desktop/project/chat/lib/libproto_c.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"dist/proto/CMakeLists.txt",
+			"CMakeLists.txt",
+			"dist/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 3,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 18,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 19,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 20,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 21,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 22,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 23,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 24,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 25,
+				"parent" : 2
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 8,
+				"parent" : 12
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 9,
+				"parent" : 12
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 10,
+				"parent" : 12
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 11,
+				"parent" : 12
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 12,
+				"parent" : 12
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 13,
+				"parent" : 12
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 14,
+				"parent" : 12
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 15,
+				"parent" : 12
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-I/usr/local/include -g -g"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/home/gas/Desktop/project/chat/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/gas/Desktop/project/chat/include/server"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/home/gas/Desktop/project/chat/include/server/db"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/gas/Desktop/project/chat/include/server/model"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/home/gas/Desktop/project/chat/include/server/redis"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/gas/Desktop/project/chat/include/serverpro"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "/home/gas/Desktop/project/chat/thirdparty"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "/home/gas/Desktop/project/chat/rpc/include"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "/home/gas/Desktop/project/chat/rpc/include/mprpclog"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "/home/gas/Desktop/project/chat/dist/../rpc/include"
+				},
+				{
+					"backtrace" : 14,
+					"path" : "/home/gas/Desktop/project/chat/dist/../include"
+				},
+				{
+					"backtrace" : 15,
+					"path" : "/home/gas/Desktop/project/chat/dist/../include/server"
+				},
+				{
+					"backtrace" : 16,
+					"path" : "/home/gas/Desktop/project/chat/dist/../include/server/db"
+				},
+				{
+					"backtrace" : 17,
+					"path" : "/home/gas/Desktop/project/chat/dist/../include/server/model"
+				},
+				{
+					"backtrace" : 18,
+					"path" : "/home/gas/Desktop/project/chat/dist/proto"
+				},
+				{
+					"backtrace" : 19,
+					"path" : "/home/gas/Desktop/project/chat/dist/rpcservice"
+				},
+				{
+					"backtrace" : 20,
+					"path" : "/home/gas/Desktop/project/chat/dist/rpcservice/include"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2
+			]
+		}
+	],
+	"id" : "proto_c::@c691cb8232a6718ad6ef",
+	"name" : "proto_c",
+	"nameOnDisk" : "libproto_c.a",
+	"paths" : 
+	{
+		"build" : "dist/proto",
+		"source" : "dist/proto"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "dist/proto/messege.pb.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "dist/proto/relation.pb.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "dist/proto/usr.pb.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+// 定义消息服务接口
+package messageservice;
+
+option cc_generic_services = true;
+
+// 消息服务
+service MessageService {
+    // 发送一对一消息
+    rpc SendOneToOneMessage(OneToOneMessageRequest) returns (OneToOneMessageResponse);
+    // 发送群组消息
+    rpc SendGroupMessage(GroupMessageRequest) returns (GroupMessageResponse);
+    // 获取离线消息
+    rpc GetOfflineMessages(OfflineMessagesRequest) returns (OfflineMessagesResponse);
+    // 删除离线消息
+    rpc RemoveOfflineMessages(RemoveOfflineMessagesRequest) returns (RemoveOfflineMessagesResponse);
+}
+
+//错误码类型
+message ResultCode {
+    int32 errcode = 1;
+    bytes errmsg = 2;
+}
+
+// 一对一消息请求
+message OneToOneMessageRequest {
+    int32 from_id = 1;         // 发送者ID
+    int32 to_id = 2;           // 接收者ID
+    bytes message = 3;        // 消息内容
+}
+
+// 一对一消息响应
+message OneToOneMessageResponse {
+    ResultCode result = 1;
+}
+
+// 群组消息请求
+message GroupMessageRequest {
+    int32 from_id = 1;         // 发送者ID
+    int32 group_id = 2;        // 群组ID
+    bytes message = 3;        // 消息内容
+}
+
+// 群组消息响应
+message GroupMessageResponse {
+    ResultCode result = 1;
+}
+
+// 获取离线消息请求
+message OfflineMessagesRequest {
+    int32 user_id = 1;         // 用户ID
+}
+
+// 获取离线消息响应
+message OfflineMessagesResponse {
+    ResultCode result = 1;
+    repeated bytes messages = 2; // 离线消息列表
+}
+
+// 删除离线消息请求
+message RemoveOfflineMessagesRequest {
+    int32 user_id = 1;         // 用户ID
+}
+
+// 删除离线消息响应
+message RemoveOfflineMessagesResponse {
+    ResultCode result = 1;
+}

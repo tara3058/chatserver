@@ -11,9 +11,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
+  "../dist/CMakeLists.txt"
+  "../dist/proto/CMakeLists.txt"
+  "../dist/rpcservice/gateway/CMakeLists.txt"
+  "../dist/rpcservice/user_service/CMakeLists.txt"
+  "../rpc/CMakeLists.txt"
   "../src/CMakeLists.txt"
   "../src/client/CMakeLists.txt"
   "../src/server/CMakeLists.txt"
+  "../src/servicePro/CMakeLists.txt"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
@@ -45,10 +51,21 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/server/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/client/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/servicePro/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "rpc/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "dist/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "dist/proto/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "dist/rpcservice/user_service/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "dist/rpcservice/gateway/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/server/CMakeFiles/server.dir/DependInfo.cmake"
   "src/client/CMakeFiles/client.dir/DependInfo.cmake"
+  "src/servicePro/CMakeFiles/service_base.dir/DependInfo.cmake"
+  "rpc/CMakeFiles/mprpc.dir/DependInfo.cmake"
+  "dist/proto/CMakeFiles/proto_c.dir/DependInfo.cmake"
+  "dist/rpcservice/user_service/CMakeFiles/user_service.dir/DependInfo.cmake"
+  "dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/DependInfo.cmake"
   )

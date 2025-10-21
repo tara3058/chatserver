@@ -1,0 +1,90 @@
+
+syntax = "proto3";
+
+// 定义用户服务接口
+package userservice;
+
+option cc_generic_services = true;
+
+// 用户信息服务
+service UserService {
+    // 用户登录
+    rpc Login(LoginRequest) returns (LoginResponse);
+    // 用户注册
+    rpc Register(RegisterRequest) returns (RegisterResponse);
+    // 用户注销
+    rpc Logout(LogoutRequest) returns (LogoutResponse);
+    // 获取用户信息
+    rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse);
+    //更新用户信息
+    rpc UpdateUserInfo(UpdateUserInfoRequest) returns (UpdateUserInfoResponse);
+}
+
+//错误码类型
+message ResultCode {
+    int32 errcode = 1;
+    bytes errmsg = 2;
+}
+
+// 登录请求
+message LoginRequest {
+    int32 id = 1;
+    bytes password = 2;
+}
+
+// 登录响应
+message LoginResponse {
+    ResultCode result = 1; // 登录结果
+    int32 id = 2;              // 用户ID
+    bytes name = 3;           // 用户名
+    repeated bytes friends = 4; // 好友列表
+    repeated bytes groups = 5;  // 群组列表
+    repeated bytes offline_msgs = 6; // 离线消息
+}
+
+// 注册请求
+message RegisterRequest {
+    bytes name = 1;
+    bytes password = 2;
+}
+
+// 注册响应
+message RegisterResponse {
+    ResultCode result = 1;  // 登录结果
+    int32 id = 2;              // 用户ID
+}
+
+// 注销请求
+message LogoutRequest {
+    int32 id = 1;
+}
+
+// 注销响应
+message LogoutResponse {
+    ResultCode result = 1; // 登录结果
+}
+
+// 获取用户信息请求
+message GetUserInfoRequest {
+    int32 id = 1;
+}
+
+// 获取用户信息响应
+message GetUserInfoResponse {
+    ResultCode result = 1; // 登录结果
+    int32 id = 2;              // 用户ID
+    bytes name = 3;           // 用户名
+    bytes state = 4;          // 用户状态
+}
+
+// 更新用户信息请求
+message UpdateUserInfoRequest {
+    int32 id = 1;
+    bytes name = 2;
+    bytes state = 3;
+}
+
+// 更新用户信息响应
+message UpdateUserInfoResponse {
+    ResultCode result = 1; 
+}

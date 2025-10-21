@@ -1,0 +1,1 @@
+/usr/bin/c++ -I/usr/local/include -g -std=c++14 -L/usr/local/lib -rdynamic CMakeFiles/connection_test.dir/connection_test.cpp.o -o /home/gas/Desktop/project/chat/bin/connection_test  -Wl,-Bstatic -lmuduo_base -lmuduo_net -lpthread -Wl,-Bdynamic 

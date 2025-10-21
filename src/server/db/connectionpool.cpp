@@ -209,7 +209,7 @@ void ConnectionPool::produceConnectionTask()
                 p->refreshAliveTime();
                 _connectionQue.push(p);
                 _connectionCnt++;
-                LOG_INFO << "create new connection, current pool size: " << _connectionCnt;
+                //LOG_INFO << "create new connection, current pool size: " << _connectionCnt;
             }
             else
             {

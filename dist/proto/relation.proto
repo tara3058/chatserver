@@ -1,0 +1,133 @@
+syntax = "proto3";
+
+// 定义关系服务接口
+package relationservice;
+
+option cc_generic_services = true;
+
+//错误码类型
+message ResultCode {
+    int32 errcode = 1;
+    bytes errmsg = 2;
+}
+
+// 关系服务
+service RelationService {
+    // 添加好友
+    rpc AddFriend(AddFriendRequest) returns (AddFriendResponse);
+    // 删除好友
+    rpc RemoveFriend(RemoveFriendRequest) returns (RemoveFriendResponse);
+    // 创建群组
+    rpc CreateGroup(CreateGroupRequest) returns (CreateGroupResponse);
+    // 加入群组
+    rpc JoinGroup(JoinGroupRequest) returns (JoinGroupResponse);
+    // 退出群组
+    rpc LeaveGroup(LeaveGroupRequest) returns (LeaveGroupResponse);
+    // 获取好友列表
+    rpc GetFriends(GetFriendsRequest) returns (GetFriendsResponse);
+    // 获取群组列表
+    rpc GetGroups(GetGroupsRequest) returns (GetGroupsResponse);
+}
+
+// 添加好友请求
+message AddFriendRequest {
+    int32 user_id = 1;         // 用户ID
+    int32 friend_id = 2;       // 好友ID
+}
+
+// 添加好友响应
+message AddFriendResponse {
+    ResultCode result = 1;
+}
+
+// 删除好友请求
+message RemoveFriendRequest {
+    int32 user_id = 1;         // 用户ID
+    int32 friend_id = 2;       // 好友ID
+}
+
+// 删除好友响应
+message RemoveFriendResponse {
+    ResultCode result = 1;
+}
+
+// 创建群组请求
+message CreateGroupRequest {
+    int32 user_id = 1;         // 用户ID
+    bytes group_name = 2;     // 群组名称
+    bytes group_desc = 3;     // 群组描述
+}
+
+// 创建群组响应
+message CreateGroupResponse {
+    ResultCode result = 1;
+    int32 group_id = 2;        // 群组ID
+}
+
+// 加入群组请求
+message JoinGroupRequest {
+    int32 user_id = 1;         // 用户ID
+    int32 group_id = 2;        // 群组ID
+}
+
+// 加入群组响应
+message JoinGroupResponse {
+    ResultCode result = 1;
+}
+
+// 退出群组请求
+message LeaveGroupRequest {
+    int32 user_id = 1;         // 用户ID
+    int32 group_id = 2;        // 群组ID
+}
+
+// 退出群组响应
+message LeaveGroupResponse {
+    ResultCode result = 1;
+}
+
+// 获取好友列表请求
+message GetFriendsRequest {
+    int32 user_id = 1;         // 用户ID
+}
+
+// 获取好友列表响应
+message GetFriendsResponse {
+    int32 error_code = 1;      // 0表示成功，非0表示失败
+    bytes error_msg = 2;      // 错误信息
+    repeated FriendInfo friends = 3; // 好友列表
+}
+
+// 好友信息
+message FriendInfo {
+    int32 id = 1;
+    bytes name = 2;
+    bytes state = 3;
+}
+
+// 获取群组列表请求
+message GetGroupsRequest {
+    int32 user_id = 1;         // 用户ID
+}
+
+// 获取群组列表响应
+message GetGroupsResponse {
+    ResultCode result = 1;
+    repeated GroupInfo groups = 2; // 群组列表
+}
+
+// 群组信息
+message GroupInfo {
+    int32 id = 1;
+    bytes name = 2;
+    bytes desc = 3;
+    repeated GroupUserInfo users = 4;
+}
+
+// 群组用户信息
+message GroupUserInfo {
+    int32 id = 1;
+    bytes name = 2;
+    bytes state = 3;
+    bytes role = 4;
+}

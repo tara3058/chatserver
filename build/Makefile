@@ -142,6 +142,71 @@ client/fast:
 	$(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/build
 .PHONY : client/fast
 
+#=============================================================================
+# Target rules for targets named service_base
+
+# Build rule for target.
+service_base: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 service_base
+.PHONY : service_base
+
+# fast build rule for target.
+service_base/fast:
+	$(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/build
+.PHONY : service_base/fast
+
+#=============================================================================
+# Target rules for targets named mprpc
+
+# Build rule for target.
+mprpc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mprpc
+.PHONY : mprpc
+
+# fast build rule for target.
+mprpc/fast:
+	$(MAKE) $(MAKESILENT) -f rpc/CMakeFiles/mprpc.dir/build.make rpc/CMakeFiles/mprpc.dir/build
+.PHONY : mprpc/fast
+
+#=============================================================================
+# Target rules for targets named proto_c
+
+# Build rule for target.
+proto_c: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 proto_c
+.PHONY : proto_c
+
+# fast build rule for target.
+proto_c/fast:
+	$(MAKE) $(MAKESILENT) -f dist/proto/CMakeFiles/proto_c.dir/build.make dist/proto/CMakeFiles/proto_c.dir/build
+.PHONY : proto_c/fast
+
+#=============================================================================
+# Target rules for targets named user_service
+
+# Build rule for target.
+user_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 user_service
+.PHONY : user_service
+
+# fast build rule for target.
+user_service/fast:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/build
+.PHONY : user_service/fast
+
+#=============================================================================
+# Target rules for targets named gateway_service
+
+# Build rule for target.
+gateway_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gateway_service
+.PHONY : gateway_service
+
+# fast build rule for target.
+gateway_service/fast:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/build.make dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/build
+.PHONY : gateway_service/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -151,7 +216,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... client"
+	@echo "... gateway_service"
+	@echo "... mprpc"
+	@echo "... proto_c"
 	@echo "... server"
+	@echo "... service_base"
+	@echo "... user_service"
 .PHONY : help
 
 

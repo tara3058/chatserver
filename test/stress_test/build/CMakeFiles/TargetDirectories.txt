@@ -1,0 +1,4 @@
+/home/gas/Desktop/project/chat/test/stress_test/build/CMakeFiles/stress_client.dir
+/home/gas/Desktop/project/chat/test/stress_test/build/CMakeFiles/connection_test.dir
+/home/gas/Desktop/project/chat/test/stress_test/build/CMakeFiles/edit_cache.dir
+/home/gas/Desktop/project/chat/test/stress_test/build/CMakeFiles/rebuild_cache.dir

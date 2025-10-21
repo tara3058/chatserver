@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/thirdparty
+CXX_INCLUDES = -I/home/gas/Desktop/project/chat/include -I/home/gas/Desktop/project/chat/include/server -I/home/gas/Desktop/project/chat/include/server/db -I/home/gas/Desktop/project/chat/include/server/model -I/home/gas/Desktop/project/chat/include/server/redis -I/home/gas/Desktop/project/chat/include/serverpro -I/home/gas/Desktop/project/chat/thirdparty -I/home/gas/Desktop/project/chat/rpc/include -I/home/gas/Desktop/project/chat/rpc/include/mprpclog
 
-CXX_FLAGS = -g -g
+CXX_FLAGS = -I/usr/local/include -g -g
 

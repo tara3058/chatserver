@@ -38,7 +38,7 @@ CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/bin/gcc-ar-11
 CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-11
 
 //Flags used by the CXX compiler during all build types.
-CMAKE_CXX_FLAGS:STRING=
+CMAKE_CXX_FLAGS:STRING=-I/usr/local/include
 
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g
@@ -82,7 +82,7 @@ CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
 
 //Flags used by the linker during all build types.
-CMAKE_EXE_LINKER_FLAGS:STRING=
+CMAKE_EXE_LINKER_FLAGS:STRING=-L/usr/local/lib
 
 //Flags used by the linker during DEBUG builds.
 CMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=
@@ -110,7 +110,7 @@ CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/gmake
 
 //Flags used by the linker during the creation of modules during
 // all build types.
-CMAKE_MODULE_LINKER_FLAGS:STRING=
+CMAKE_MODULE_LINKER_FLAGS:STRING=-L/usr/local/lib
 
 //Flags used by the linker during the creation of modules during
 // DEBUG builds.
@@ -144,7 +144,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=chat
+CMAKE_PROJECT_NAME:STATIC=chatServer
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -154,7 +154,7 @@ CMAKE_READELF:FILEPATH=/usr/bin/readelf
 
 //Flags used by the linker during the creation of shared libraries
 // during all build types.
-CMAKE_SHARED_LINKER_FLAGS:STRING=
+CMAKE_SHARED_LINKER_FLAGS:STRING=-L/usr/local/lib
 
 //Flags used by the linker during the creation of shared libraries
 // during DEBUG builds.
@@ -209,13 +209,31 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-chat_BINARY_DIR:STATIC=/home/gas/Desktop/project/chat/build
+Dist_Chat_BINARY_DIR:STATIC=/home/gas/Desktop/project/chat/build/dist
 
 //Value Computed by CMake
-chat_IS_TOP_LEVEL:STATIC=ON
+Dist_Chat_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-chat_SOURCE_DIR:STATIC=/home/gas/Desktop/project/chat
+Dist_Chat_SOURCE_DIR:STATIC=/home/gas/Desktop/project/chat/dist
+
+//Value Computed by CMake
+chatServer_BINARY_DIR:STATIC=/home/gas/Desktop/project/chat/build
+
+//Value Computed by CMake
+chatServer_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+chatServer_SOURCE_DIR:STATIC=/home/gas/Desktop/project/chat
+
+//Dependencies for the target
+mprpc_LIB_DEPENDS:STATIC=general;muduo_net;general;muduo_base;general;pthread;general;zookeeper_mt;
+
+//Dependencies for the target
+proto_c_LIB_DEPENDS:STATIC=general;protobuf;
+
+//Dependencies for the target
+service_base_LIB_DEPENDS:STATIC=general;muduo_net;general;muduo_base;general;pthread;
 
 
 ########################
@@ -320,7 +338,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

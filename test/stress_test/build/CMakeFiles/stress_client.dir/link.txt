@@ -1,0 +1,1 @@
+/usr/bin/c++ -I/usr/local/include -g -std=c++14 -L/usr/local/lib -rdynamic CMakeFiles/stress_client.dir/stress_client.cpp.o -o /home/gas/Desktop/project/chat/bin/stress_client  -Wl,-Bstatic -lmuduo_base -lmuduo_net -lpthread -Wl,-Bdynamic 

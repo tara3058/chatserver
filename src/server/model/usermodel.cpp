@@ -7,7 +7,7 @@ bool UserModel::insert(User &user)
 {
     // 组装sql语句
     char sql[1024] = {0};
-    sprintf(sql, "insert into User(name, password, state) values('%s', '%s', '%s')",
+    sprintf(sql, "insert into user1(name, password, state) values('%s', '%s', '%s')",
             user.getName().c_str(), user.getPwd().c_str(), user.getState().c_str());
 
     ConnectionPool* pool = ConnectionPool::getConnectionPool();
@@ -32,7 +32,7 @@ User UserModel::dbquery(int id)
 {
     // 1.组装sql语句
     char sql[1024] = {0};
-    sprintf(sql, "select * from User where id = %d", id);
+    sprintf(sql, "select * from user1 where id = %d", id);
 
     ConnectionPool* pool = ConnectionPool::getConnectionPool();
     ConnectionRAII conn(pool);
@@ -64,7 +64,7 @@ User UserModel::dbquery(int id)
 bool UserModel::updateState(User user)
 {
     char sql[1024] = {0};
-    sprintf(sql, "update User set state = '%s' where id = %d", user.getState().c_str(), user.getId());
+    sprintf(sql, "update user1 set state = '%s' where id = %d", user.getState().c_str(), user.getId());
 
     ConnectionPool* pool = ConnectionPool::getConnectionPool();
     ConnectionRAII conn(pool);
@@ -82,7 +82,7 @@ bool UserModel::updateState(User user)
 
 void UserModel::resetState()
 {
-    char sql[1024] = "update User set state = 'offline' where state = 'online'";
+    char sql[1024] = "update user1 set state = 'offline' where state = 'online'";
 
     ConnectionPool* pool = ConnectionPool::getConnectionPool();
     ConnectionRAII conn(pool);

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/libservice_base.a CMakeFiles/service_base.dir/serverbase.cc.o
+/usr/bin/ranlib ../../../lib/libservice_base.a

@@ -1,1 +1,1 @@
-/usr/bin/g++ -g -g -rdynamic CMakeFiles/client.dir/main.cpp.o -o ../../../bin/client  -lpthread 
+/usr/bin/g++ -I/usr/local/include -g -g -L/usr/local/lib CMakeFiles/client.dir/main.cpp.o -o ../../../bin/client   -L/home/gas/Desktop/project/chat/lib  -Wl,-rpath,/home/gas/Desktop/project/chat/lib -lpthread 
