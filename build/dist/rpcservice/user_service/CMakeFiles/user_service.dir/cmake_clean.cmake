@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o.d"
   "CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o"
   "CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o.d"
+  "CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o"
+  "CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o.d"
   "CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o"
   "CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o.d"
   "CMakeFiles/user_service.dir/main.cc.o"

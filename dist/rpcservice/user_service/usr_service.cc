@@ -1,29 +1,25 @@
-// dist/services/user_service/user_service.cpp
 #include "include/usr_service.h"
 #include "mprpcprovider.h"
-#include"logger.h"
-//#include <muduo/base/Logging.h>
+#include "logger.h"
 
 UserServiceImpl::UserServiceImpl(const std::string& ip, uint16_t port)
     : ServiceBase("UserService", ip, port)
     , _connectionPool(nullptr)
 {
-    LOG_INFO ("UserServiceImpl created");
+    LOG_INFO("UserServiceImpl created");
 }
 
 void UserServiceImpl::InitRpcService()
 {
-    // 创建RPC服务提供者并注册服务
-    MprpcProvider provider;
-    provider.NotifyService(this);
-    LOG_INFO ( "UserService RPC service initialized");
+    // 不作为RPC服务提供者运行
+    LOG_INFO("UserService RPC service initialized");
 }
 
 void UserServiceImpl::InitDatabasePool()
 {
     // 初始化数据库连接池
     _connectionPool = ConnectionPool::getConnectionPool();
-    LOG_INFO ("UserService database pool initialized");
+    LOG_INFO("UserService database pool initialized");
 }
 
 void UserServiceImpl::Login(::google::protobuf::RpcController* controller,
@@ -31,7 +27,7 @@ void UserServiceImpl::Login(::google::protobuf::RpcController* controller,
                            ::userservice::LoginResponse* response,
                            ::google::protobuf::Closure* done)
 {
-    LOG_INFO ( "UserService::Login called, id:");
+    LOG_INFO("UserService::Login called, id: %d", request->id());
     
     int id = request->id();
     std::string password = request->password();
@@ -44,19 +40,16 @@ void UserServiceImpl::Login(::google::protobuf::RpcController* controller,
         if (user.getState() == "online")
         {
             // 用户已经在线
-            userservice::ResultCode *resACK = response->mutable_result();
-            resACK->set_errcode(2);
-            resACK->set_errmsg("this account is using, input another!");
+            response->set_error_code(2);
+            response->set_error_msg("this account is using, input another!");
         }
         else
         {
             // 登录成功
-            userservice::ResultCode *resACK = response->mutable_result();
-            resACK->set_errcode(0);
-            resACK->set_errmsg("");
+            response->set_error_code(0);
             response->set_id(user.getId());
             response->set_name(user.getName());
-            //response->set_state(user.getState());
+            response->set_state(user.getState());
             
             // 更新用户状态为在线
             user.setState("online");
@@ -66,9 +59,8 @@ void UserServiceImpl::Login(::google::protobuf::RpcController* controller,
     else
     {
         // 用户不存在或密码错误
-        userservice::ResultCode *resACK = response->mutable_result();
-        resACK->set_errcode(2);
-        resACK->set_errmsg("id or password is invalid!");
+        response->set_error_code(1);
+        response->set_error_msg("id or password is invalid!");
     }
     
     // 调用回调函数
@@ -80,7 +72,7 @@ void UserServiceImpl::Register(::google::protobuf::RpcController* controller,
                               ::userservice::RegisterResponse* response,
                               ::google::protobuf::Closure* done)
 {
-    LOG_INFO("UserService::Register called, name");
+    LOG_INFO("UserService::Register called, name: %s", request->name().c_str());
     
     std::string name = request->name();
     std::string password = request->password();
@@ -92,17 +84,14 @@ void UserServiceImpl::Register(::google::protobuf::RpcController* controller,
     if (_userModel.insert(user))
     {
         // 注册成功
-       userservice::ResultCode *resACK = response->mutable_result();
-        resACK->set_errcode(0);
-        resACK->set_errmsg("");
+        response->set_error_code(0);
         response->set_id(user.getId());
     }
     else
     {
         // 注册失败
-       userservice::ResultCode *resACK = response->mutable_result();
-        resACK->set_errcode(1);
-        resACK->set_errmsg("register failed");
+        response->set_error_code(1);
+        response->set_error_msg("register failed");
     }
     
     // 调用回调函数
@@ -114,7 +103,7 @@ void UserServiceImpl::Logout(::google::protobuf::RpcController* controller,
                             ::userservice::LogoutResponse* response,
                             ::google::protobuf::Closure* done)
 {
-    LOG_INFO ( "UserService::Logout called, id: " );
+    LOG_INFO("UserService::Logout called, id: %d", request->id());
     
     int id = request->id();
     
@@ -122,15 +111,12 @@ void UserServiceImpl::Logout(::google::protobuf::RpcController* controller,
     User user(id, "", "", "offline");
     if (_userModel.updateState(user))
     {
-        userservice::ResultCode *resACK = response->mutable_result();
-        resACK->set_errcode(0);
-        resACK->set_errmsg("");
+        response->set_error_code(0);
     }
     else
     {
-        userservice::ResultCode *resACK = response->mutable_result();
-        resACK->set_errcode(1);
-        resACK->set_errmsg("update user state failed");
+        response->set_error_code(1);
+        response->set_error_msg("update user state failed");
     }
     
     // 调用回调函数
@@ -142,7 +128,7 @@ void UserServiceImpl::GetUserInfo(::google::protobuf::RpcController* controller,
                                  ::userservice::GetUserInfoResponse* response,
                                  ::google::protobuf::Closure* done)
 {
-    LOG_INFO("UserService::GetUserInfo called, id:");
+    LOG_INFO("UserService::GetUserInfo called, id: %d", request->id());
     
     int id = request->id();
     
@@ -151,29 +137,27 @@ void UserServiceImpl::GetUserInfo(::google::protobuf::RpcController* controller,
     
     if (user.getId() == id)
     {
-        userservice::ResultCode *resACK = response->mutable_result();
-        resACK->set_errcode(0);
+        response->set_error_code(0);
         response->set_id(user.getId());
         response->set_name(user.getName());
         response->set_state(user.getState());
     }
     else
     {
-        userservice::ResultCode *resACK = response->mutable_result();
-        resACK->set_errcode(1);
-        resACK->set_errmsg("user not found");
+        response->set_error_code(1);
+        response->set_error_msg("user not found");
     }
     
     // 调用回调函数
     done->Run();
 }
 
-void UserServiceImpl::UpdateUserInfo(::google::protobuf::RpcController* controller,
-                                     const ::userservice::UpdateUserInfoRequest* request,
-                                     ::userservice::UpdateUserInfoResponse* response,
+void UserServiceImpl::UpdateUserState(::google::protobuf::RpcController* controller,
+                                     const ::userservice::UpdateUserStateRequest* request,
+                                     ::userservice::UpdateUserStateResponse* response,
                                      ::google::protobuf::Closure* done)
 {
-    LOG_INFO("UserService::UpdateUserState called" );
+    LOG_INFO("UserService::UpdateUserState called, id: %d, state: %s", request->id(), request->state().c_str());
     
     int id = request->id();
     std::string state = request->state();
@@ -181,15 +165,12 @@ void UserServiceImpl::UpdateUserInfo(::google::protobuf::RpcController* controll
     User user(id, "", "", state);
     if (_userModel.updateState(user))
     {
-        userservice::ResultCode *resACK = response->mutable_result();
-        resACK->set_errcode(0);
-        resACK->set_errmsg("");
+        response->set_error_code(0);
     }
     else
     {
-        userservice::ResultCode *resACK = response->mutable_result();
-        resACK->set_errcode(1);
-        resACK->set_errmsg("update user state failed");
+        response->set_error_code(1);
+        response->set_error_msg("update user state failed");
     }
     
     // 调用回调函数

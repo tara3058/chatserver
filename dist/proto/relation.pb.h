@@ -97,9 +97,6 @@ extern RemoveFriendRequestDefaultTypeInternal _RemoveFriendRequest_default_insta
 class RemoveFriendResponse;
 struct RemoveFriendResponseDefaultTypeInternal;
 extern RemoveFriendResponseDefaultTypeInternal _RemoveFriendResponse_default_instance_;
-class ResultCode;
-struct ResultCodeDefaultTypeInternal;
-extern ResultCodeDefaultTypeInternal _ResultCode_default_instance_;
 }  // namespace relationservice
 PROTOBUF_NAMESPACE_OPEN
 template<> ::relationservice::AddFriendRequest* Arena::CreateMaybeMessage<::relationservice::AddFriendRequest>(Arena*);
@@ -119,175 +116,10 @@ template<> ::relationservice::LeaveGroupRequest* Arena::CreateMaybeMessage<::rel
 template<> ::relationservice::LeaveGroupResponse* Arena::CreateMaybeMessage<::relationservice::LeaveGroupResponse>(Arena*);
 template<> ::relationservice::RemoveFriendRequest* Arena::CreateMaybeMessage<::relationservice::RemoveFriendRequest>(Arena*);
 template<> ::relationservice::RemoveFriendResponse* Arena::CreateMaybeMessage<::relationservice::RemoveFriendResponse>(Arena*);
-template<> ::relationservice::ResultCode* Arena::CreateMaybeMessage<::relationservice::ResultCode>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace relationservice {
 
 // ===================================================================
-
-class ResultCode final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:relationservice.ResultCode) */ {
- public:
-  inline ResultCode() : ResultCode(nullptr) {}
-  ~ResultCode() override;
-  explicit PROTOBUF_CONSTEXPR ResultCode(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  ResultCode(const ResultCode& from);
-  ResultCode(ResultCode&& from) noexcept
-    : ResultCode() {
-    *this = ::std::move(from);
-  }
-
-  inline ResultCode& operator=(const ResultCode& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ResultCode& operator=(ResultCode&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ResultCode& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const ResultCode* internal_default_instance() {
-    return reinterpret_cast<const ResultCode*>(
-               &_ResultCode_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(ResultCode& a, ResultCode& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(ResultCode* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ResultCode* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  ResultCode* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<ResultCode>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const ResultCode& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const ResultCode& from) {
-    ResultCode::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ResultCode* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "relationservice.ResultCode";
-  }
-  protected:
-  explicit ResultCode(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kErrmsgFieldNumber = 2,
-    kErrcodeFieldNumber = 1,
-  };
-  // bytes errmsg = 2;
-  void clear_errmsg();
-  const std::string& errmsg() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_errmsg(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_errmsg();
-  PROTOBUF_NODISCARD std::string* release_errmsg();
-  void set_allocated_errmsg(std::string* errmsg);
-  private:
-  const std::string& _internal_errmsg() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_errmsg(const std::string& value);
-  std::string* _internal_mutable_errmsg();
-  public:
-
-  // int32 errcode = 1;
-  void clear_errcode();
-  int32_t errcode() const;
-  void set_errcode(int32_t value);
-  private:
-  int32_t _internal_errcode() const;
-  void _internal_set_errcode(int32_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:relationservice.ResultCode)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr errmsg_;
-    int32_t errcode_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_relation_2eproto;
-};
-// -------------------------------------------------------------------
 
 class AddFriendRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:relationservice.AddFriendRequest) */ {
@@ -337,7 +169,7 @@ class AddFriendRequest final :
                &_AddFriendRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    0;
 
   friend void swap(AddFriendRequest& a, AddFriendRequest& b) {
     a.Swap(&b);
@@ -496,7 +328,7 @@ class AddFriendResponse final :
                &_AddFriendResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    1;
 
   friend void swap(AddFriendResponse& a, AddFriendResponse& b) {
     a.Swap(&b);
@@ -569,25 +401,31 @@ class AddFriendResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kErrorMsgFieldNumber = 2,
+    kErrorCodeFieldNumber = 1,
   };
-  // .relationservice.ResultCode result = 1;
-  bool has_result() const;
+  // string error_msg = 2;
+  void clear_error_msg();
+  const std::string& error_msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_msg();
+  PROTOBUF_NODISCARD std::string* release_error_msg();
+  void set_allocated_error_msg(std::string* error_msg);
   private:
-  bool _internal_has_result() const;
+  const std::string& _internal_error_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_msg(const std::string& value);
+  std::string* _internal_mutable_error_msg();
   public:
-  void clear_result();
-  const ::relationservice::ResultCode& result() const;
-  PROTOBUF_NODISCARD ::relationservice::ResultCode* release_result();
-  ::relationservice::ResultCode* mutable_result();
-  void set_allocated_result(::relationservice::ResultCode* result);
+
+  // int32 error_code = 1;
+  void clear_error_code();
+  int32_t error_code() const;
+  void set_error_code(int32_t value);
   private:
-  const ::relationservice::ResultCode& _internal_result() const;
-  ::relationservice::ResultCode* _internal_mutable_result();
+  int32_t _internal_error_code() const;
+  void _internal_set_error_code(int32_t value);
   public:
-  void unsafe_arena_set_allocated_result(
-      ::relationservice::ResultCode* result);
-  ::relationservice::ResultCode* unsafe_arena_release_result();
 
   // @@protoc_insertion_point(class_scope:relationservice.AddFriendResponse)
  private:
@@ -597,7 +435,8 @@ class AddFriendResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::relationservice::ResultCode* result_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_msg_;
+    int32_t error_code_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -653,7 +492,7 @@ class RemoveFriendRequest final :
                &_RemoveFriendRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    2;
 
   friend void swap(RemoveFriendRequest& a, RemoveFriendRequest& b) {
     a.Swap(&b);
@@ -812,7 +651,7 @@ class RemoveFriendResponse final :
                &_RemoveFriendResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   friend void swap(RemoveFriendResponse& a, RemoveFriendResponse& b) {
     a.Swap(&b);
@@ -885,25 +724,31 @@ class RemoveFriendResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kErrorMsgFieldNumber = 2,
+    kErrorCodeFieldNumber = 1,
   };
-  // .relationservice.ResultCode result = 1;
-  bool has_result() const;
+  // string error_msg = 2;
+  void clear_error_msg();
+  const std::string& error_msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_msg();
+  PROTOBUF_NODISCARD std::string* release_error_msg();
+  void set_allocated_error_msg(std::string* error_msg);
   private:
-  bool _internal_has_result() const;
+  const std::string& _internal_error_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_msg(const std::string& value);
+  std::string* _internal_mutable_error_msg();
   public:
-  void clear_result();
-  const ::relationservice::ResultCode& result() const;
-  PROTOBUF_NODISCARD ::relationservice::ResultCode* release_result();
-  ::relationservice::ResultCode* mutable_result();
-  void set_allocated_result(::relationservice::ResultCode* result);
+
+  // int32 error_code = 1;
+  void clear_error_code();
+  int32_t error_code() const;
+  void set_error_code(int32_t value);
   private:
-  const ::relationservice::ResultCode& _internal_result() const;
-  ::relationservice::ResultCode* _internal_mutable_result();
+  int32_t _internal_error_code() const;
+  void _internal_set_error_code(int32_t value);
   public:
-  void unsafe_arena_set_allocated_result(
-      ::relationservice::ResultCode* result);
-  ::relationservice::ResultCode* unsafe_arena_release_result();
 
   // @@protoc_insertion_point(class_scope:relationservice.RemoveFriendResponse)
  private:
@@ -913,7 +758,8 @@ class RemoveFriendResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::relationservice::ResultCode* result_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_msg_;
+    int32_t error_code_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -969,7 +815,7 @@ class CreateGroupRequest final :
                &_CreateGroupRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   friend void swap(CreateGroupRequest& a, CreateGroupRequest& b) {
     a.Swap(&b);
@@ -1046,7 +892,7 @@ class CreateGroupRequest final :
     kGroupDescFieldNumber = 3,
     kUserIdFieldNumber = 1,
   };
-  // bytes group_name = 2;
+  // string group_name = 2;
   void clear_group_name();
   const std::string& group_name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1060,7 +906,7 @@ class CreateGroupRequest final :
   std::string* _internal_mutable_group_name();
   public:
 
-  // bytes group_desc = 3;
+  // string group_desc = 3;
   void clear_group_desc();
   const std::string& group_desc() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1149,7 +995,7 @@ class CreateGroupResponse final :
                &_CreateGroupResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   friend void swap(CreateGroupResponse& a, CreateGroupResponse& b) {
     a.Swap(&b);
@@ -1222,28 +1068,34 @@ class CreateGroupResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
-    kGroupIdFieldNumber = 2,
+    kErrorMsgFieldNumber = 2,
+    kErrorCodeFieldNumber = 1,
+    kGroupIdFieldNumber = 3,
   };
-  // .relationservice.ResultCode result = 1;
-  bool has_result() const;
+  // string error_msg = 2;
+  void clear_error_msg();
+  const std::string& error_msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_msg();
+  PROTOBUF_NODISCARD std::string* release_error_msg();
+  void set_allocated_error_msg(std::string* error_msg);
   private:
-  bool _internal_has_result() const;
+  const std::string& _internal_error_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_msg(const std::string& value);
+  std::string* _internal_mutable_error_msg();
   public:
-  void clear_result();
-  const ::relationservice::ResultCode& result() const;
-  PROTOBUF_NODISCARD ::relationservice::ResultCode* release_result();
-  ::relationservice::ResultCode* mutable_result();
-  void set_allocated_result(::relationservice::ResultCode* result);
-  private:
-  const ::relationservice::ResultCode& _internal_result() const;
-  ::relationservice::ResultCode* _internal_mutable_result();
-  public:
-  void unsafe_arena_set_allocated_result(
-      ::relationservice::ResultCode* result);
-  ::relationservice::ResultCode* unsafe_arena_release_result();
 
-  // int32 group_id = 2;
+  // int32 error_code = 1;
+  void clear_error_code();
+  int32_t error_code() const;
+  void set_error_code(int32_t value);
+  private:
+  int32_t _internal_error_code() const;
+  void _internal_set_error_code(int32_t value);
+  public:
+
+  // int32 group_id = 3;
   void clear_group_id();
   int32_t group_id() const;
   void set_group_id(int32_t value);
@@ -1260,7 +1112,8 @@ class CreateGroupResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::relationservice::ResultCode* result_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_msg_;
+    int32_t error_code_;
     int32_t group_id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -1317,7 +1170,7 @@ class JoinGroupRequest final :
                &_JoinGroupRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   friend void swap(JoinGroupRequest& a, JoinGroupRequest& b) {
     a.Swap(&b);
@@ -1476,7 +1329,7 @@ class JoinGroupResponse final :
                &_JoinGroupResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   friend void swap(JoinGroupResponse& a, JoinGroupResponse& b) {
     a.Swap(&b);
@@ -1549,25 +1402,31 @@ class JoinGroupResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kErrorMsgFieldNumber = 2,
+    kErrorCodeFieldNumber = 1,
   };
-  // .relationservice.ResultCode result = 1;
-  bool has_result() const;
+  // string error_msg = 2;
+  void clear_error_msg();
+  const std::string& error_msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_msg();
+  PROTOBUF_NODISCARD std::string* release_error_msg();
+  void set_allocated_error_msg(std::string* error_msg);
   private:
-  bool _internal_has_result() const;
+  const std::string& _internal_error_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_msg(const std::string& value);
+  std::string* _internal_mutable_error_msg();
   public:
-  void clear_result();
-  const ::relationservice::ResultCode& result() const;
-  PROTOBUF_NODISCARD ::relationservice::ResultCode* release_result();
-  ::relationservice::ResultCode* mutable_result();
-  void set_allocated_result(::relationservice::ResultCode* result);
+
+  // int32 error_code = 1;
+  void clear_error_code();
+  int32_t error_code() const;
+  void set_error_code(int32_t value);
   private:
-  const ::relationservice::ResultCode& _internal_result() const;
-  ::relationservice::ResultCode* _internal_mutable_result();
+  int32_t _internal_error_code() const;
+  void _internal_set_error_code(int32_t value);
   public:
-  void unsafe_arena_set_allocated_result(
-      ::relationservice::ResultCode* result);
-  ::relationservice::ResultCode* unsafe_arena_release_result();
 
   // @@protoc_insertion_point(class_scope:relationservice.JoinGroupResponse)
  private:
@@ -1577,7 +1436,8 @@ class JoinGroupResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::relationservice::ResultCode* result_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_msg_;
+    int32_t error_code_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1633,7 +1493,7 @@ class LeaveGroupRequest final :
                &_LeaveGroupRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   friend void swap(LeaveGroupRequest& a, LeaveGroupRequest& b) {
     a.Swap(&b);
@@ -1792,7 +1652,7 @@ class LeaveGroupResponse final :
                &_LeaveGroupResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   friend void swap(LeaveGroupResponse& a, LeaveGroupResponse& b) {
     a.Swap(&b);
@@ -1865,25 +1725,31 @@ class LeaveGroupResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kErrorMsgFieldNumber = 2,
+    kErrorCodeFieldNumber = 1,
   };
-  // .relationservice.ResultCode result = 1;
-  bool has_result() const;
+  // string error_msg = 2;
+  void clear_error_msg();
+  const std::string& error_msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_msg();
+  PROTOBUF_NODISCARD std::string* release_error_msg();
+  void set_allocated_error_msg(std::string* error_msg);
   private:
-  bool _internal_has_result() const;
+  const std::string& _internal_error_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_msg(const std::string& value);
+  std::string* _internal_mutable_error_msg();
   public:
-  void clear_result();
-  const ::relationservice::ResultCode& result() const;
-  PROTOBUF_NODISCARD ::relationservice::ResultCode* release_result();
-  ::relationservice::ResultCode* mutable_result();
-  void set_allocated_result(::relationservice::ResultCode* result);
+
+  // int32 error_code = 1;
+  void clear_error_code();
+  int32_t error_code() const;
+  void set_error_code(int32_t value);
   private:
-  const ::relationservice::ResultCode& _internal_result() const;
-  ::relationservice::ResultCode* _internal_mutable_result();
+  int32_t _internal_error_code() const;
+  void _internal_set_error_code(int32_t value);
   public:
-  void unsafe_arena_set_allocated_result(
-      ::relationservice::ResultCode* result);
-  ::relationservice::ResultCode* unsafe_arena_release_result();
 
   // @@protoc_insertion_point(class_scope:relationservice.LeaveGroupResponse)
  private:
@@ -1893,7 +1759,8 @@ class LeaveGroupResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::relationservice::ResultCode* result_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_msg_;
+    int32_t error_code_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1949,7 +1816,7 @@ class GetFriendsRequest final :
                &_GetFriendsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   friend void swap(GetFriendsRequest& a, GetFriendsRequest& b) {
     a.Swap(&b);
@@ -2097,7 +1964,7 @@ class GetFriendsResponse final :
                &_GetFriendsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    11;
 
   friend void swap(GetFriendsResponse& a, GetFriendsResponse& b) {
     a.Swap(&b);
@@ -2192,7 +2059,7 @@ class GetFriendsResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::relationservice::FriendInfo >&
       friends() const;
 
-  // bytes error_msg = 2;
+  // string error_msg = 2;
   void clear_error_msg();
   const std::string& error_msg() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2281,7 +2148,7 @@ class FriendInfo final :
                &_FriendInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    12;
 
   friend void swap(FriendInfo& a, FriendInfo& b) {
     a.Swap(&b);
@@ -2358,7 +2225,7 @@ class FriendInfo final :
     kStateFieldNumber = 3,
     kIdFieldNumber = 1,
   };
-  // bytes name = 2;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2372,7 +2239,7 @@ class FriendInfo final :
   std::string* _internal_mutable_name();
   public:
 
-  // bytes state = 3;
+  // string state = 3;
   void clear_state();
   const std::string& state() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2461,7 +2328,7 @@ class GetGroupsRequest final :
                &_GetGroupsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    13;
 
   friend void swap(GetGroupsRequest& a, GetGroupsRequest& b) {
     a.Swap(&b);
@@ -2609,7 +2476,7 @@ class GetGroupsResponse final :
                &_GetGroupsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    14;
 
   friend void swap(GetGroupsResponse& a, GetGroupsResponse& b) {
     a.Swap(&b);
@@ -2682,10 +2549,11 @@ class GetGroupsResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kGroupsFieldNumber = 2,
-    kResultFieldNumber = 1,
+    kGroupsFieldNumber = 3,
+    kErrorMsgFieldNumber = 2,
+    kErrorCodeFieldNumber = 1,
   };
-  // repeated .relationservice.GroupInfo groups = 2;
+  // repeated .relationservice.GroupInfo groups = 3;
   int groups_size() const;
   private:
   int _internal_groups_size() const;
@@ -2703,23 +2571,28 @@ class GetGroupsResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::relationservice::GroupInfo >&
       groups() const;
 
-  // .relationservice.ResultCode result = 1;
-  bool has_result() const;
+  // string error_msg = 2;
+  void clear_error_msg();
+  const std::string& error_msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_msg();
+  PROTOBUF_NODISCARD std::string* release_error_msg();
+  void set_allocated_error_msg(std::string* error_msg);
   private:
-  bool _internal_has_result() const;
+  const std::string& _internal_error_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_msg(const std::string& value);
+  std::string* _internal_mutable_error_msg();
   public:
-  void clear_result();
-  const ::relationservice::ResultCode& result() const;
-  PROTOBUF_NODISCARD ::relationservice::ResultCode* release_result();
-  ::relationservice::ResultCode* mutable_result();
-  void set_allocated_result(::relationservice::ResultCode* result);
+
+  // int32 error_code = 1;
+  void clear_error_code();
+  int32_t error_code() const;
+  void set_error_code(int32_t value);
   private:
-  const ::relationservice::ResultCode& _internal_result() const;
-  ::relationservice::ResultCode* _internal_mutable_result();
+  int32_t _internal_error_code() const;
+  void _internal_set_error_code(int32_t value);
   public:
-  void unsafe_arena_set_allocated_result(
-      ::relationservice::ResultCode* result);
-  ::relationservice::ResultCode* unsafe_arena_release_result();
 
   // @@protoc_insertion_point(class_scope:relationservice.GetGroupsResponse)
  private:
@@ -2730,7 +2603,8 @@ class GetGroupsResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::relationservice::GroupInfo > groups_;
-    ::relationservice::ResultCode* result_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_msg_;
+    int32_t error_code_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2786,7 +2660,7 @@ class GroupInfo final :
                &_GroupInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    15;
 
   friend void swap(GroupInfo& a, GroupInfo& b) {
     a.Swap(&b);
@@ -2882,7 +2756,7 @@ class GroupInfo final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::relationservice::GroupUserInfo >&
       users() const;
 
-  // bytes name = 2;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2896,7 +2770,7 @@ class GroupInfo final :
   std::string* _internal_mutable_name();
   public:
 
-  // bytes desc = 3;
+  // string desc = 3;
   void clear_desc();
   const std::string& desc() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2986,7 +2860,7 @@ class GroupUserInfo final :
                &_GroupUserInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    16;
 
   friend void swap(GroupUserInfo& a, GroupUserInfo& b) {
     a.Swap(&b);
@@ -3064,7 +2938,7 @@ class GroupUserInfo final :
     kRoleFieldNumber = 4,
     kIdFieldNumber = 1,
   };
-  // bytes name = 2;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3078,7 +2952,7 @@ class GroupUserInfo final :
   std::string* _internal_mutable_name();
   public:
 
-  // bytes state = 3;
+  // string state = 3;
   void clear_state();
   const std::string& state() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3092,7 +2966,7 @@ class GroupUserInfo final :
   std::string* _internal_mutable_state();
   public:
 
-  // bytes role = 4;
+  // string role = 4;
   void clear_role();
   const std::string& role() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -3248,80 +3122,6 @@ class RelationService_Stub : public RelationService {
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// ResultCode
-
-// int32 errcode = 1;
-inline void ResultCode::clear_errcode() {
-  _impl_.errcode_ = 0;
-}
-inline int32_t ResultCode::_internal_errcode() const {
-  return _impl_.errcode_;
-}
-inline int32_t ResultCode::errcode() const {
-  // @@protoc_insertion_point(field_get:relationservice.ResultCode.errcode)
-  return _internal_errcode();
-}
-inline void ResultCode::_internal_set_errcode(int32_t value) {
-  
-  _impl_.errcode_ = value;
-}
-inline void ResultCode::set_errcode(int32_t value) {
-  _internal_set_errcode(value);
-  // @@protoc_insertion_point(field_set:relationservice.ResultCode.errcode)
-}
-
-// bytes errmsg = 2;
-inline void ResultCode::clear_errmsg() {
-  _impl_.errmsg_.ClearToEmpty();
-}
-inline const std::string& ResultCode::errmsg() const {
-  // @@protoc_insertion_point(field_get:relationservice.ResultCode.errmsg)
-  return _internal_errmsg();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void ResultCode::set_errmsg(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.errmsg_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:relationservice.ResultCode.errmsg)
-}
-inline std::string* ResultCode::mutable_errmsg() {
-  std::string* _s = _internal_mutable_errmsg();
-  // @@protoc_insertion_point(field_mutable:relationservice.ResultCode.errmsg)
-  return _s;
-}
-inline const std::string& ResultCode::_internal_errmsg() const {
-  return _impl_.errmsg_.Get();
-}
-inline void ResultCode::_internal_set_errmsg(const std::string& value) {
-  
-  _impl_.errmsg_.Set(value, GetArenaForAllocation());
-}
-inline std::string* ResultCode::_internal_mutable_errmsg() {
-  
-  return _impl_.errmsg_.Mutable(GetArenaForAllocation());
-}
-inline std::string* ResultCode::release_errmsg() {
-  // @@protoc_insertion_point(field_release:relationservice.ResultCode.errmsg)
-  return _impl_.errmsg_.Release();
-}
-inline void ResultCode::set_allocated_errmsg(std::string* errmsg) {
-  if (errmsg != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.errmsg_.SetAllocated(errmsg, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.errmsg_.IsDefault()) {
-    _impl_.errmsg_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:relationservice.ResultCode.errmsg)
-}
-
-// -------------------------------------------------------------------
-
 // AddFriendRequest
 
 // int32 user_id = 1;
@@ -3368,94 +3168,74 @@ inline void AddFriendRequest::set_friend_id(int32_t value) {
 
 // AddFriendResponse
 
-// .relationservice.ResultCode result = 1;
-inline bool AddFriendResponse::_internal_has_result() const {
-  return this != internal_default_instance() && _impl_.result_ != nullptr;
+// int32 error_code = 1;
+inline void AddFriendResponse::clear_error_code() {
+  _impl_.error_code_ = 0;
 }
-inline bool AddFriendResponse::has_result() const {
-  return _internal_has_result();
+inline int32_t AddFriendResponse::_internal_error_code() const {
+  return _impl_.error_code_;
 }
-inline void AddFriendResponse::clear_result() {
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+inline int32_t AddFriendResponse::error_code() const {
+  // @@protoc_insertion_point(field_get:relationservice.AddFriendResponse.error_code)
+  return _internal_error_code();
 }
-inline const ::relationservice::ResultCode& AddFriendResponse::_internal_result() const {
-  const ::relationservice::ResultCode* p = _impl_.result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::relationservice::ResultCode&>(
-      ::relationservice::_ResultCode_default_instance_);
+inline void AddFriendResponse::_internal_set_error_code(int32_t value) {
+  
+  _impl_.error_code_ = value;
 }
-inline const ::relationservice::ResultCode& AddFriendResponse::result() const {
-  // @@protoc_insertion_point(field_get:relationservice.AddFriendResponse.result)
-  return _internal_result();
+inline void AddFriendResponse::set_error_code(int32_t value) {
+  _internal_set_error_code(value);
+  // @@protoc_insertion_point(field_set:relationservice.AddFriendResponse.error_code)
 }
-inline void AddFriendResponse::unsafe_arena_set_allocated_result(
-    ::relationservice::ResultCode* result) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.result_);
-  }
-  _impl_.result_ = result;
-  if (result) {
+
+// string error_msg = 2;
+inline void AddFriendResponse::clear_error_msg() {
+  _impl_.error_msg_.ClearToEmpty();
+}
+inline const std::string& AddFriendResponse::error_msg() const {
+  // @@protoc_insertion_point(field_get:relationservice.AddFriendResponse.error_msg)
+  return _internal_error_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void AddFriendResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:relationservice.AddFriendResponse.error_msg)
+}
+inline std::string* AddFriendResponse::mutable_error_msg() {
+  std::string* _s = _internal_mutable_error_msg();
+  // @@protoc_insertion_point(field_mutable:relationservice.AddFriendResponse.error_msg)
+  return _s;
+}
+inline const std::string& AddFriendResponse::_internal_error_msg() const {
+  return _impl_.error_msg_.Get();
+}
+inline void AddFriendResponse::_internal_set_error_msg(const std::string& value) {
+  
+  _impl_.error_msg_.Set(value, GetArenaForAllocation());
+}
+inline std::string* AddFriendResponse::_internal_mutable_error_msg() {
+  
+  return _impl_.error_msg_.Mutable(GetArenaForAllocation());
+}
+inline std::string* AddFriendResponse::release_error_msg() {
+  // @@protoc_insertion_point(field_release:relationservice.AddFriendResponse.error_msg)
+  return _impl_.error_msg_.Release();
+}
+inline void AddFriendResponse::set_allocated_error_msg(std::string* error_msg) {
+  if (error_msg != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:relationservice.AddFriendResponse.result)
-}
-inline ::relationservice::ResultCode* AddFriendResponse::release_result() {
-  
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  _impl_.error_msg_.SetAllocated(error_msg, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_msg_.IsDefault()) {
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::relationservice::ResultCode* AddFriendResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:relationservice.AddFriendResponse.result)
-  
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-  return temp;
-}
-inline ::relationservice::ResultCode* AddFriendResponse::_internal_mutable_result() {
-  
-  if (_impl_.result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::relationservice::ResultCode>(GetArenaForAllocation());
-    _impl_.result_ = p;
-  }
-  return _impl_.result_;
-}
-inline ::relationservice::ResultCode* AddFriendResponse::mutable_result() {
-  ::relationservice::ResultCode* _msg = _internal_mutable_result();
-  // @@protoc_insertion_point(field_mutable:relationservice.AddFriendResponse.result)
-  return _msg;
-}
-inline void AddFriendResponse::set_allocated_result(::relationservice::ResultCode* result) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.result_;
-  }
-  if (result) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(result);
-    if (message_arena != submessage_arena) {
-      result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, result, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:relationservice.AddFriendResponse.result)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:relationservice.AddFriendResponse.error_msg)
 }
 
 // -------------------------------------------------------------------
@@ -3506,94 +3286,74 @@ inline void RemoveFriendRequest::set_friend_id(int32_t value) {
 
 // RemoveFriendResponse
 
-// .relationservice.ResultCode result = 1;
-inline bool RemoveFriendResponse::_internal_has_result() const {
-  return this != internal_default_instance() && _impl_.result_ != nullptr;
+// int32 error_code = 1;
+inline void RemoveFriendResponse::clear_error_code() {
+  _impl_.error_code_ = 0;
 }
-inline bool RemoveFriendResponse::has_result() const {
-  return _internal_has_result();
+inline int32_t RemoveFriendResponse::_internal_error_code() const {
+  return _impl_.error_code_;
 }
-inline void RemoveFriendResponse::clear_result() {
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+inline int32_t RemoveFriendResponse::error_code() const {
+  // @@protoc_insertion_point(field_get:relationservice.RemoveFriendResponse.error_code)
+  return _internal_error_code();
 }
-inline const ::relationservice::ResultCode& RemoveFriendResponse::_internal_result() const {
-  const ::relationservice::ResultCode* p = _impl_.result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::relationservice::ResultCode&>(
-      ::relationservice::_ResultCode_default_instance_);
+inline void RemoveFriendResponse::_internal_set_error_code(int32_t value) {
+  
+  _impl_.error_code_ = value;
 }
-inline const ::relationservice::ResultCode& RemoveFriendResponse::result() const {
-  // @@protoc_insertion_point(field_get:relationservice.RemoveFriendResponse.result)
-  return _internal_result();
+inline void RemoveFriendResponse::set_error_code(int32_t value) {
+  _internal_set_error_code(value);
+  // @@protoc_insertion_point(field_set:relationservice.RemoveFriendResponse.error_code)
 }
-inline void RemoveFriendResponse::unsafe_arena_set_allocated_result(
-    ::relationservice::ResultCode* result) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.result_);
-  }
-  _impl_.result_ = result;
-  if (result) {
+
+// string error_msg = 2;
+inline void RemoveFriendResponse::clear_error_msg() {
+  _impl_.error_msg_.ClearToEmpty();
+}
+inline const std::string& RemoveFriendResponse::error_msg() const {
+  // @@protoc_insertion_point(field_get:relationservice.RemoveFriendResponse.error_msg)
+  return _internal_error_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RemoveFriendResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:relationservice.RemoveFriendResponse.error_msg)
+}
+inline std::string* RemoveFriendResponse::mutable_error_msg() {
+  std::string* _s = _internal_mutable_error_msg();
+  // @@protoc_insertion_point(field_mutable:relationservice.RemoveFriendResponse.error_msg)
+  return _s;
+}
+inline const std::string& RemoveFriendResponse::_internal_error_msg() const {
+  return _impl_.error_msg_.Get();
+}
+inline void RemoveFriendResponse::_internal_set_error_msg(const std::string& value) {
+  
+  _impl_.error_msg_.Set(value, GetArenaForAllocation());
+}
+inline std::string* RemoveFriendResponse::_internal_mutable_error_msg() {
+  
+  return _impl_.error_msg_.Mutable(GetArenaForAllocation());
+}
+inline std::string* RemoveFriendResponse::release_error_msg() {
+  // @@protoc_insertion_point(field_release:relationservice.RemoveFriendResponse.error_msg)
+  return _impl_.error_msg_.Release();
+}
+inline void RemoveFriendResponse::set_allocated_error_msg(std::string* error_msg) {
+  if (error_msg != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:relationservice.RemoveFriendResponse.result)
-}
-inline ::relationservice::ResultCode* RemoveFriendResponse::release_result() {
-  
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  _impl_.error_msg_.SetAllocated(error_msg, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_msg_.IsDefault()) {
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::relationservice::ResultCode* RemoveFriendResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:relationservice.RemoveFriendResponse.result)
-  
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-  return temp;
-}
-inline ::relationservice::ResultCode* RemoveFriendResponse::_internal_mutable_result() {
-  
-  if (_impl_.result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::relationservice::ResultCode>(GetArenaForAllocation());
-    _impl_.result_ = p;
-  }
-  return _impl_.result_;
-}
-inline ::relationservice::ResultCode* RemoveFriendResponse::mutable_result() {
-  ::relationservice::ResultCode* _msg = _internal_mutable_result();
-  // @@protoc_insertion_point(field_mutable:relationservice.RemoveFriendResponse.result)
-  return _msg;
-}
-inline void RemoveFriendResponse::set_allocated_result(::relationservice::ResultCode* result) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.result_;
-  }
-  if (result) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(result);
-    if (message_arena != submessage_arena) {
-      result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, result, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:relationservice.RemoveFriendResponse.result)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:relationservice.RemoveFriendResponse.error_msg)
 }
 
 // -------------------------------------------------------------------
@@ -3620,7 +3380,7 @@ inline void CreateGroupRequest::set_user_id(int32_t value) {
   // @@protoc_insertion_point(field_set:relationservice.CreateGroupRequest.user_id)
 }
 
-// bytes group_name = 2;
+// string group_name = 2;
 inline void CreateGroupRequest::clear_group_name() {
   _impl_.group_name_.ClearToEmpty();
 }
@@ -3632,7 +3392,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void CreateGroupRequest::set_group_name(ArgT0&& arg0, ArgT... args) {
  
- _impl_.group_name_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.group_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:relationservice.CreateGroupRequest.group_name)
 }
 inline std::string* CreateGroupRequest::mutable_group_name() {
@@ -3670,7 +3430,7 @@ inline void CreateGroupRequest::set_allocated_group_name(std::string* group_name
   // @@protoc_insertion_point(field_set_allocated:relationservice.CreateGroupRequest.group_name)
 }
 
-// bytes group_desc = 3;
+// string group_desc = 3;
 inline void CreateGroupRequest::clear_group_desc() {
   _impl_.group_desc_.ClearToEmpty();
 }
@@ -3682,7 +3442,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void CreateGroupRequest::set_group_desc(ArgT0&& arg0, ArgT... args) {
  
- _impl_.group_desc_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.group_desc_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:relationservice.CreateGroupRequest.group_desc)
 }
 inline std::string* CreateGroupRequest::mutable_group_desc() {
@@ -3724,97 +3484,77 @@ inline void CreateGroupRequest::set_allocated_group_desc(std::string* group_desc
 
 // CreateGroupResponse
 
-// .relationservice.ResultCode result = 1;
-inline bool CreateGroupResponse::_internal_has_result() const {
-  return this != internal_default_instance() && _impl_.result_ != nullptr;
+// int32 error_code = 1;
+inline void CreateGroupResponse::clear_error_code() {
+  _impl_.error_code_ = 0;
 }
-inline bool CreateGroupResponse::has_result() const {
-  return _internal_has_result();
+inline int32_t CreateGroupResponse::_internal_error_code() const {
+  return _impl_.error_code_;
 }
-inline void CreateGroupResponse::clear_result() {
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+inline int32_t CreateGroupResponse::error_code() const {
+  // @@protoc_insertion_point(field_get:relationservice.CreateGroupResponse.error_code)
+  return _internal_error_code();
 }
-inline const ::relationservice::ResultCode& CreateGroupResponse::_internal_result() const {
-  const ::relationservice::ResultCode* p = _impl_.result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::relationservice::ResultCode&>(
-      ::relationservice::_ResultCode_default_instance_);
-}
-inline const ::relationservice::ResultCode& CreateGroupResponse::result() const {
-  // @@protoc_insertion_point(field_get:relationservice.CreateGroupResponse.result)
-  return _internal_result();
-}
-inline void CreateGroupResponse::unsafe_arena_set_allocated_result(
-    ::relationservice::ResultCode* result) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.result_);
-  }
-  _impl_.result_ = result;
-  if (result) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:relationservice.CreateGroupResponse.result)
-}
-inline ::relationservice::ResultCode* CreateGroupResponse::release_result() {
+inline void CreateGroupResponse::_internal_set_error_code(int32_t value) {
   
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
+  _impl_.error_code_ = value;
 }
-inline ::relationservice::ResultCode* CreateGroupResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:relationservice.CreateGroupResponse.result)
-  
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-  return temp;
-}
-inline ::relationservice::ResultCode* CreateGroupResponse::_internal_mutable_result() {
-  
-  if (_impl_.result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::relationservice::ResultCode>(GetArenaForAllocation());
-    _impl_.result_ = p;
-  }
-  return _impl_.result_;
-}
-inline ::relationservice::ResultCode* CreateGroupResponse::mutable_result() {
-  ::relationservice::ResultCode* _msg = _internal_mutable_result();
-  // @@protoc_insertion_point(field_mutable:relationservice.CreateGroupResponse.result)
-  return _msg;
-}
-inline void CreateGroupResponse::set_allocated_result(::relationservice::ResultCode* result) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.result_;
-  }
-  if (result) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(result);
-    if (message_arena != submessage_arena) {
-      result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, result, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:relationservice.CreateGroupResponse.result)
+inline void CreateGroupResponse::set_error_code(int32_t value) {
+  _internal_set_error_code(value);
+  // @@protoc_insertion_point(field_set:relationservice.CreateGroupResponse.error_code)
 }
 
-// int32 group_id = 2;
+// string error_msg = 2;
+inline void CreateGroupResponse::clear_error_msg() {
+  _impl_.error_msg_.ClearToEmpty();
+}
+inline const std::string& CreateGroupResponse::error_msg() const {
+  // @@protoc_insertion_point(field_get:relationservice.CreateGroupResponse.error_msg)
+  return _internal_error_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CreateGroupResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:relationservice.CreateGroupResponse.error_msg)
+}
+inline std::string* CreateGroupResponse::mutable_error_msg() {
+  std::string* _s = _internal_mutable_error_msg();
+  // @@protoc_insertion_point(field_mutable:relationservice.CreateGroupResponse.error_msg)
+  return _s;
+}
+inline const std::string& CreateGroupResponse::_internal_error_msg() const {
+  return _impl_.error_msg_.Get();
+}
+inline void CreateGroupResponse::_internal_set_error_msg(const std::string& value) {
+  
+  _impl_.error_msg_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CreateGroupResponse::_internal_mutable_error_msg() {
+  
+  return _impl_.error_msg_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CreateGroupResponse::release_error_msg() {
+  // @@protoc_insertion_point(field_release:relationservice.CreateGroupResponse.error_msg)
+  return _impl_.error_msg_.Release();
+}
+inline void CreateGroupResponse::set_allocated_error_msg(std::string* error_msg) {
+  if (error_msg != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.error_msg_.SetAllocated(error_msg, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_msg_.IsDefault()) {
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:relationservice.CreateGroupResponse.error_msg)
+}
+
+// int32 group_id = 3;
 inline void CreateGroupResponse::clear_group_id() {
   _impl_.group_id_ = 0;
 }
@@ -3882,94 +3622,74 @@ inline void JoinGroupRequest::set_group_id(int32_t value) {
 
 // JoinGroupResponse
 
-// .relationservice.ResultCode result = 1;
-inline bool JoinGroupResponse::_internal_has_result() const {
-  return this != internal_default_instance() && _impl_.result_ != nullptr;
+// int32 error_code = 1;
+inline void JoinGroupResponse::clear_error_code() {
+  _impl_.error_code_ = 0;
 }
-inline bool JoinGroupResponse::has_result() const {
-  return _internal_has_result();
+inline int32_t JoinGroupResponse::_internal_error_code() const {
+  return _impl_.error_code_;
 }
-inline void JoinGroupResponse::clear_result() {
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+inline int32_t JoinGroupResponse::error_code() const {
+  // @@protoc_insertion_point(field_get:relationservice.JoinGroupResponse.error_code)
+  return _internal_error_code();
 }
-inline const ::relationservice::ResultCode& JoinGroupResponse::_internal_result() const {
-  const ::relationservice::ResultCode* p = _impl_.result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::relationservice::ResultCode&>(
-      ::relationservice::_ResultCode_default_instance_);
+inline void JoinGroupResponse::_internal_set_error_code(int32_t value) {
+  
+  _impl_.error_code_ = value;
 }
-inline const ::relationservice::ResultCode& JoinGroupResponse::result() const {
-  // @@protoc_insertion_point(field_get:relationservice.JoinGroupResponse.result)
-  return _internal_result();
+inline void JoinGroupResponse::set_error_code(int32_t value) {
+  _internal_set_error_code(value);
+  // @@protoc_insertion_point(field_set:relationservice.JoinGroupResponse.error_code)
 }
-inline void JoinGroupResponse::unsafe_arena_set_allocated_result(
-    ::relationservice::ResultCode* result) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.result_);
-  }
-  _impl_.result_ = result;
-  if (result) {
+
+// string error_msg = 2;
+inline void JoinGroupResponse::clear_error_msg() {
+  _impl_.error_msg_.ClearToEmpty();
+}
+inline const std::string& JoinGroupResponse::error_msg() const {
+  // @@protoc_insertion_point(field_get:relationservice.JoinGroupResponse.error_msg)
+  return _internal_error_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void JoinGroupResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:relationservice.JoinGroupResponse.error_msg)
+}
+inline std::string* JoinGroupResponse::mutable_error_msg() {
+  std::string* _s = _internal_mutable_error_msg();
+  // @@protoc_insertion_point(field_mutable:relationservice.JoinGroupResponse.error_msg)
+  return _s;
+}
+inline const std::string& JoinGroupResponse::_internal_error_msg() const {
+  return _impl_.error_msg_.Get();
+}
+inline void JoinGroupResponse::_internal_set_error_msg(const std::string& value) {
+  
+  _impl_.error_msg_.Set(value, GetArenaForAllocation());
+}
+inline std::string* JoinGroupResponse::_internal_mutable_error_msg() {
+  
+  return _impl_.error_msg_.Mutable(GetArenaForAllocation());
+}
+inline std::string* JoinGroupResponse::release_error_msg() {
+  // @@protoc_insertion_point(field_release:relationservice.JoinGroupResponse.error_msg)
+  return _impl_.error_msg_.Release();
+}
+inline void JoinGroupResponse::set_allocated_error_msg(std::string* error_msg) {
+  if (error_msg != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:relationservice.JoinGroupResponse.result)
-}
-inline ::relationservice::ResultCode* JoinGroupResponse::release_result() {
-  
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  _impl_.error_msg_.SetAllocated(error_msg, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_msg_.IsDefault()) {
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::relationservice::ResultCode* JoinGroupResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:relationservice.JoinGroupResponse.result)
-  
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-  return temp;
-}
-inline ::relationservice::ResultCode* JoinGroupResponse::_internal_mutable_result() {
-  
-  if (_impl_.result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::relationservice::ResultCode>(GetArenaForAllocation());
-    _impl_.result_ = p;
-  }
-  return _impl_.result_;
-}
-inline ::relationservice::ResultCode* JoinGroupResponse::mutable_result() {
-  ::relationservice::ResultCode* _msg = _internal_mutable_result();
-  // @@protoc_insertion_point(field_mutable:relationservice.JoinGroupResponse.result)
-  return _msg;
-}
-inline void JoinGroupResponse::set_allocated_result(::relationservice::ResultCode* result) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.result_;
-  }
-  if (result) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(result);
-    if (message_arena != submessage_arena) {
-      result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, result, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:relationservice.JoinGroupResponse.result)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:relationservice.JoinGroupResponse.error_msg)
 }
 
 // -------------------------------------------------------------------
@@ -4020,94 +3740,74 @@ inline void LeaveGroupRequest::set_group_id(int32_t value) {
 
 // LeaveGroupResponse
 
-// .relationservice.ResultCode result = 1;
-inline bool LeaveGroupResponse::_internal_has_result() const {
-  return this != internal_default_instance() && _impl_.result_ != nullptr;
+// int32 error_code = 1;
+inline void LeaveGroupResponse::clear_error_code() {
+  _impl_.error_code_ = 0;
 }
-inline bool LeaveGroupResponse::has_result() const {
-  return _internal_has_result();
+inline int32_t LeaveGroupResponse::_internal_error_code() const {
+  return _impl_.error_code_;
 }
-inline void LeaveGroupResponse::clear_result() {
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+inline int32_t LeaveGroupResponse::error_code() const {
+  // @@protoc_insertion_point(field_get:relationservice.LeaveGroupResponse.error_code)
+  return _internal_error_code();
 }
-inline const ::relationservice::ResultCode& LeaveGroupResponse::_internal_result() const {
-  const ::relationservice::ResultCode* p = _impl_.result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::relationservice::ResultCode&>(
-      ::relationservice::_ResultCode_default_instance_);
+inline void LeaveGroupResponse::_internal_set_error_code(int32_t value) {
+  
+  _impl_.error_code_ = value;
 }
-inline const ::relationservice::ResultCode& LeaveGroupResponse::result() const {
-  // @@protoc_insertion_point(field_get:relationservice.LeaveGroupResponse.result)
-  return _internal_result();
+inline void LeaveGroupResponse::set_error_code(int32_t value) {
+  _internal_set_error_code(value);
+  // @@protoc_insertion_point(field_set:relationservice.LeaveGroupResponse.error_code)
 }
-inline void LeaveGroupResponse::unsafe_arena_set_allocated_result(
-    ::relationservice::ResultCode* result) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.result_);
-  }
-  _impl_.result_ = result;
-  if (result) {
+
+// string error_msg = 2;
+inline void LeaveGroupResponse::clear_error_msg() {
+  _impl_.error_msg_.ClearToEmpty();
+}
+inline const std::string& LeaveGroupResponse::error_msg() const {
+  // @@protoc_insertion_point(field_get:relationservice.LeaveGroupResponse.error_msg)
+  return _internal_error_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LeaveGroupResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:relationservice.LeaveGroupResponse.error_msg)
+}
+inline std::string* LeaveGroupResponse::mutable_error_msg() {
+  std::string* _s = _internal_mutable_error_msg();
+  // @@protoc_insertion_point(field_mutable:relationservice.LeaveGroupResponse.error_msg)
+  return _s;
+}
+inline const std::string& LeaveGroupResponse::_internal_error_msg() const {
+  return _impl_.error_msg_.Get();
+}
+inline void LeaveGroupResponse::_internal_set_error_msg(const std::string& value) {
+  
+  _impl_.error_msg_.Set(value, GetArenaForAllocation());
+}
+inline std::string* LeaveGroupResponse::_internal_mutable_error_msg() {
+  
+  return _impl_.error_msg_.Mutable(GetArenaForAllocation());
+}
+inline std::string* LeaveGroupResponse::release_error_msg() {
+  // @@protoc_insertion_point(field_release:relationservice.LeaveGroupResponse.error_msg)
+  return _impl_.error_msg_.Release();
+}
+inline void LeaveGroupResponse::set_allocated_error_msg(std::string* error_msg) {
+  if (error_msg != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:relationservice.LeaveGroupResponse.result)
-}
-inline ::relationservice::ResultCode* LeaveGroupResponse::release_result() {
-  
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  _impl_.error_msg_.SetAllocated(error_msg, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_msg_.IsDefault()) {
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::relationservice::ResultCode* LeaveGroupResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:relationservice.LeaveGroupResponse.result)
-  
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-  return temp;
-}
-inline ::relationservice::ResultCode* LeaveGroupResponse::_internal_mutable_result() {
-  
-  if (_impl_.result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::relationservice::ResultCode>(GetArenaForAllocation());
-    _impl_.result_ = p;
-  }
-  return _impl_.result_;
-}
-inline ::relationservice::ResultCode* LeaveGroupResponse::mutable_result() {
-  ::relationservice::ResultCode* _msg = _internal_mutable_result();
-  // @@protoc_insertion_point(field_mutable:relationservice.LeaveGroupResponse.result)
-  return _msg;
-}
-inline void LeaveGroupResponse::set_allocated_result(::relationservice::ResultCode* result) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.result_;
-  }
-  if (result) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(result);
-    if (message_arena != submessage_arena) {
-      result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, result, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:relationservice.LeaveGroupResponse.result)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:relationservice.LeaveGroupResponse.error_msg)
 }
 
 // -------------------------------------------------------------------
@@ -4158,7 +3858,7 @@ inline void GetFriendsResponse::set_error_code(int32_t value) {
   // @@protoc_insertion_point(field_set:relationservice.GetFriendsResponse.error_code)
 }
 
-// bytes error_msg = 2;
+// string error_msg = 2;
 inline void GetFriendsResponse::clear_error_msg() {
   _impl_.error_msg_.ClearToEmpty();
 }
@@ -4170,7 +3870,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void GetFriendsResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
  
- _impl_.error_msg_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:relationservice.GetFriendsResponse.error_msg)
 }
 inline std::string* GetFriendsResponse::mutable_error_msg() {
@@ -4272,7 +3972,7 @@ inline void FriendInfo::set_id(int32_t value) {
   // @@protoc_insertion_point(field_set:relationservice.FriendInfo.id)
 }
 
-// bytes name = 2;
+// string name = 2;
 inline void FriendInfo::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -4284,7 +3984,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void FriendInfo::set_name(ArgT0&& arg0, ArgT... args) {
  
- _impl_.name_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:relationservice.FriendInfo.name)
 }
 inline std::string* FriendInfo::mutable_name() {
@@ -4322,7 +4022,7 @@ inline void FriendInfo::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:relationservice.FriendInfo.name)
 }
 
-// bytes state = 3;
+// string state = 3;
 inline void FriendInfo::clear_state() {
   _impl_.state_.ClearToEmpty();
 }
@@ -4334,7 +4034,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void FriendInfo::set_state(ArgT0&& arg0, ArgT... args) {
  
- _impl_.state_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.state_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:relationservice.FriendInfo.state)
 }
 inline std::string* FriendInfo::mutable_state() {
@@ -4400,97 +4100,77 @@ inline void GetGroupsRequest::set_user_id(int32_t value) {
 
 // GetGroupsResponse
 
-// .relationservice.ResultCode result = 1;
-inline bool GetGroupsResponse::_internal_has_result() const {
-  return this != internal_default_instance() && _impl_.result_ != nullptr;
+// int32 error_code = 1;
+inline void GetGroupsResponse::clear_error_code() {
+  _impl_.error_code_ = 0;
 }
-inline bool GetGroupsResponse::has_result() const {
-  return _internal_has_result();
+inline int32_t GetGroupsResponse::_internal_error_code() const {
+  return _impl_.error_code_;
 }
-inline void GetGroupsResponse::clear_result() {
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+inline int32_t GetGroupsResponse::error_code() const {
+  // @@protoc_insertion_point(field_get:relationservice.GetGroupsResponse.error_code)
+  return _internal_error_code();
 }
-inline const ::relationservice::ResultCode& GetGroupsResponse::_internal_result() const {
-  const ::relationservice::ResultCode* p = _impl_.result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::relationservice::ResultCode&>(
-      ::relationservice::_ResultCode_default_instance_);
-}
-inline const ::relationservice::ResultCode& GetGroupsResponse::result() const {
-  // @@protoc_insertion_point(field_get:relationservice.GetGroupsResponse.result)
-  return _internal_result();
-}
-inline void GetGroupsResponse::unsafe_arena_set_allocated_result(
-    ::relationservice::ResultCode* result) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.result_);
-  }
-  _impl_.result_ = result;
-  if (result) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:relationservice.GetGroupsResponse.result)
-}
-inline ::relationservice::ResultCode* GetGroupsResponse::release_result() {
+inline void GetGroupsResponse::_internal_set_error_code(int32_t value) {
   
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
+  _impl_.error_code_ = value;
 }
-inline ::relationservice::ResultCode* GetGroupsResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:relationservice.GetGroupsResponse.result)
-  
-  ::relationservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-  return temp;
-}
-inline ::relationservice::ResultCode* GetGroupsResponse::_internal_mutable_result() {
-  
-  if (_impl_.result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::relationservice::ResultCode>(GetArenaForAllocation());
-    _impl_.result_ = p;
-  }
-  return _impl_.result_;
-}
-inline ::relationservice::ResultCode* GetGroupsResponse::mutable_result() {
-  ::relationservice::ResultCode* _msg = _internal_mutable_result();
-  // @@protoc_insertion_point(field_mutable:relationservice.GetGroupsResponse.result)
-  return _msg;
-}
-inline void GetGroupsResponse::set_allocated_result(::relationservice::ResultCode* result) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.result_;
-  }
-  if (result) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(result);
-    if (message_arena != submessage_arena) {
-      result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, result, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:relationservice.GetGroupsResponse.result)
+inline void GetGroupsResponse::set_error_code(int32_t value) {
+  _internal_set_error_code(value);
+  // @@protoc_insertion_point(field_set:relationservice.GetGroupsResponse.error_code)
 }
 
-// repeated .relationservice.GroupInfo groups = 2;
+// string error_msg = 2;
+inline void GetGroupsResponse::clear_error_msg() {
+  _impl_.error_msg_.ClearToEmpty();
+}
+inline const std::string& GetGroupsResponse::error_msg() const {
+  // @@protoc_insertion_point(field_get:relationservice.GetGroupsResponse.error_msg)
+  return _internal_error_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetGroupsResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:relationservice.GetGroupsResponse.error_msg)
+}
+inline std::string* GetGroupsResponse::mutable_error_msg() {
+  std::string* _s = _internal_mutable_error_msg();
+  // @@protoc_insertion_point(field_mutable:relationservice.GetGroupsResponse.error_msg)
+  return _s;
+}
+inline const std::string& GetGroupsResponse::_internal_error_msg() const {
+  return _impl_.error_msg_.Get();
+}
+inline void GetGroupsResponse::_internal_set_error_msg(const std::string& value) {
+  
+  _impl_.error_msg_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetGroupsResponse::_internal_mutable_error_msg() {
+  
+  return _impl_.error_msg_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetGroupsResponse::release_error_msg() {
+  // @@protoc_insertion_point(field_release:relationservice.GetGroupsResponse.error_msg)
+  return _impl_.error_msg_.Release();
+}
+inline void GetGroupsResponse::set_allocated_error_msg(std::string* error_msg) {
+  if (error_msg != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.error_msg_.SetAllocated(error_msg, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_msg_.IsDefault()) {
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:relationservice.GetGroupsResponse.error_msg)
+}
+
+// repeated .relationservice.GroupInfo groups = 3;
 inline int GetGroupsResponse::_internal_groups_size() const {
   return _impl_.groups_.size();
 }
@@ -4554,7 +4234,7 @@ inline void GroupInfo::set_id(int32_t value) {
   // @@protoc_insertion_point(field_set:relationservice.GroupInfo.id)
 }
 
-// bytes name = 2;
+// string name = 2;
 inline void GroupInfo::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -4566,7 +4246,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void GroupInfo::set_name(ArgT0&& arg0, ArgT... args) {
  
- _impl_.name_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:relationservice.GroupInfo.name)
 }
 inline std::string* GroupInfo::mutable_name() {
@@ -4604,7 +4284,7 @@ inline void GroupInfo::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:relationservice.GroupInfo.name)
 }
 
-// bytes desc = 3;
+// string desc = 3;
 inline void GroupInfo::clear_desc() {
   _impl_.desc_.ClearToEmpty();
 }
@@ -4616,7 +4296,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void GroupInfo::set_desc(ArgT0&& arg0, ArgT... args) {
  
- _impl_.desc_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.desc_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:relationservice.GroupInfo.desc)
 }
 inline std::string* GroupInfo::mutable_desc() {
@@ -4718,7 +4398,7 @@ inline void GroupUserInfo::set_id(int32_t value) {
   // @@protoc_insertion_point(field_set:relationservice.GroupUserInfo.id)
 }
 
-// bytes name = 2;
+// string name = 2;
 inline void GroupUserInfo::clear_name() {
   _impl_.name_.ClearToEmpty();
 }
@@ -4730,7 +4410,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void GroupUserInfo::set_name(ArgT0&& arg0, ArgT... args) {
  
- _impl_.name_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:relationservice.GroupUserInfo.name)
 }
 inline std::string* GroupUserInfo::mutable_name() {
@@ -4768,7 +4448,7 @@ inline void GroupUserInfo::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:relationservice.GroupUserInfo.name)
 }
 
-// bytes state = 3;
+// string state = 3;
 inline void GroupUserInfo::clear_state() {
   _impl_.state_.ClearToEmpty();
 }
@@ -4780,7 +4460,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void GroupUserInfo::set_state(ArgT0&& arg0, ArgT... args) {
  
- _impl_.state_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.state_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:relationservice.GroupUserInfo.state)
 }
 inline std::string* GroupUserInfo::mutable_state() {
@@ -4818,7 +4498,7 @@ inline void GroupUserInfo::set_allocated_state(std::string* state) {
   // @@protoc_insertion_point(field_set_allocated:relationservice.GroupUserInfo.state)
 }
 
-// bytes role = 4;
+// string role = 4;
 inline void GroupUserInfo::clear_role() {
   _impl_.role_.ClearToEmpty();
 }
@@ -4830,7 +4510,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void GroupUserInfo::set_role(ArgT0&& arg0, ArgT... args) {
  
- _impl_.role_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.role_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:relationservice.GroupUserInfo.role)
 }
 inline std::string* GroupUserInfo::mutable_role() {
@@ -4871,8 +4551,6 @@ inline void GroupUserInfo::set_allocated_role(std::string* role) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

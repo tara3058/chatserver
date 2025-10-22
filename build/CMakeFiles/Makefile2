@@ -86,18 +86,24 @@ clean: dist/clean
 # Recursive "all" directory target.
 dist/all: dist/proto/all
 dist/all: dist/rpcservice/user_service/all
+dist/all: dist/rpcservice/message/all
+dist/all: dist/rpcservice/relation_service/all
 dist/all: dist/rpcservice/gateway/all
 .PHONY : dist/all
 
 # Recursive "preinstall" directory target.
 dist/preinstall: dist/proto/preinstall
 dist/preinstall: dist/rpcservice/user_service/preinstall
+dist/preinstall: dist/rpcservice/message/preinstall
+dist/preinstall: dist/rpcservice/relation_service/preinstall
 dist/preinstall: dist/rpcservice/gateway/preinstall
 .PHONY : dist/preinstall
 
 # Recursive "clean" directory target.
 dist/clean: dist/proto/clean
 dist/clean: dist/rpcservice/user_service/clean
+dist/clean: dist/rpcservice/message/clean
+dist/clean: dist/rpcservice/relation_service/clean
 dist/clean: dist/rpcservice/gateway/clean
 .PHONY : dist/clean
 
@@ -132,10 +138,45 @@ dist/rpcservice/gateway/clean: dist/rpcservice/gateway/CMakeFiles/gateway_servic
 .PHONY : dist/rpcservice/gateway/clean
 
 #=============================================================================
+# Directory level rules for directory dist/rpcservice/message
+
+# Recursive "all" directory target.
+dist/rpcservice/message/all: dist/rpcservice/message/CMakeFiles/message_service.dir/all
+dist/rpcservice/message/all: dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/all
+.PHONY : dist/rpcservice/message/all
+
+# Recursive "preinstall" directory target.
+dist/rpcservice/message/preinstall:
+.PHONY : dist/rpcservice/message/preinstall
+
+# Recursive "clean" directory target.
+dist/rpcservice/message/clean: dist/rpcservice/message/CMakeFiles/message_service.dir/clean
+dist/rpcservice/message/clean: dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/clean
+.PHONY : dist/rpcservice/message/clean
+
+#=============================================================================
+# Directory level rules for directory dist/rpcservice/relation_service
+
+# Recursive "all" directory target.
+dist/rpcservice/relation_service/all: dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/all
+dist/rpcservice/relation_service/all: dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/all
+.PHONY : dist/rpcservice/relation_service/all
+
+# Recursive "preinstall" directory target.
+dist/rpcservice/relation_service/preinstall:
+.PHONY : dist/rpcservice/relation_service/preinstall
+
+# Recursive "clean" directory target.
+dist/rpcservice/relation_service/clean: dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/clean
+dist/rpcservice/relation_service/clean: dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/clean
+.PHONY : dist/rpcservice/relation_service/clean
+
+#=============================================================================
 # Directory level rules for directory dist/rpcservice/user_service
 
 # Recursive "all" directory target.
 dist/rpcservice/user_service/all: dist/rpcservice/user_service/CMakeFiles/user_service.dir/all
+dist/rpcservice/user_service/all: dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/all
 .PHONY : dist/rpcservice/user_service/all
 
 # Recursive "preinstall" directory target.
@@ -144,6 +185,7 @@ dist/rpcservice/user_service/preinstall:
 
 # Recursive "clean" directory target.
 dist/rpcservice/user_service/clean: dist/rpcservice/user_service/CMakeFiles/user_service.dir/clean
+dist/rpcservice/user_service/clean: dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/clean
 .PHONY : dist/rpcservice/user_service/clean
 
 #=============================================================================
@@ -234,7 +276,7 @@ src/servicePro/clean: src/servicePro/CMakeFiles/service_base.dir/clean
 src/server/CMakeFiles/server.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/server.dir/build.make src/server/CMakeFiles/server.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/server.dir/build.make src/server/CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=19,20,21,22,23,24,25,26,27,28,29 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=43,44,45,46,47,48,49,50,51,52,53 "Built target server"
 .PHONY : src/server/CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -286,12 +328,12 @@ src/client/CMakeFiles/client.dir/clean:
 src/servicePro/CMakeFiles/service_base.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=30,31 "Built target service_base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=54,55,56,57,58 "Built target service_base"
 .PHONY : src/servicePro/CMakeFiles/service_base.dir/all
 
 # Build rule for subdir invocation for target.
 src/servicePro/CMakeFiles/service_base.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/servicePro/CMakeFiles/service_base.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 0
 .PHONY : src/servicePro/CMakeFiles/service_base.dir/rule
@@ -312,7 +354,7 @@ src/servicePro/CMakeFiles/service_base.dir/clean:
 rpc/CMakeFiles/mprpc.dir/all:
 	$(MAKE) $(MAKESILENT) -f rpc/CMakeFiles/mprpc.dir/build.make rpc/CMakeFiles/mprpc.dir/depend
 	$(MAKE) $(MAKESILENT) -f rpc/CMakeFiles/mprpc.dir/build.make rpc/CMakeFiles/mprpc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=6,7,8,9,10,11,12,13,14 "Built target mprpc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=18,19,20,21,22,23,24,25,26 "Built target mprpc"
 .PHONY : rpc/CMakeFiles/mprpc.dir/all
 
 # Build rule for subdir invocation for target.
@@ -338,7 +380,7 @@ rpc/CMakeFiles/mprpc.dir/clean:
 dist/proto/CMakeFiles/proto_c.dir/all:
 	$(MAKE) $(MAKESILENT) -f dist/proto/CMakeFiles/proto_c.dir/build.make dist/proto/CMakeFiles/proto_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f dist/proto/CMakeFiles/proto_c.dir/build.make dist/proto/CMakeFiles/proto_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=15,16,17,18 "Built target proto_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=27,28,29,30 "Built target proto_c"
 .PHONY : dist/proto/CMakeFiles/proto_c.dir/all
 
 # Build rule for subdir invocation for target.
@@ -366,12 +408,12 @@ dist/rpcservice/user_service/CMakeFiles/user_service.dir/all: rpc/CMakeFiles/mpr
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/all: dist/proto/CMakeFiles/proto_c.dir/all
 	$(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/depend
 	$(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=32,33,34,35,36,37 "Built target user_service"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=66,67,68,69,70,71,72 "Built target user_service"
 .PHONY : dist/rpcservice/user_service/CMakeFiles/user_service.dir/all
 
 # Build rule for subdir invocation for target.
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dist/rpcservice/user_service/CMakeFiles/user_service.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 0
 .PHONY : dist/rpcservice/user_service/CMakeFiles/user_service.dir/rule
@@ -384,6 +426,142 @@ user_service: dist/rpcservice/user_service/CMakeFiles/user_service.dir/rule
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/clean:
 	$(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/clean
 .PHONY : dist/rpcservice/user_service/CMakeFiles/user_service.dir/clean
+
+#=============================================================================
+# Target rules for target dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir
+
+# All Build rule for target.
+dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/all: src/servicePro/CMakeFiles/service_base.dir/all
+dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/all: rpc/CMakeFiles/mprpc.dir/all
+dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/all: dist/proto/CMakeFiles/proto_c.dir/all
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/depend
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=59,60,61,62,63,64,65 "Built target user_rpc_service"
+.PHONY : dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/all
+
+# Build rule for subdir invocation for target.
+dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 25
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 0
+.PHONY : dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/rule
+
+# Convenience name for target.
+user_rpc_service: dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/rule
+.PHONY : user_rpc_service
+
+# clean rule for target.
+dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/clean:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/clean
+.PHONY : dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/clean
+
+#=============================================================================
+# Target rules for target dist/rpcservice/message/CMakeFiles/message_service.dir
+
+# All Build rule for target.
+dist/rpcservice/message/CMakeFiles/message_service.dir/all: src/servicePro/CMakeFiles/service_base.dir/all
+dist/rpcservice/message/CMakeFiles/message_service.dir/all: rpc/CMakeFiles/mprpc.dir/all
+dist/rpcservice/message/CMakeFiles/message_service.dir/all: dist/proto/CMakeFiles/proto_c.dir/all
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/message/CMakeFiles/message_service.dir/build.make dist/rpcservice/message/CMakeFiles/message_service.dir/depend
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/message/CMakeFiles/message_service.dir/build.make dist/rpcservice/message/CMakeFiles/message_service.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=12,13,14,15,16,17 "Built target message_service"
+.PHONY : dist/rpcservice/message/CMakeFiles/message_service.dir/all
+
+# Build rule for subdir invocation for target.
+dist/rpcservice/message/CMakeFiles/message_service.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 24
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dist/rpcservice/message/CMakeFiles/message_service.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 0
+.PHONY : dist/rpcservice/message/CMakeFiles/message_service.dir/rule
+
+# Convenience name for target.
+message_service: dist/rpcservice/message/CMakeFiles/message_service.dir/rule
+.PHONY : message_service
+
+# clean rule for target.
+dist/rpcservice/message/CMakeFiles/message_service.dir/clean:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/message/CMakeFiles/message_service.dir/build.make dist/rpcservice/message/CMakeFiles/message_service.dir/clean
+.PHONY : dist/rpcservice/message/CMakeFiles/message_service.dir/clean
+
+#=============================================================================
+# Target rules for target dist/rpcservice/message/CMakeFiles/message_rpc_service.dir
+
+# All Build rule for target.
+dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/all:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/build.make dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/depend
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/build.make dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=6,7,8,9,10,11 "Built target message_rpc_service"
+.PHONY : dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/all
+
+# Build rule for subdir invocation for target.
+dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 0
+.PHONY : dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/rule
+
+# Convenience name for target.
+message_rpc_service: dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/rule
+.PHONY : message_rpc_service
+
+# clean rule for target.
+dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/clean:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/build.make dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/clean
+.PHONY : dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/clean
+
+#=============================================================================
+# Target rules for target dist/rpcservice/relation_service/CMakeFiles/relation_service.dir
+
+# All Build rule for target.
+dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/all: src/servicePro/CMakeFiles/service_base.dir/all
+dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/all: rpc/CMakeFiles/mprpc.dir/all
+dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/all: dist/proto/CMakeFiles/proto_c.dir/all
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/build.make dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/depend
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/build.make dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=37,38,39,40,41,42 "Built target relation_service"
+.PHONY : dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/all
+
+# Build rule for subdir invocation for target.
+dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 24
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 0
+.PHONY : dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/rule
+
+# Convenience name for target.
+relation_service: dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/rule
+.PHONY : relation_service
+
+# clean rule for target.
+dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/clean:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/build.make dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/clean
+.PHONY : dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/clean
+
+#=============================================================================
+# Target rules for target dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir
+
+# All Build rule for target.
+dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/all:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/build.make dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/depend
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/build.make dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=31,32,33,34,35,36 "Built target relation_rpc_service"
+.PHONY : dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/all
+
+# Build rule for subdir invocation for target.
+dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 0
+.PHONY : dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/rule
+
+# Convenience name for target.
+relation_rpc_service: dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/rule
+.PHONY : relation_rpc_service
+
+# clean rule for target.
+dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/clean:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/build.make dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/clean
+.PHONY : dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/clean
 
 #=============================================================================
 # Target rules for target dist/rpcservice/gateway/CMakeFiles/gateway_service.dir
@@ -399,7 +577,7 @@ dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/all: dist/proto/CMakeFile
 
 # Build rule for subdir invocation for target.
 dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gas/Desktop/project/chat/build/CMakeFiles 0
 .PHONY : dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/rule

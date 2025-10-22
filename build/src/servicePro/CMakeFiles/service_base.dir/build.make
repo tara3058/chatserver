@@ -69,10 +69,52 @@ include src/servicePro/CMakeFiles/service_base.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/servicePro/CMakeFiles/service_base.dir/flags.make
 
+src/servicePro/CMakeFiles/service_base.dir/circuitbreaker.cc.o: src/servicePro/CMakeFiles/service_base.dir/flags.make
+src/servicePro/CMakeFiles/service_base.dir/circuitbreaker.cc.o: ../src/servicePro/circuitbreaker.cc
+src/servicePro/CMakeFiles/service_base.dir/circuitbreaker.cc.o: src/servicePro/CMakeFiles/service_base.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/servicePro/CMakeFiles/service_base.dir/circuitbreaker.cc.o"
+	cd /home/gas/Desktop/project/chat/build/src/servicePro && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/servicePro/CMakeFiles/service_base.dir/circuitbreaker.cc.o -MF CMakeFiles/service_base.dir/circuitbreaker.cc.o.d -o CMakeFiles/service_base.dir/circuitbreaker.cc.o -c /home/gas/Desktop/project/chat/src/servicePro/circuitbreaker.cc
+
+src/servicePro/CMakeFiles/service_base.dir/circuitbreaker.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/service_base.dir/circuitbreaker.cc.i"
+	cd /home/gas/Desktop/project/chat/build/src/servicePro && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gas/Desktop/project/chat/src/servicePro/circuitbreaker.cc > CMakeFiles/service_base.dir/circuitbreaker.cc.i
+
+src/servicePro/CMakeFiles/service_base.dir/circuitbreaker.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/service_base.dir/circuitbreaker.cc.s"
+	cd /home/gas/Desktop/project/chat/build/src/servicePro && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gas/Desktop/project/chat/src/servicePro/circuitbreaker.cc -o CMakeFiles/service_base.dir/circuitbreaker.cc.s
+
+src/servicePro/CMakeFiles/service_base.dir/loadbalancer.cc.o: src/servicePro/CMakeFiles/service_base.dir/flags.make
+src/servicePro/CMakeFiles/service_base.dir/loadbalancer.cc.o: ../src/servicePro/loadbalancer.cc
+src/servicePro/CMakeFiles/service_base.dir/loadbalancer.cc.o: src/servicePro/CMakeFiles/service_base.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/servicePro/CMakeFiles/service_base.dir/loadbalancer.cc.o"
+	cd /home/gas/Desktop/project/chat/build/src/servicePro && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/servicePro/CMakeFiles/service_base.dir/loadbalancer.cc.o -MF CMakeFiles/service_base.dir/loadbalancer.cc.o.d -o CMakeFiles/service_base.dir/loadbalancer.cc.o -c /home/gas/Desktop/project/chat/src/servicePro/loadbalancer.cc
+
+src/servicePro/CMakeFiles/service_base.dir/loadbalancer.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/service_base.dir/loadbalancer.cc.i"
+	cd /home/gas/Desktop/project/chat/build/src/servicePro && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gas/Desktop/project/chat/src/servicePro/loadbalancer.cc > CMakeFiles/service_base.dir/loadbalancer.cc.i
+
+src/servicePro/CMakeFiles/service_base.dir/loadbalancer.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/service_base.dir/loadbalancer.cc.s"
+	cd /home/gas/Desktop/project/chat/build/src/servicePro && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gas/Desktop/project/chat/src/servicePro/loadbalancer.cc -o CMakeFiles/service_base.dir/loadbalancer.cc.s
+
+src/servicePro/CMakeFiles/service_base.dir/monitor.cc.o: src/servicePro/CMakeFiles/service_base.dir/flags.make
+src/servicePro/CMakeFiles/service_base.dir/monitor.cc.o: ../src/servicePro/monitor.cc
+src/servicePro/CMakeFiles/service_base.dir/monitor.cc.o: src/servicePro/CMakeFiles/service_base.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/servicePro/CMakeFiles/service_base.dir/monitor.cc.o"
+	cd /home/gas/Desktop/project/chat/build/src/servicePro && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/servicePro/CMakeFiles/service_base.dir/monitor.cc.o -MF CMakeFiles/service_base.dir/monitor.cc.o.d -o CMakeFiles/service_base.dir/monitor.cc.o -c /home/gas/Desktop/project/chat/src/servicePro/monitor.cc
+
+src/servicePro/CMakeFiles/service_base.dir/monitor.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/service_base.dir/monitor.cc.i"
+	cd /home/gas/Desktop/project/chat/build/src/servicePro && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gas/Desktop/project/chat/src/servicePro/monitor.cc > CMakeFiles/service_base.dir/monitor.cc.i
+
+src/servicePro/CMakeFiles/service_base.dir/monitor.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/service_base.dir/monitor.cc.s"
+	cd /home/gas/Desktop/project/chat/build/src/servicePro && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gas/Desktop/project/chat/src/servicePro/monitor.cc -o CMakeFiles/service_base.dir/monitor.cc.s
+
 src/servicePro/CMakeFiles/service_base.dir/serverbase.cc.o: src/servicePro/CMakeFiles/service_base.dir/flags.make
 src/servicePro/CMakeFiles/service_base.dir/serverbase.cc.o: ../src/servicePro/serverbase.cc
 src/servicePro/CMakeFiles/service_base.dir/serverbase.cc.o: src/servicePro/CMakeFiles/service_base.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/servicePro/CMakeFiles/service_base.dir/serverbase.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/servicePro/CMakeFiles/service_base.dir/serverbase.cc.o"
 	cd /home/gas/Desktop/project/chat/build/src/servicePro && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/servicePro/CMakeFiles/service_base.dir/serverbase.cc.o -MF CMakeFiles/service_base.dir/serverbase.cc.o.d -o CMakeFiles/service_base.dir/serverbase.cc.o -c /home/gas/Desktop/project/chat/src/servicePro/serverbase.cc
 
 src/servicePro/CMakeFiles/service_base.dir/serverbase.cc.i: cmake_force
@@ -85,15 +127,21 @@ src/servicePro/CMakeFiles/service_base.dir/serverbase.cc.s: cmake_force
 
 # Object files for target service_base
 service_base_OBJECTS = \
+"CMakeFiles/service_base.dir/circuitbreaker.cc.o" \
+"CMakeFiles/service_base.dir/loadbalancer.cc.o" \
+"CMakeFiles/service_base.dir/monitor.cc.o" \
 "CMakeFiles/service_base.dir/serverbase.cc.o"
 
 # External object files for target service_base
 service_base_EXTERNAL_OBJECTS =
 
+../lib/libservice_base.a: src/servicePro/CMakeFiles/service_base.dir/circuitbreaker.cc.o
+../lib/libservice_base.a: src/servicePro/CMakeFiles/service_base.dir/loadbalancer.cc.o
+../lib/libservice_base.a: src/servicePro/CMakeFiles/service_base.dir/monitor.cc.o
 ../lib/libservice_base.a: src/servicePro/CMakeFiles/service_base.dir/serverbase.cc.o
 ../lib/libservice_base.a: src/servicePro/CMakeFiles/service_base.dir/build.make
 ../lib/libservice_base.a: src/servicePro/CMakeFiles/service_base.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../lib/libservice_base.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library ../../../lib/libservice_base.a"
 	cd /home/gas/Desktop/project/chat/build/src/servicePro && $(CMAKE_COMMAND) -P CMakeFiles/service_base.dir/cmake_clean_target.cmake
 	cd /home/gas/Desktop/project/chat/build/src/servicePro && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/service_base.dir/link.txt --verbose=$(VERBOSE)
 

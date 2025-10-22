@@ -259,6 +259,12 @@ dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/gateway.cc.o: \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h /usr/include/c++/11/map \
  /usr/include/c++/11/bits/stl_tree.h /usr/include/c++/11/bits/stl_map.h \
  /usr/include/c++/11/bits/stl_multimap.h \
+ /home/gas/Desktop/project/chat/src/servicePro/monitor.h \
+ /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
+ /usr/include/c++/11/limits /usr/include/c++/11/ctime \
+ /usr/include/c++/11/bits/parse_numbers.h \
+ /usr/include/muduo/base/Logging.h /usr/include/muduo/base/LogStream.h \
+ /home/gas/Desktop/project/chat/src/servicePro/circuitbreaker.h \
  /home/gas/Desktop/project/chat/thirdparty/json.hpp \
  /usr/include/c++/11/cassert /usr/include/c++/11/ciso646 \
  /usr/include/c++/11/numeric /usr/include/c++/11/bits/stl_numeric.h \
@@ -275,8 +281,7 @@ dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/gateway.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/limits \
- /usr/include/c++/11/tr1/gamma.tcc \
+ /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/tr1/gamma.tcc \
  /usr/include/c++/11/tr1/special_function_util.h \
  /usr/include/c++/11/tr1/bessel_function.tcc \
  /usr/include/c++/11/tr1/beta_function.tcc \
@@ -306,8 +311,6 @@ dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/gateway.cc.o: \
  /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
  /usr/include/c++/11/bits/ostream.tcc \
  /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/mutex \
- /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
- /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
  /home/gas/Desktop/project/chat/rpc/include/mprpcconsumer.h \
@@ -333,7 +336,7 @@ dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/gateway.cc.o: \
  /usr/local/protobuf/include/google/protobuf/stubs/mutex.h \
  /usr/local/protobuf/include/google/protobuf/stubs/once.h \
  /usr/local/protobuf/include/google/protobuf/port.h \
- /home/gas/Desktop/project/chat/dist/rpcservice/gateway/../user_service/include/usr_service.h \
+ /home/gas/Desktop/project/chat/rpc/include/mprpccontroller.h \
  /home/gas/Desktop/project/chat/dist/proto/usr.pb.h \
  /usr/local/protobuf/include/google/protobuf/io/coded_stream.h \
  /usr/include/c++/11/climits \
@@ -375,23 +378,6 @@ dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/gateway.cc.o: \
  /usr/local/protobuf/include/google/protobuf/map.h \
  /usr/local/protobuf/include/google/protobuf/map_type_handler.h \
  /usr/local/protobuf/include/google/protobuf/extension_set.h \
- /home/gas/Desktop/project/chat/include/server/model/usermodel.hpp \
- /home/gas/Desktop/project/chat/include/server/model/user.hpp \
- /home/gas/Desktop/project/chat/include/server/db/connectionpool.h \
- /usr/include/c++/11/queue /usr/include/c++/11/deque \
- /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
- /usr/include/c++/11/bits/stl_queue.h \
- /usr/include/c++/11/condition_variable /usr/include/c++/11/thread \
- /usr/include/c++/11/bits/std_thread.h \
- /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/mysql/mysql.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /usr/include/mysql/field_types.h /usr/include/mysql/my_list.h \
- /usr/include/mysql/mysql_com.h /usr/include/mysql/my_command.h \
- /usr/include/mysql/my_compress.h \
- /usr/include/mysql/udf_registration_types.h \
- /usr/include/mysql/client_plugin.h \
- /usr/include/mysql/plugin_auth_common.h \
- /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_time.h \
- /usr/include/mysql/errmsg.h /usr/include/muduo/base/Logging.h \
- /usr/include/muduo/base/LogStream.h \
+ /home/gas/Desktop/project/chat/dist/proto/messege.pb.h \
+ /home/gas/Desktop/project/chat/dist/proto/relation.pb.h \
  /home/gas/Desktop/project/chat/include/public.hpp

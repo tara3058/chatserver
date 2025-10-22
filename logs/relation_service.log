@@ -1,0 +1,8 @@
+20251022 13:50:52.028072Z 23356 INFO  ServiceMonitor created for RelationService - monitor.cc:14
+20251022 13:50:52.028078Z 23356 INFO  Monitor initialized for RelationService - serverbase.cc:53
+20251022 13:50:52.028083Z 23356 INFO  CircuitBreaker created with failureThreshold=5, timeoutMs=5000, halfOpenRetryCount=3 - circuitbreaker.cc:16
+20251022 13:50:52.028084Z 23356 INFO  Circuit breaker initialized for RelationService - serverbase.cc:59
+20251022 13:50:52.028084Z 23356 INFO  ServiceBase created for RelationService on 127.0.0.1:8083 - serverbase.cc:20
+RelationServiceImpl created
+Starting service: RelationService on 127.0.0.1:8083
+20251022 13:50:52.028149Z 23356 FATAL Another EventLoop 0x7FFDA622AD50 exists in this thread 23356 - EventLoop.cc:80

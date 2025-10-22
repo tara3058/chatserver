@@ -1,0 +1,1 @@
+/usr/bin/c++ -I/usr/local/include -L/usr/local/lib CMakeFiles/message_service.dir/message.cc.o CMakeFiles/message_service.dir/main.cc.o -o message_service   -L/home/gas/Desktop/project/chat/dist/../lib  -Wl,-rpath,/home/gas/Desktop/project/chat/dist/../lib -lservice_base -lchat_proto -lrpc -lmuduo_net -lmuduo_base -lzookeeper_mt -lmysqlclient -lpthread 

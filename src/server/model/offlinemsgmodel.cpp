@@ -5,7 +5,7 @@
 using namespace std;
 
 // 存储用户的离线消息
-void OfflineMsgModel::insert(int userid, string msg)
+bool OfflineMsgModel::insert(int userid, string msg)
 {
     char sql[1024] = {0};
     sprintf(sql, "insert into OfflineMessage values(%d, '%s')", userid, msg.c_str());
@@ -13,19 +13,21 @@ void OfflineMsgModel::insert(int userid, string msg)
     MySQL database;
     if (database.connect())
     {
-        database.update(sql);
+        return database.update(sql);
     }
+    return false;
 }
 // 删除用户的离线消息
-void OfflineMsgModel::remove(int userid)
+bool OfflineMsgModel::remove(int userid)
 {
     char sql[1024] = {0};
     sprintf(sql, "delete from OfflineMessage where userid=%d", userid);
     MySQL database;
     if (database.connect())
     {
-        database.update(sql);
+        return database.update(sql);
     }
+    return false;
 }
 // 查询用户的离线消息
 vector<string> OfflineMsgModel::query(int userid)

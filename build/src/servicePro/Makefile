@@ -130,6 +130,78 @@ service_base/fast:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/build
 .PHONY : service_base/fast
 
+circuitbreaker.o: circuitbreaker.cc.o
+.PHONY : circuitbreaker.o
+
+# target to build an object file
+circuitbreaker.cc.o:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/circuitbreaker.cc.o
+.PHONY : circuitbreaker.cc.o
+
+circuitbreaker.i: circuitbreaker.cc.i
+.PHONY : circuitbreaker.i
+
+# target to preprocess a source file
+circuitbreaker.cc.i:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/circuitbreaker.cc.i
+.PHONY : circuitbreaker.cc.i
+
+circuitbreaker.s: circuitbreaker.cc.s
+.PHONY : circuitbreaker.s
+
+# target to generate assembly for a file
+circuitbreaker.cc.s:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/circuitbreaker.cc.s
+.PHONY : circuitbreaker.cc.s
+
+loadbalancer.o: loadbalancer.cc.o
+.PHONY : loadbalancer.o
+
+# target to build an object file
+loadbalancer.cc.o:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/loadbalancer.cc.o
+.PHONY : loadbalancer.cc.o
+
+loadbalancer.i: loadbalancer.cc.i
+.PHONY : loadbalancer.i
+
+# target to preprocess a source file
+loadbalancer.cc.i:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/loadbalancer.cc.i
+.PHONY : loadbalancer.cc.i
+
+loadbalancer.s: loadbalancer.cc.s
+.PHONY : loadbalancer.s
+
+# target to generate assembly for a file
+loadbalancer.cc.s:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/loadbalancer.cc.s
+.PHONY : loadbalancer.cc.s
+
+monitor.o: monitor.cc.o
+.PHONY : monitor.o
+
+# target to build an object file
+monitor.cc.o:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/monitor.cc.o
+.PHONY : monitor.cc.o
+
+monitor.i: monitor.cc.i
+.PHONY : monitor.i
+
+# target to preprocess a source file
+monitor.cc.i:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/monitor.cc.i
+.PHONY : monitor.cc.i
+
+monitor.s: monitor.cc.s
+.PHONY : monitor.s
+
+# target to generate assembly for a file
+monitor.cc.s:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f src/servicePro/CMakeFiles/service_base.dir/build.make src/servicePro/CMakeFiles/service_base.dir/monitor.cc.s
+.PHONY : monitor.cc.s
+
 serverbase.o: serverbase.cc.o
 .PHONY : serverbase.o
 
@@ -163,6 +235,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... service_base"
+	@echo "... circuitbreaker.o"
+	@echo "... circuitbreaker.i"
+	@echo "... circuitbreaker.s"
+	@echo "... loadbalancer.o"
+	@echo "... loadbalancer.i"
+	@echo "... loadbalancer.s"
+	@echo "... monitor.o"
+	@echo "... monitor.i"
+	@echo "... monitor.s"
 	@echo "... serverbase.o"
 	@echo "... serverbase.i"
 	@echo "... serverbase.s"

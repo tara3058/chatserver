@@ -14,6 +14,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../dist/CMakeLists.txt"
   "../dist/proto/CMakeLists.txt"
   "../dist/rpcservice/gateway/CMakeLists.txt"
+  "../dist/rpcservice/message/CMakeLists.txt"
+  "../dist/rpcservice/relation_service/CMakeLists.txt"
   "../dist/rpcservice/user_service/CMakeLists.txt"
   "../rpc/CMakeLists.txt"
   "../src/CMakeLists.txt"
@@ -56,6 +58,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "dist/CMakeFiles/CMakeDirectoryInformation.cmake"
   "dist/proto/CMakeFiles/CMakeDirectoryInformation.cmake"
   "dist/rpcservice/user_service/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "dist/rpcservice/message/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "dist/rpcservice/relation_service/CMakeFiles/CMakeDirectoryInformation.cmake"
   "dist/rpcservice/gateway/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -67,5 +71,10 @@ set(CMAKE_DEPEND_INFO_FILES
   "rpc/CMakeFiles/mprpc.dir/DependInfo.cmake"
   "dist/proto/CMakeFiles/proto_c.dir/DependInfo.cmake"
   "dist/rpcservice/user_service/CMakeFiles/user_service.dir/DependInfo.cmake"
+  "dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/DependInfo.cmake"
+  "dist/rpcservice/message/CMakeFiles/message_service.dir/DependInfo.cmake"
+  "dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/DependInfo.cmake"
+  "dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/DependInfo.cmake"
+  "dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/DependInfo.cmake"
   "dist/rpcservice/gateway/CMakeFiles/gateway_service.dir/DependInfo.cmake"
   )

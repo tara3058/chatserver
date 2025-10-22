@@ -130,12 +130,27 @@ user_service/fast:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/build
 .PHONY : user_service/fast
 
+# Convenience name for target.
+dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/rule:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/rule
+.PHONY : dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/rule
+
+# Convenience name for target.
+user_rpc_service: dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/rule
+.PHONY : user_rpc_service
+
+# fast build rule for target.
+user_rpc_service/fast:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build
+.PHONY : user_rpc_service/fast
+
 __/__/__/src/server/db/connectionpool.o: __/__/__/src/server/db/connectionpool.cpp.o
 .PHONY : __/__/__/src/server/db/connectionpool.o
 
 # target to build an object file
 __/__/__/src/server/db/connectionpool.cpp.o:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/db/connectionpool.cpp.o
 .PHONY : __/__/__/src/server/db/connectionpool.cpp.o
 
 __/__/__/src/server/db/connectionpool.i: __/__/__/src/server/db/connectionpool.cpp.i
@@ -144,6 +159,7 @@ __/__/__/src/server/db/connectionpool.i: __/__/__/src/server/db/connectionpool.c
 # target to preprocess a source file
 __/__/__/src/server/db/connectionpool.cpp.i:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.i
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/db/connectionpool.cpp.i
 .PHONY : __/__/__/src/server/db/connectionpool.cpp.i
 
 __/__/__/src/server/db/connectionpool.s: __/__/__/src/server/db/connectionpool.cpp.s
@@ -152,6 +168,7 @@ __/__/__/src/server/db/connectionpool.s: __/__/__/src/server/db/connectionpool.c
 # target to generate assembly for a file
 __/__/__/src/server/db/connectionpool.cpp.s:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.s
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/db/connectionpool.cpp.s
 .PHONY : __/__/__/src/server/db/connectionpool.cpp.s
 
 __/__/__/src/server/db/db.o: __/__/__/src/server/db/db.cpp.o
@@ -160,6 +177,7 @@ __/__/__/src/server/db/db.o: __/__/__/src/server/db/db.cpp.o
 # target to build an object file
 __/__/__/src/server/db/db.cpp.o:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/db/db.cpp.o
 .PHONY : __/__/__/src/server/db/db.cpp.o
 
 __/__/__/src/server/db/db.i: __/__/__/src/server/db/db.cpp.i
@@ -168,6 +186,7 @@ __/__/__/src/server/db/db.i: __/__/__/src/server/db/db.cpp.i
 # target to preprocess a source file
 __/__/__/src/server/db/db.cpp.i:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.i
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/db/db.cpp.i
 .PHONY : __/__/__/src/server/db/db.cpp.i
 
 __/__/__/src/server/db/db.s: __/__/__/src/server/db/db.cpp.s
@@ -176,7 +195,35 @@ __/__/__/src/server/db/db.s: __/__/__/src/server/db/db.cpp.s
 # target to generate assembly for a file
 __/__/__/src/server/db/db.cpp.s:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.s
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/db/db.cpp.s
 .PHONY : __/__/__/src/server/db/db.cpp.s
+
+__/__/__/src/server/model/offlinemsgmodel.o: __/__/__/src/server/model/offlinemsgmodel.cpp.o
+.PHONY : __/__/__/src/server/model/offlinemsgmodel.o
+
+# target to build an object file
+__/__/__/src/server/model/offlinemsgmodel.cpp.o:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o
+.PHONY : __/__/__/src/server/model/offlinemsgmodel.cpp.o
+
+__/__/__/src/server/model/offlinemsgmodel.i: __/__/__/src/server/model/offlinemsgmodel.cpp.i
+.PHONY : __/__/__/src/server/model/offlinemsgmodel.i
+
+# target to preprocess a source file
+__/__/__/src/server/model/offlinemsgmodel.cpp.i:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.i
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.i
+.PHONY : __/__/__/src/server/model/offlinemsgmodel.cpp.i
+
+__/__/__/src/server/model/offlinemsgmodel.s: __/__/__/src/server/model/offlinemsgmodel.cpp.s
+.PHONY : __/__/__/src/server/model/offlinemsgmodel.s
+
+# target to generate assembly for a file
+__/__/__/src/server/model/offlinemsgmodel.cpp.s:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.s
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.s
+.PHONY : __/__/__/src/server/model/offlinemsgmodel.cpp.s
 
 __/__/__/src/server/model/usermodel.o: __/__/__/src/server/model/usermodel.cpp.o
 .PHONY : __/__/__/src/server/model/usermodel.o
@@ -184,6 +231,7 @@ __/__/__/src/server/model/usermodel.o: __/__/__/src/server/model/usermodel.cpp.o
 # target to build an object file
 __/__/__/src/server/model/usermodel.cpp.o:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/model/usermodel.cpp.o
 .PHONY : __/__/__/src/server/model/usermodel.cpp.o
 
 __/__/__/src/server/model/usermodel.i: __/__/__/src/server/model/usermodel.cpp.i
@@ -192,6 +240,7 @@ __/__/__/src/server/model/usermodel.i: __/__/__/src/server/model/usermodel.cpp.i
 # target to preprocess a source file
 __/__/__/src/server/model/usermodel.cpp.i:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.i
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/model/usermodel.cpp.i
 .PHONY : __/__/__/src/server/model/usermodel.cpp.i
 
 __/__/__/src/server/model/usermodel.s: __/__/__/src/server/model/usermodel.cpp.s
@@ -200,6 +249,7 @@ __/__/__/src/server/model/usermodel.s: __/__/__/src/server/model/usermodel.cpp.s
 # target to generate assembly for a file
 __/__/__/src/server/model/usermodel.cpp.s:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.s
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/__/__/__/src/server/model/usermodel.cpp.s
 .PHONY : __/__/__/src/server/model/usermodel.cpp.s
 
 main.o: main.cc.o
@@ -226,12 +276,37 @@ main.cc.s:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/main.cc.s
 .PHONY : main.cc.s
 
+rpc_main.o: rpc_main.cc.o
+.PHONY : rpc_main.o
+
+# target to build an object file
+rpc_main.cc.o:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/rpc_main.cc.o
+.PHONY : rpc_main.cc.o
+
+rpc_main.i: rpc_main.cc.i
+.PHONY : rpc_main.i
+
+# target to preprocess a source file
+rpc_main.cc.i:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/rpc_main.cc.i
+.PHONY : rpc_main.cc.i
+
+rpc_main.s: rpc_main.cc.s
+.PHONY : rpc_main.s
+
+# target to generate assembly for a file
+rpc_main.cc.s:
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/rpc_main.cc.s
+.PHONY : rpc_main.cc.s
+
 usr_service.o: usr_service.cc.o
 .PHONY : usr_service.o
 
 # target to build an object file
 usr_service.cc.o:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/usr_service.cc.o
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/usr_service.cc.o
 .PHONY : usr_service.cc.o
 
 usr_service.i: usr_service.cc.i
@@ -240,6 +315,7 @@ usr_service.i: usr_service.cc.i
 # target to preprocess a source file
 usr_service.cc.i:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/usr_service.cc.i
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/usr_service.cc.i
 .PHONY : usr_service.cc.i
 
 usr_service.s: usr_service.cc.s
@@ -248,6 +324,7 @@ usr_service.s: usr_service.cc.s
 # target to generate assembly for a file
 usr_service.cc.s:
 	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_service.dir/usr_service.cc.s
+	cd /home/gas/Desktop/project/chat/build && $(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/usr_service.cc.s
 .PHONY : usr_service.cc.s
 
 # Help Target
@@ -258,6 +335,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... user_rpc_service"
 	@echo "... user_service"
 	@echo "... __/__/__/src/server/db/connectionpool.o"
 	@echo "... __/__/__/src/server/db/connectionpool.i"
@@ -265,12 +343,18 @@ help:
 	@echo "... __/__/__/src/server/db/db.o"
 	@echo "... __/__/__/src/server/db/db.i"
 	@echo "... __/__/__/src/server/db/db.s"
+	@echo "... __/__/__/src/server/model/offlinemsgmodel.o"
+	@echo "... __/__/__/src/server/model/offlinemsgmodel.i"
+	@echo "... __/__/__/src/server/model/offlinemsgmodel.s"
 	@echo "... __/__/__/src/server/model/usermodel.o"
 	@echo "... __/__/__/src/server/model/usermodel.i"
 	@echo "... __/__/__/src/server/model/usermodel.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... rpc_main.o"
+	@echo "... rpc_main.i"
+	@echo "... rpc_main.s"
 	@echo "... usr_service.o"
 	@echo "... usr_service.i"
 	@echo "... usr_service.s"

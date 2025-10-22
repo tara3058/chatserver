@@ -97,10 +97,24 @@ dist/rpcservice/user_service/CMakeFiles/user_service.dir/usr_service.cc.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/user_service.dir/usr_service.cc.s"
 	cd /home/gas/Desktop/project/chat/build/dist/rpcservice/user_service && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gas/Desktop/project/chat/dist/rpcservice/user_service/usr_service.cc -o CMakeFiles/user_service.dir/usr_service.cc.s
 
+dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o: dist/rpcservice/user_service/CMakeFiles/user_service.dir/flags.make
+dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o: ../src/server/model/offlinemsgmodel.cpp
+dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o: dist/rpcservice/user_service/CMakeFiles/user_service.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o"
+	cd /home/gas/Desktop/project/chat/build/dist/rpcservice/user_service && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o -MF CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o.d -o CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o -c /home/gas/Desktop/project/chat/src/server/model/offlinemsgmodel.cpp
+
+dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.i"
+	cd /home/gas/Desktop/project/chat/build/dist/rpcservice/user_service && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gas/Desktop/project/chat/src/server/model/offlinemsgmodel.cpp > CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.i
+
+dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.s"
+	cd /home/gas/Desktop/project/chat/build/dist/rpcservice/user_service && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gas/Desktop/project/chat/src/server/model/offlinemsgmodel.cpp -o CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.s
+
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o: dist/rpcservice/user_service/CMakeFiles/user_service.dir/flags.make
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o: ../src/server/model/usermodel.cpp
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o: dist/rpcservice/user_service/CMakeFiles/user_service.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o"
 	cd /home/gas/Desktop/project/chat/build/dist/rpcservice/user_service && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o -MF CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o.d -o CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o -c /home/gas/Desktop/project/chat/src/server/model/usermodel.cpp
 
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.i: cmake_force
@@ -114,7 +128,7 @@ dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/mod
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o: dist/rpcservice/user_service/CMakeFiles/user_service.dir/flags.make
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o: ../src/server/db/connectionpool.cpp
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o: dist/rpcservice/user_service/CMakeFiles/user_service.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o"
 	cd /home/gas/Desktop/project/chat/build/dist/rpcservice/user_service && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o -MF CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o.d -o CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o -c /home/gas/Desktop/project/chat/src/server/db/connectionpool.cpp
 
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.i: cmake_force
@@ -128,7 +142,7 @@ dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o: dist/rpcservice/user_service/CMakeFiles/user_service.dir/flags.make
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o: ../src/server/db/db.cpp
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o: dist/rpcservice/user_service/CMakeFiles/user_service.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o"
 	cd /home/gas/Desktop/project/chat/build/dist/rpcservice/user_service && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o -MF CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o.d -o CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o -c /home/gas/Desktop/project/chat/src/server/db/db.cpp
 
 dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.i: cmake_force
@@ -143,6 +157,7 @@ dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/
 user_service_OBJECTS = \
 "CMakeFiles/user_service.dir/main.cc.o" \
 "CMakeFiles/user_service.dir/usr_service.cc.o" \
+"CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o" \
 "CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o" \
 "CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o" \
 "CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o"
@@ -152,6 +167,7 @@ user_service_EXTERNAL_OBJECTS =
 
 ../bin/user_service: dist/rpcservice/user_service/CMakeFiles/user_service.dir/main.cc.o
 ../bin/user_service: dist/rpcservice/user_service/CMakeFiles/user_service.dir/usr_service.cc.o
+../bin/user_service: dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/offlinemsgmodel.cpp.o
 ../bin/user_service: dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/model/usermodel.cpp.o
 ../bin/user_service: dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/connectionpool.cpp.o
 ../bin/user_service: dist/rpcservice/user_service/CMakeFiles/user_service.dir/__/__/__/src/server/db/db.cpp.o
@@ -160,7 +176,7 @@ user_service_EXTERNAL_OBJECTS =
 ../bin/user_service: ../lib/libservice_base.a
 ../bin/user_service: ../lib/libmprpc.a
 ../bin/user_service: dist/rpcservice/user_service/CMakeFiles/user_service.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../../../../bin/user_service"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gas/Desktop/project/chat/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../../../../bin/user_service"
 	cd /home/gas/Desktop/project/chat/build/dist/rpcservice/user_service && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/user_service.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

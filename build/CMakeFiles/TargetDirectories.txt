@@ -20,8 +20,17 @@
 /home/gas/Desktop/project/chat/build/dist/proto/CMakeFiles/edit_cache.dir
 /home/gas/Desktop/project/chat/build/dist/proto/CMakeFiles/rebuild_cache.dir
 /home/gas/Desktop/project/chat/build/dist/rpcservice/user_service/CMakeFiles/user_service.dir
+/home/gas/Desktop/project/chat/build/dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir
 /home/gas/Desktop/project/chat/build/dist/rpcservice/user_service/CMakeFiles/edit_cache.dir
 /home/gas/Desktop/project/chat/build/dist/rpcservice/user_service/CMakeFiles/rebuild_cache.dir
+/home/gas/Desktop/project/chat/build/dist/rpcservice/message/CMakeFiles/message_service.dir
+/home/gas/Desktop/project/chat/build/dist/rpcservice/message/CMakeFiles/message_rpc_service.dir
+/home/gas/Desktop/project/chat/build/dist/rpcservice/message/CMakeFiles/edit_cache.dir
+/home/gas/Desktop/project/chat/build/dist/rpcservice/message/CMakeFiles/rebuild_cache.dir
+/home/gas/Desktop/project/chat/build/dist/rpcservice/relation_service/CMakeFiles/relation_service.dir
+/home/gas/Desktop/project/chat/build/dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir
+/home/gas/Desktop/project/chat/build/dist/rpcservice/relation_service/CMakeFiles/edit_cache.dir
+/home/gas/Desktop/project/chat/build/dist/rpcservice/relation_service/CMakeFiles/rebuild_cache.dir
 /home/gas/Desktop/project/chat/build/dist/rpcservice/gateway/CMakeFiles/gateway_service.dir
 /home/gas/Desktop/project/chat/build/dist/rpcservice/gateway/CMakeFiles/edit_cache.dir
 /home/gas/Desktop/project/chat/build/dist/rpcservice/gateway/CMakeFiles/rebuild_cache.dir

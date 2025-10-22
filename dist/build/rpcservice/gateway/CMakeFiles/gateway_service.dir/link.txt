@@ -1,0 +1,1 @@
+/usr/bin/c++ -I/usr/local/include -L/usr/local/lib CMakeFiles/gateway_service.dir/gateway.cc.o CMakeFiles/gateway_service.dir/main.cc.o -o gateway_service   -L/home/gas/Desktop/project/chat/dist/../lib  -Wl,-rpath,/home/gas/Desktop/project/chat/dist/../lib -lservice_base ../../proto/libproto_c.a -lmuduo_net -lmuduo_base -lpthread -lmprpc -lzookeeper_mt -lprotobuf 

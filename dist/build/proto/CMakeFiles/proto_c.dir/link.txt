@@ -1,0 +1,2 @@
+/usr/bin/ar qc libproto_c.a CMakeFiles/proto_c.dir/messege.pb.cc.o CMakeFiles/proto_c.dir/relation.pb.cc.o CMakeFiles/proto_c.dir/usr.pb.cc.o
+/usr/bin/ranlib libproto_c.a

@@ -31,10 +31,10 @@ public:
     void setState(string state) { this->state = state; }
 
     //获取用户信息参数
-    int getId() { return this->id; }
-    string getName() { return this->name; }
-    string getPwd() { return this->password; }
-    string getState() { return this->state; }
+    int getId() const { return this->id; }
+    string getName() const { return this->name; }
+    string getPwd() const { return this->password; }
+    string getState() const { return this->state; }
 
 };
 

@@ -1,0 +1,349 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5,
+						6
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/server",
+					"jsonFile" : "directory-src.server-Debug-ed01e06ea8a73e000890.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/server",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "src/client",
+					"jsonFile" : "directory-src.client-Debug-1c4a3b19c39f3daa3331.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/client",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "src/servicePro",
+					"jsonFile" : "directory-src.servicePro-Debug-c255d8b7cfaf00302faf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/servicePro",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "rpc",
+					"jsonFile" : "directory-rpc-Debug-0baab23a232788aa7dde.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "rpc",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "dist",
+					"childIndexes" : 
+					[
+						7,
+						8,
+						9,
+						10,
+						11
+					],
+					"jsonFile" : "directory-dist-Debug-b98c3937539d7ed31c0a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "dist"
+				},
+				{
+					"build" : "dist/proto",
+					"jsonFile" : "directory-dist.proto-Debug-cf5051ce5be1e3ef1e6a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 1,
+					"source" : "dist/proto",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "dist/rpcservice/user_service",
+					"jsonFile" : "directory-dist.rpcservice.user_service-Debug-3727744cc6dd46fdbfc4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 1,
+					"source" : "dist/rpcservice/user_service",
+					"targetIndexes" : 
+					[
+						10,
+						11
+					]
+				},
+				{
+					"build" : "dist/rpcservice/message",
+					"jsonFile" : "directory-dist.rpcservice.message-Debug-a39269713f2a8f0ab4d0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 1,
+					"source" : "dist/rpcservice/message",
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				},
+				{
+					"build" : "dist/rpcservice/relation_service",
+					"jsonFile" : "directory-dist.rpcservice.relation_service-Debug-bb9fee294f73a6d3fadd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 1,
+					"source" : "dist/rpcservice/relation_service",
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				},
+				{
+					"build" : "dist/rpcservice/gateway",
+					"jsonFile" : "directory-dist.rpcservice.gateway-Debug-ab64795a7c4b04060db9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 1,
+					"source" : "dist/rpcservice/gateway",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "chatServer",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						8,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					],
+					"name" : "Dist_Chat",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "client::@8ca63c80a879d0067daa",
+					"jsonFile" : "target-client-Debug-e0a2309ec27de4e8f99c.json",
+					"name" : "client",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "gateway_service::@6bd19e0a93e5e7d4ea4f",
+					"jsonFile" : "target-gateway_service-Debug-eaf725bc524b21b06723.json",
+					"name" : "gateway_service",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "message_rpc_service::@e3f22e0dbf74bb1decf5",
+					"jsonFile" : "target-message_rpc_service-Debug-46740f8e0eb035395b84.json",
+					"name" : "message_rpc_service",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "message_service::@e3f22e0dbf74bb1decf5",
+					"jsonFile" : "target-message_service-Debug-77f752441bd1f452abae.json",
+					"name" : "message_service",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "mprpc::@1745d478b0787f6aa9e6",
+					"jsonFile" : "target-mprpc-Debug-6385f18e381b9f52d528.json",
+					"name" : "mprpc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "proto_c::@c691cb8232a6718ad6ef",
+					"jsonFile" : "target-proto_c-Debug-67090f1e6df8576d93a7.json",
+					"name" : "proto_c",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "relation_rpc_service::@c07922c07eaa824c3928",
+					"jsonFile" : "target-relation_rpc_service-Debug-0dba05eb5ea646f47825.json",
+					"name" : "relation_rpc_service",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "relation_service::@c07922c07eaa824c3928",
+					"jsonFile" : "target-relation_service-Debug-dbed4fb9775ee6aaacc6.json",
+					"name" : "relation_service",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "server::@2804e40980a64c7d7ad1",
+					"jsonFile" : "target-server-Debug-3b5a8c106a93d8ebedac.json",
+					"name" : "server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "service_base::@a77772547969e962a77b",
+					"jsonFile" : "target-service_base-Debug-0f2c6aa7046dc6ada9d8.json",
+					"name" : "service_base",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "user_rpc_service::@29b6a59158f59ca6cafc",
+					"jsonFile" : "target-user_rpc_service-Debug-f1600140131b6ea0476a.json",
+					"name" : "user_rpc_service",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "user_service::@29b6a59158f59ca6cafc",
+					"jsonFile" : "target-user_service-Debug-7f9a894ecc136f0ac9be.json",
+					"name" : "user_service",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/gas/Desktop/project/chat/build",
+		"source" : "/home/gas/Desktop/project/chat"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

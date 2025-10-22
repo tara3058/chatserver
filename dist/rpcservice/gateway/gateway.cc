@@ -1,3 +1,4 @@
+// dist/rpcservice/gateway/gateway.cc
 // dist/rpcservice/gateway/src/gateway.cc
 #include "gateway.h"
 #include <muduo/base/Logging.h>
@@ -16,13 +17,13 @@ void GatewayService::InitRpcService()
 {
     // 初始化RPC存根
     _userStub = std::make_unique<userservice::UserService::Stub>(&_userRpcChannel);
-    //_messageStub = std::make_unique<messageservice::MessageService::Stub>(&_messageRpcChannel);
-    //_relationStub = std::make_unique<relationservice::RelationService::Stub>(&_relationRpcChannel);
+    _messageStub = std::make_unique<messageservice::MessageService::Stub>(&_messageRpcChannel);
+    _relationStub = std::make_unique<relationservice::RelationService::Stub>(&_relationRpcChannel);
     
     // 设置服务器连接和消息回调
-    _server.setConnectionCallback(
+    GetServer().setConnectionCallback(
         std::bind(&GatewayService::OnConnection, this, std::placeholders::_1));
-    _server.setMessageCallback(
+    GetServer().setMessageCallback(
         std::bind(&GatewayService::OnMessage, this, std::placeholders::_1, 
                   std::placeholders::_2, std::placeholders::_3));
     
@@ -75,11 +76,11 @@ void GatewayService::OnConnection(const muduo::net::TcpConnectionPtr& conn)
         if (userId != -1)
         {
             // 调用用户服务更新用户状态
-            userservice::UpdateUserInfoRequest request;
+            userservice::UpdateUserStateRequest request;
             request.set_id(userId);
             request.set_state("offline");
             
-            userservice::UpdateUserInfoResponse response;
+            userservice::UpdateUserStateResponse response;
             MprpcController controller;
             
             _userStub->UpdateUserState(nullptr, &request, &response, nullptr);
@@ -219,3 +220,202 @@ void GatewayService::HandleRegister(const muduo::net::TcpConnectionPtr& conn, js
     conn->send(responseJson.dump());
 }
 
+void GatewayService::HandleOneChat(const muduo::net::TcpConnectionPtr& conn, json& js, muduo::Timestamp time)
+{
+    int fromId = js["id"].get<int>();
+    int toId = js["toid"].get<int>();
+    std::string msg = js["msg"];
+    
+    LOG_INFO << "One-to-one chat from " << fromId << " to " << toId;
+    
+    // 调用消息服务发送消息
+    messageservice::OneToOneMessageRequest request;
+    request.set_from_id(fromId);
+    request.set_to_id(toId);
+    request.set_message(msg);
+    
+    messageservice::OneToOneMessageResponse response;
+    MprpcController controller;
+    
+    _messageStub->SendOneToOneMessage(nullptr, &request, &response, nullptr);
+    
+    json responseJson;
+    responseJson["msgid"] = ONE_CHAT_MSG_ACK;
+    responseJson["errno"] = response.error_code();
+    
+    if (response.error_code() != 0)
+    {
+        responseJson["errmsg"] = response.error_msg();
+        LOG_ERROR << "Failed to send message from " << fromId << " to " << toId 
+                  << ": " << response.error_msg();
+    }
+    
+    conn->send(responseJson.dump());
+}
+
+void GatewayService::HandleAddFriend(const muduo::net::TcpConnectionPtr& conn, json& js, muduo::Timestamp time)
+{
+    int userId = js["id"].get<int>();
+    int friendId = js["friendid"].get<int>();
+    
+    LOG_INFO << "Add friend request from " << userId << " to " << friendId;
+    
+    // 调用关系服务添加好友
+    relationservice::AddFriendRequest request;
+    request.set_user_id(userId);
+    request.set_friend_id(friendId);
+    
+    relationservice::AddFriendResponse response;
+    MprpcController controller;
+    
+    _relationStub->AddFriend(nullptr, &request, &response, nullptr);
+    
+    json responseJson;
+    responseJson["msgid"] = ADD_FRIEND_ACK;
+    responseJson["errno"] = response.error_code();
+    
+    if (response.error_code() != 0)
+    {
+        responseJson["errmsg"] = response.error_msg();
+        LOG_ERROR << "Failed to add friend from " << userId << " to " << friendId 
+                  << ": " << response.error_msg();
+    }
+    
+    conn->send(responseJson.dump());
+}
+
+void GatewayService::HandleCreateGroup(const muduo::net::TcpConnectionPtr& conn, json& js, muduo::Timestamp time)
+{
+    int userId = js["id"].get<int>();
+    std::string groupName = js["groupname"];
+    std::string groupDesc = js["groupdesc"];
+    
+    LOG_INFO << "Create group request from " << userId << ", group: " << groupName;
+    
+    // 调用关系服务创建群组
+    relationservice::CreateGroupRequest request;
+    request.set_user_id(userId);
+    request.set_group_name(groupName);
+    request.set_group_desc(groupDesc);
+    
+    relationservice::CreateGroupResponse response;
+    MprpcController controller;
+    
+    _relationStub->CreateGroup(nullptr, &request, &response, nullptr);
+    
+    json responseJson;
+    responseJson["msgid"] = CREATE_GROUP_ACK;
+    responseJson["errno"] = response.error_code();
+    
+    if (response.error_code() == 0)
+    {
+        responseJson["groupid"] = response.group_id();
+        LOG_INFO << "Group " << groupName << " created successfully with id: " << response.group_id();
+    }
+    else
+    {
+        responseJson["errmsg"] = response.error_msg();
+        LOG_ERROR << "Failed to create group " << groupName << ": " << response.error_msg();
+    }
+    
+    conn->send(responseJson.dump());
+}
+
+void GatewayService::HandleAddGroup(const muduo::net::TcpConnectionPtr& conn, json& js, muduo::Timestamp time)
+{
+    int userId = js["id"].get<int>();
+    int groupId = js["groupid"].get<int>();
+    
+    LOG_INFO << "Add group request from " << userId << " to group " << groupId;
+    
+    // 调用关系服务加入群组
+    relationservice::JoinGroupRequest request;
+    request.set_user_id(userId);
+    request.set_group_id(groupId);
+    
+    relationservice::JoinGroupResponse response;
+    MprpcController controller;
+    
+    _relationStub->JoinGroup(nullptr, &request, &response, nullptr);
+    
+    json responseJson;
+    responseJson["msgid"] = ADD_GROUP_ACK;
+    responseJson["errno"] = response.error_code();
+    
+    if (response.error_code() != 0)
+    {
+        responseJson["errmsg"] = response.error_msg();
+        LOG_ERROR << "Failed to join group " << groupId << " for user " << userId 
+                  << ": " << response.error_msg();
+    }
+    
+    conn->send(responseJson.dump());
+}
+
+void GatewayService::HandleGroupChat(const muduo::net::TcpConnectionPtr& conn, json& js, muduo::Timestamp time)
+{
+    int fromId = js["id"].get<int>();
+    int groupId = js["groupid"].get<int>();
+    std::string msg = js["msg"];
+    
+    LOG_INFO << "Group chat from " << fromId << " to group " << groupId;
+    
+    // 调用消息服务发送群组消息
+    messageservice::GroupMessageRequest request;
+    request.set_from_id(fromId);
+    request.set_group_id(groupId);
+    request.set_message(msg);
+    
+    messageservice::GroupMessageResponse response;
+    MprpcController controller;
+    
+    _messageStub->SendGroupMessage(nullptr, &request, &response, nullptr);
+    
+    json responseJson;
+    responseJson["msgid"] = GROUP_CHAT_MSG_ACK;
+    responseJson["errno"] = response.error_code();
+    
+    if (response.error_code() != 0)
+    {
+        responseJson["errmsg"] = response.error_msg();
+        LOG_ERROR << "Failed to send group message from " << fromId << " to group " << groupId 
+                  << ": " << response.error_msg();
+    }
+    
+    conn->send(responseJson.dump());
+}
+
+void GatewayService::HandleLoginOut(const muduo::net::TcpConnectionPtr& conn, json& js, muduo::Timestamp time)
+{
+    int userId = js["id"].get<int>();
+    
+    LOG_INFO << "User logout request, id: " << userId;
+    
+    // 从连接映射中移除
+    {
+        std::lock_guard<std::mutex> lock(_connMutex);
+        _userConnMap.erase(userId);
+    }
+    
+    // 调用用户服务更新用户状态
+    userservice::UpdateUserStateRequest request;
+    request.set_id(userId);
+    request.set_state("offline");
+    
+    userservice::UpdateUserStateResponse response;
+    MprpcController controller;
+    
+    _userStub->UpdateUserState(nullptr, &request, &response, nullptr);
+    
+    json responseJson;
+    responseJson["msgid"] = LOGINOUT_MSG_ACK;
+    responseJson["errno"] = response.error_code();
+    
+    if (response.error_code() != 0)
+    {
+        responseJson["errmsg"] = response.error_msg();
+        LOG_ERROR << "Failed to update user " << userId << " state to offline: " << response.error_msg();
+    }
+    
+    conn->send(responseJson.dump());
+}

@@ -21,20 +21,6 @@ namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
 namespace messageservice {
-PROTOBUF_CONSTEXPR ResultCode::ResultCode(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.errmsg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.errcode_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct ResultCodeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ResultCodeDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ResultCodeDefaultTypeInternal() {}
-  union {
-    ResultCode _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ResultCodeDefaultTypeInternal _ResultCode_default_instance_;
 PROTOBUF_CONSTEXPR OneToOneMessageRequest::OneToOneMessageRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.message_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -52,7 +38,8 @@ struct OneToOneMessageRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OneToOneMessageRequestDefaultTypeInternal _OneToOneMessageRequest_default_instance_;
 PROTOBUF_CONSTEXPR OneToOneMessageResponse::OneToOneMessageResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.result_)*/nullptr
+    /*decltype(_impl_.error_msg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.error_code_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct OneToOneMessageResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR OneToOneMessageResponseDefaultTypeInternal()
@@ -80,7 +67,8 @@ struct GroupMessageRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GroupMessageRequestDefaultTypeInternal _GroupMessageRequest_default_instance_;
 PROTOBUF_CONSTEXPR GroupMessageResponse::GroupMessageResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.result_)*/nullptr
+    /*decltype(_impl_.error_msg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.error_code_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GroupMessageResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GroupMessageResponseDefaultTypeInternal()
@@ -91,33 +79,62 @@ struct GroupMessageResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GroupMessageResponseDefaultTypeInternal _GroupMessageResponse_default_instance_;
-PROTOBUF_CONSTEXPR OfflineMessagesRequest::OfflineMessagesRequest(
+PROTOBUF_CONSTEXPR StoreOfflineMessageRequest::StoreOfflineMessageRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.message_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.user_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct StoreOfflineMessageRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR StoreOfflineMessageRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~StoreOfflineMessageRequestDefaultTypeInternal() {}
+  union {
+    StoreOfflineMessageRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StoreOfflineMessageRequestDefaultTypeInternal _StoreOfflineMessageRequest_default_instance_;
+PROTOBUF_CONSTEXPR StoreOfflineMessageResponse::StoreOfflineMessageResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.error_msg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.error_code_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct StoreOfflineMessageResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR StoreOfflineMessageResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~StoreOfflineMessageResponseDefaultTypeInternal() {}
+  union {
+    StoreOfflineMessageResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StoreOfflineMessageResponseDefaultTypeInternal _StoreOfflineMessageResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetOfflineMessagesRequest::GetOfflineMessagesRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.user_id_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct OfflineMessagesRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR OfflineMessagesRequestDefaultTypeInternal()
+struct GetOfflineMessagesRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetOfflineMessagesRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~OfflineMessagesRequestDefaultTypeInternal() {}
+  ~GetOfflineMessagesRequestDefaultTypeInternal() {}
   union {
-    OfflineMessagesRequest _instance;
+    GetOfflineMessagesRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OfflineMessagesRequestDefaultTypeInternal _OfflineMessagesRequest_default_instance_;
-PROTOBUF_CONSTEXPR OfflineMessagesResponse::OfflineMessagesResponse(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetOfflineMessagesRequestDefaultTypeInternal _GetOfflineMessagesRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetOfflineMessagesResponse::GetOfflineMessagesResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.messages_)*/{}
-  , /*decltype(_impl_.result_)*/nullptr
+  , /*decltype(_impl_.error_msg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.error_code_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct OfflineMessagesResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR OfflineMessagesResponseDefaultTypeInternal()
+struct GetOfflineMessagesResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetOfflineMessagesResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~OfflineMessagesResponseDefaultTypeInternal() {}
+  ~GetOfflineMessagesResponseDefaultTypeInternal() {}
   union {
-    OfflineMessagesResponse _instance;
+    GetOfflineMessagesResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OfflineMessagesResponseDefaultTypeInternal _OfflineMessagesResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetOfflineMessagesResponseDefaultTypeInternal _GetOfflineMessagesResponse_default_instance_;
 PROTOBUF_CONSTEXPR RemoveOfflineMessagesRequest::RemoveOfflineMessagesRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.user_id_)*/0
@@ -133,7 +150,8 @@ struct RemoveOfflineMessagesRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RemoveOfflineMessagesRequestDefaultTypeInternal _RemoveOfflineMessagesRequest_default_instance_;
 PROTOBUF_CONSTEXPR RemoveOfflineMessagesResponse::RemoveOfflineMessagesResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.result_)*/nullptr
+    /*decltype(_impl_.error_msg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.error_code_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RemoveOfflineMessagesResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR RemoveOfflineMessagesResponseDefaultTypeInternal()
@@ -145,19 +163,11 @@ struct RemoveOfflineMessagesResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RemoveOfflineMessagesResponseDefaultTypeInternal _RemoveOfflineMessagesResponse_default_instance_;
 }  // namespace messageservice
-static ::_pb::Metadata file_level_metadata_messege_2eproto[9];
+static ::_pb::Metadata file_level_metadata_messege_2eproto[10];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_messege_2eproto = nullptr;
 static const ::_pb::ServiceDescriptor* file_level_service_descriptors_messege_2eproto[1];
 
 const uint32_t TableStruct_messege_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::messageservice::ResultCode, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::messageservice::ResultCode, _impl_.errcode_),
-  PROTOBUF_FIELD_OFFSET(::messageservice::ResultCode, _impl_.errmsg_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::messageservice::OneToOneMessageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -173,7 +183,8 @@ const uint32_t TableStruct_messege_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::messageservice::OneToOneMessageResponse, _impl_.result_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::OneToOneMessageResponse, _impl_.error_code_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::OneToOneMessageResponse, _impl_.error_msg_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::messageservice::GroupMessageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -189,22 +200,40 @@ const uint32_t TableStruct_messege_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::messageservice::GroupMessageResponse, _impl_.result_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::GroupMessageResponse, _impl_.error_code_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::GroupMessageResponse, _impl_.error_msg_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::messageservice::OfflineMessagesRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::StoreOfflineMessageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::messageservice::OfflineMessagesRequest, _impl_.user_id_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::StoreOfflineMessageRequest, _impl_.user_id_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::StoreOfflineMessageRequest, _impl_.message_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::messageservice::OfflineMessagesResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::StoreOfflineMessageResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::messageservice::OfflineMessagesResponse, _impl_.result_),
-  PROTOBUF_FIELD_OFFSET(::messageservice::OfflineMessagesResponse, _impl_.messages_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::StoreOfflineMessageResponse, _impl_.error_code_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::StoreOfflineMessageResponse, _impl_.error_msg_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::messageservice::GetOfflineMessagesRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::messageservice::GetOfflineMessagesRequest, _impl_.user_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::messageservice::GetOfflineMessagesResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::messageservice::GetOfflineMessagesResponse, _impl_.error_code_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::GetOfflineMessagesResponse, _impl_.error_msg_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::GetOfflineMessagesResponse, _impl_.messages_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::messageservice::RemoveOfflineMessagesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -218,66 +247,74 @@ const uint32_t TableStruct_messege_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::messageservice::RemoveOfflineMessagesResponse, _impl_.result_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::RemoveOfflineMessagesResponse, _impl_.error_code_),
+  PROTOBUF_FIELD_OFFSET(::messageservice::RemoveOfflineMessagesResponse, _impl_.error_msg_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::messageservice::ResultCode)},
-  { 8, -1, -1, sizeof(::messageservice::OneToOneMessageRequest)},
-  { 17, -1, -1, sizeof(::messageservice::OneToOneMessageResponse)},
-  { 24, -1, -1, sizeof(::messageservice::GroupMessageRequest)},
-  { 33, -1, -1, sizeof(::messageservice::GroupMessageResponse)},
-  { 40, -1, -1, sizeof(::messageservice::OfflineMessagesRequest)},
-  { 47, -1, -1, sizeof(::messageservice::OfflineMessagesResponse)},
-  { 55, -1, -1, sizeof(::messageservice::RemoveOfflineMessagesRequest)},
-  { 62, -1, -1, sizeof(::messageservice::RemoveOfflineMessagesResponse)},
+  { 0, -1, -1, sizeof(::messageservice::OneToOneMessageRequest)},
+  { 9, -1, -1, sizeof(::messageservice::OneToOneMessageResponse)},
+  { 17, -1, -1, sizeof(::messageservice::GroupMessageRequest)},
+  { 26, -1, -1, sizeof(::messageservice::GroupMessageResponse)},
+  { 34, -1, -1, sizeof(::messageservice::StoreOfflineMessageRequest)},
+  { 42, -1, -1, sizeof(::messageservice::StoreOfflineMessageResponse)},
+  { 50, -1, -1, sizeof(::messageservice::GetOfflineMessagesRequest)},
+  { 57, -1, -1, sizeof(::messageservice::GetOfflineMessagesResponse)},
+  { 66, -1, -1, sizeof(::messageservice::RemoveOfflineMessagesRequest)},
+  { 73, -1, -1, sizeof(::messageservice::RemoveOfflineMessagesResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::messageservice::_ResultCode_default_instance_._instance,
   &::messageservice::_OneToOneMessageRequest_default_instance_._instance,
   &::messageservice::_OneToOneMessageResponse_default_instance_._instance,
   &::messageservice::_GroupMessageRequest_default_instance_._instance,
   &::messageservice::_GroupMessageResponse_default_instance_._instance,
-  &::messageservice::_OfflineMessagesRequest_default_instance_._instance,
-  &::messageservice::_OfflineMessagesResponse_default_instance_._instance,
+  &::messageservice::_StoreOfflineMessageRequest_default_instance_._instance,
+  &::messageservice::_StoreOfflineMessageResponse_default_instance_._instance,
+  &::messageservice::_GetOfflineMessagesRequest_default_instance_._instance,
+  &::messageservice::_GetOfflineMessagesResponse_default_instance_._instance,
   &::messageservice::_RemoveOfflineMessagesRequest_default_instance_._instance,
   &::messageservice::_RemoveOfflineMessagesResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_messege_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\rmessege.proto\022\016messageservice\"-\n\nResul"
-  "tCode\022\017\n\007errcode\030\001 \001(\005\022\016\n\006errmsg\030\002 \001(\014\"I"
-  "\n\026OneToOneMessageRequest\022\017\n\007from_id\030\001 \001("
-  "\005\022\r\n\005to_id\030\002 \001(\005\022\017\n\007message\030\003 \001(\014\"E\n\027One"
-  "ToOneMessageResponse\022*\n\006result\030\001 \001(\0132\032.m"
-  "essageservice.ResultCode\"I\n\023GroupMessage"
-  "Request\022\017\n\007from_id\030\001 \001(\005\022\020\n\010group_id\030\002 \001"
-  "(\005\022\017\n\007message\030\003 \001(\014\"B\n\024GroupMessageRespo"
-  "nse\022*\n\006result\030\001 \001(\0132\032.messageservice.Res"
-  "ultCode\")\n\026OfflineMessagesRequest\022\017\n\007use"
-  "r_id\030\001 \001(\005\"W\n\027OfflineMessagesResponse\022*\n"
-  "\006result\030\001 \001(\0132\032.messageservice.ResultCod"
-  "e\022\020\n\010messages\030\002 \003(\014\"/\n\034RemoveOfflineMess"
-  "agesRequest\022\017\n\007user_id\030\001 \001(\005\"K\n\035RemoveOf"
-  "flineMessagesResponse\022*\n\006result\030\001 \001(\0132\032."
-  "messageservice.ResultCode2\264\003\n\016MessageSer"
-  "vice\022f\n\023SendOneToOneMessage\022&.messageser"
-  "vice.OneToOneMessageRequest\032\'.messageser"
-  "vice.OneToOneMessageResponse\022]\n\020SendGrou"
-  "pMessage\022#.messageservice.GroupMessageRe"
-  "quest\032$.messageservice.GroupMessageRespo"
-  "nse\022e\n\022GetOfflineMessages\022&.messageservi"
-  "ce.OfflineMessagesRequest\032\'.messageservi"
-  "ce.OfflineMessagesResponse\022t\n\025RemoveOffl"
-  "ineMessages\022,.messageservice.RemoveOffli"
-  "neMessagesRequest\032-.messageservice.Remov"
-  "eOfflineMessagesResponseB\003\200\001\001b\006proto3"
+  "\n\rmessege.proto\022\016messageservice\"I\n\026OneTo"
+  "OneMessageRequest\022\017\n\007from_id\030\001 \001(\005\022\r\n\005to"
+  "_id\030\002 \001(\005\022\017\n\007message\030\003 \001(\t\"@\n\027OneToOneMe"
+  "ssageResponse\022\022\n\nerror_code\030\001 \001(\005\022\021\n\terr"
+  "or_msg\030\002 \001(\t\"I\n\023GroupMessageRequest\022\017\n\007f"
+  "rom_id\030\001 \001(\005\022\020\n\010group_id\030\002 \001(\005\022\017\n\007messag"
+  "e\030\003 \001(\t\"=\n\024GroupMessageResponse\022\022\n\nerror"
+  "_code\030\001 \001(\005\022\021\n\terror_msg\030\002 \001(\t\">\n\032StoreO"
+  "fflineMessageRequest\022\017\n\007user_id\030\001 \001(\005\022\017\n"
+  "\007message\030\002 \001(\t\"D\n\033StoreOfflineMessageRes"
+  "ponse\022\022\n\nerror_code\030\001 \001(\005\022\021\n\terror_msg\030\002"
+  " \001(\t\",\n\031GetOfflineMessagesRequest\022\017\n\007use"
+  "r_id\030\001 \001(\005\"U\n\032GetOfflineMessagesResponse"
+  "\022\022\n\nerror_code\030\001 \001(\005\022\021\n\terror_msg\030\002 \001(\t\022"
+  "\020\n\010messages\030\003 \003(\t\"/\n\034RemoveOfflineMessag"
+  "esRequest\022\017\n\007user_id\030\001 \001(\005\"F\n\035RemoveOffl"
+  "ineMessagesResponse\022\022\n\nerror_code\030\001 \001(\005\022"
+  "\021\n\terror_msg\030\002 \001(\t2\252\004\n\016MessageService\022f\n"
+  "\023SendOneToOneMessage\022&.messageservice.On"
+  "eToOneMessageRequest\032\'.messageservice.On"
+  "eToOneMessageResponse\022]\n\020SendGroupMessag"
+  "e\022#.messageservice.GroupMessageRequest\032$"
+  ".messageservice.GroupMessageResponse\022n\n\023"
+  "StoreOfflineMessage\022*.messageservice.Sto"
+  "reOfflineMessageRequest\032+.messageservice"
+  ".StoreOfflineMessageResponse\022k\n\022GetOffli"
+  "neMessages\022).messageservice.GetOfflineMe"
+  "ssagesRequest\032*.messageservice.GetOfflin"
+  "eMessagesResponse\022t\n\025RemoveOfflineMessag"
+  "es\022,.messageservice.RemoveOfflineMessage"
+  "sRequest\032-.messageservice.RemoveOfflineM"
+  "essagesResponseB\003\200\001\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_messege_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_messege_2eproto = {
-    false, false, 1077, descriptor_table_protodef_messege_2eproto,
+    false, false, 1268, descriptor_table_protodef_messege_2eproto,
     "messege.proto",
-    &descriptor_table_messege_2eproto_once, nullptr, 0, 9,
+    &descriptor_table_messege_2eproto_once, nullptr, 0, 10,
     schemas, file_default_instances, TableStruct_messege_2eproto::offsets,
     file_level_metadata_messege_2eproto, file_level_enum_descriptors_messege_2eproto,
     file_level_service_descriptors_messege_2eproto,
@@ -289,231 +326,6 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_messege_
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_messege_2eproto(&descriptor_table_messege_2eproto);
 namespace messageservice {
-
-// ===================================================================
-
-class ResultCode::_Internal {
- public:
-};
-
-ResultCode::ResultCode(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:messageservice.ResultCode)
-}
-ResultCode::ResultCode(const ResultCode& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  ResultCode* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.errmsg_){}
-    , decltype(_impl_.errcode_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.errmsg_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.errmsg_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_errmsg().empty()) {
-    _this->_impl_.errmsg_.Set(from._internal_errmsg(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.errcode_ = from._impl_.errcode_;
-  // @@protoc_insertion_point(copy_constructor:messageservice.ResultCode)
-}
-
-inline void ResultCode::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.errmsg_){}
-    , decltype(_impl_.errcode_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.errmsg_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.errmsg_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-ResultCode::~ResultCode() {
-  // @@protoc_insertion_point(destructor:messageservice.ResultCode)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void ResultCode::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.errmsg_.Destroy();
-}
-
-void ResultCode::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void ResultCode::Clear() {
-// @@protoc_insertion_point(message_clear_start:messageservice.ResultCode)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.errmsg_.ClearToEmpty();
-  _impl_.errcode_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* ResultCode::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // int32 errcode = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.errcode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bytes errmsg = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_errmsg();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* ResultCode::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:messageservice.ResultCode)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 errcode = 1;
-  if (this->_internal_errcode() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_errcode(), target);
-  }
-
-  // bytes errmsg = 2;
-  if (!this->_internal_errmsg().empty()) {
-    target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_errmsg(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:messageservice.ResultCode)
-  return target;
-}
-
-size_t ResultCode::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:messageservice.ResultCode)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // bytes errmsg = 2;
-  if (!this->_internal_errmsg().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_errmsg());
-  }
-
-  // int32 errcode = 1;
-  if (this->_internal_errcode() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_errcode());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ResultCode::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    ResultCode::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ResultCode::GetClassData() const { return &_class_data_; }
-
-
-void ResultCode::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<ResultCode*>(&to_msg);
-  auto& from = static_cast<const ResultCode&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:messageservice.ResultCode)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_errmsg().empty()) {
-    _this->_internal_set_errmsg(from._internal_errmsg());
-  }
-  if (from._internal_errcode() != 0) {
-    _this->_internal_set_errcode(from._internal_errcode());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void ResultCode::CopyFrom(const ResultCode& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:messageservice.ResultCode)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool ResultCode::IsInitialized() const {
-  return true;
-}
-
-void ResultCode::InternalSwap(ResultCode* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.errmsg_, lhs_arena,
-      &other->_impl_.errmsg_, rhs_arena
-  );
-  swap(_impl_.errcode_, other->_impl_.errcode_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata ResultCode::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_messege_2eproto_getter, &descriptor_table_messege_2eproto_once,
-      file_level_metadata_messege_2eproto[0]);
-}
 
 // ===================================================================
 
@@ -620,12 +432,13 @@ const char* OneToOneMessageRequest::_InternalParse(const char* ptr, ::_pbi::Pars
         } else
           goto handle_unusual;
         continue;
-      // bytes message = 3;
+      // string message = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_message();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "messageservice.OneToOneMessageRequest.message"));
         } else
           goto handle_unusual;
         continue;
@@ -670,9 +483,13 @@ uint8_t* OneToOneMessageRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_to_id(), target);
   }
 
-  // bytes message = 3;
+  // string message = 3;
   if (!this->_internal_message().empty()) {
-    target = stream->WriteBytesMaybeAliased(
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "messageservice.OneToOneMessageRequest.message");
+    target = stream->WriteStringMaybeAliased(
         3, this->_internal_message(), target);
   }
 
@@ -692,10 +509,10 @@ size_t OneToOneMessageRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes message = 3;
+  // string message = 3;
   if (!this->_internal_message().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_message());
   }
 
@@ -770,20 +587,15 @@ void OneToOneMessageRequest::InternalSwap(OneToOneMessageRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata OneToOneMessageRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_messege_2eproto_getter, &descriptor_table_messege_2eproto_once,
-      file_level_metadata_messege_2eproto[1]);
+      file_level_metadata_messege_2eproto[0]);
 }
 
 // ===================================================================
 
 class OneToOneMessageResponse::_Internal {
  public:
-  static const ::messageservice::ResultCode& result(const OneToOneMessageResponse* msg);
 };
 
-const ::messageservice::ResultCode&
-OneToOneMessageResponse::_Internal::result(const OneToOneMessageResponse* msg) {
-  return *msg->_impl_.result_;
-}
 OneToOneMessageResponse::OneToOneMessageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -794,13 +606,20 @@ OneToOneMessageResponse::OneToOneMessageResponse(const OneToOneMessageResponse& 
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   OneToOneMessageResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.result_){nullptr}
+      decltype(_impl_.error_msg_){}
+    , decltype(_impl_.error_code_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_result()) {
-    _this->_impl_.result_ = new ::messageservice::ResultCode(*from._impl_.result_);
+  _impl_.error_msg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_error_msg().empty()) {
+    _this->_impl_.error_msg_.Set(from._internal_error_msg(), 
+      _this->GetArenaForAllocation());
   }
+  _this->_impl_.error_code_ = from._impl_.error_code_;
   // @@protoc_insertion_point(copy_constructor:messageservice.OneToOneMessageResponse)
 }
 
@@ -809,9 +628,14 @@ inline void OneToOneMessageResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.result_){nullptr}
+      decltype(_impl_.error_msg_){}
+    , decltype(_impl_.error_code_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
+  _impl_.error_msg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 OneToOneMessageResponse::~OneToOneMessageResponse() {
@@ -825,7 +649,7 @@ OneToOneMessageResponse::~OneToOneMessageResponse() {
 
 inline void OneToOneMessageResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.result_;
+  _impl_.error_msg_.Destroy();
 }
 
 void OneToOneMessageResponse::SetCachedSize(int size) const {
@@ -838,10 +662,8 @@ void OneToOneMessageResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+  _impl_.error_msg_.ClearToEmpty();
+  _impl_.error_code_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -851,11 +673,21 @@ const char* OneToOneMessageResponse::_InternalParse(const char* ptr, ::_pbi::Par
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .messageservice.ResultCode result = 1;
+      // int32 error_code = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_result(), ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.error_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string error_msg = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_error_msg();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "messageservice.OneToOneMessageResponse.error_msg"));
         } else
           goto handle_unusual;
         continue;
@@ -888,11 +720,20 @@ uint8_t* OneToOneMessageResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .messageservice.ResultCode result = 1;
-  if (this->_internal_has_result()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::result(this),
-        _Internal::result(this).GetCachedSize(), target, stream);
+  // int32 error_code = 1;
+  if (this->_internal_error_code() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_error_code(), target);
+  }
+
+  // string error_msg = 2;
+  if (!this->_internal_error_msg().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error_msg().data(), static_cast<int>(this->_internal_error_msg().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "messageservice.OneToOneMessageResponse.error_msg");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_error_msg(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -911,11 +752,16 @@ size_t OneToOneMessageResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .messageservice.ResultCode result = 1;
-  if (this->_internal_has_result()) {
+  // string error_msg = 2;
+  if (!this->_internal_error_msg().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.result_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error_msg());
+  }
+
+  // int32 error_code = 1;
+  if (this->_internal_error_code() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_error_code());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -936,9 +782,11 @@ void OneToOneMessageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_result()) {
-    _this->_internal_mutable_result()->::messageservice::ResultCode::MergeFrom(
-        from._internal_result());
+  if (!from._internal_error_msg().empty()) {
+    _this->_internal_set_error_msg(from._internal_error_msg());
+  }
+  if (from._internal_error_code() != 0) {
+    _this->_internal_set_error_code(from._internal_error_code());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -956,14 +804,20 @@ bool OneToOneMessageResponse::IsInitialized() const {
 
 void OneToOneMessageResponse::InternalSwap(OneToOneMessageResponse* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.result_, other->_impl_.result_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.error_msg_, lhs_arena,
+      &other->_impl_.error_msg_, rhs_arena
+  );
+  swap(_impl_.error_code_, other->_impl_.error_code_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OneToOneMessageResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_messege_2eproto_getter, &descriptor_table_messege_2eproto_once,
-      file_level_metadata_messege_2eproto[2]);
+      file_level_metadata_messege_2eproto[1]);
 }
 
 // ===================================================================
@@ -1071,12 +925,13 @@ const char* GroupMessageRequest::_InternalParse(const char* ptr, ::_pbi::ParseCo
         } else
           goto handle_unusual;
         continue;
-      // bytes message = 3;
+      // string message = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_message();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "messageservice.GroupMessageRequest.message"));
         } else
           goto handle_unusual;
         continue;
@@ -1121,9 +976,13 @@ uint8_t* GroupMessageRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_group_id(), target);
   }
 
-  // bytes message = 3;
+  // string message = 3;
   if (!this->_internal_message().empty()) {
-    target = stream->WriteBytesMaybeAliased(
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "messageservice.GroupMessageRequest.message");
+    target = stream->WriteStringMaybeAliased(
         3, this->_internal_message(), target);
   }
 
@@ -1143,10 +1002,10 @@ size_t GroupMessageRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes message = 3;
+  // string message = 3;
   if (!this->_internal_message().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_message());
   }
 
@@ -1221,20 +1080,15 @@ void GroupMessageRequest::InternalSwap(GroupMessageRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GroupMessageRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_messege_2eproto_getter, &descriptor_table_messege_2eproto_once,
-      file_level_metadata_messege_2eproto[3]);
+      file_level_metadata_messege_2eproto[2]);
 }
 
 // ===================================================================
 
 class GroupMessageResponse::_Internal {
  public:
-  static const ::messageservice::ResultCode& result(const GroupMessageResponse* msg);
 };
 
-const ::messageservice::ResultCode&
-GroupMessageResponse::_Internal::result(const GroupMessageResponse* msg) {
-  return *msg->_impl_.result_;
-}
 GroupMessageResponse::GroupMessageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -1245,13 +1099,20 @@ GroupMessageResponse::GroupMessageResponse(const GroupMessageResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   GroupMessageResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.result_){nullptr}
+      decltype(_impl_.error_msg_){}
+    , decltype(_impl_.error_code_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_result()) {
-    _this->_impl_.result_ = new ::messageservice::ResultCode(*from._impl_.result_);
+  _impl_.error_msg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_error_msg().empty()) {
+    _this->_impl_.error_msg_.Set(from._internal_error_msg(), 
+      _this->GetArenaForAllocation());
   }
+  _this->_impl_.error_code_ = from._impl_.error_code_;
   // @@protoc_insertion_point(copy_constructor:messageservice.GroupMessageResponse)
 }
 
@@ -1260,9 +1121,14 @@ inline void GroupMessageResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.result_){nullptr}
+      decltype(_impl_.error_msg_){}
+    , decltype(_impl_.error_code_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
+  _impl_.error_msg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GroupMessageResponse::~GroupMessageResponse() {
@@ -1276,7 +1142,7 @@ GroupMessageResponse::~GroupMessageResponse() {
 
 inline void GroupMessageResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.result_;
+  _impl_.error_msg_.Destroy();
 }
 
 void GroupMessageResponse::SetCachedSize(int size) const {
@@ -1289,10 +1155,8 @@ void GroupMessageResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+  _impl_.error_msg_.ClearToEmpty();
+  _impl_.error_code_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1302,11 +1166,21 @@ const char* GroupMessageResponse::_InternalParse(const char* ptr, ::_pbi::ParseC
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .messageservice.ResultCode result = 1;
+      // int32 error_code = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_result(), ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.error_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string error_msg = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_error_msg();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "messageservice.GroupMessageResponse.error_msg"));
         } else
           goto handle_unusual;
         continue;
@@ -1339,11 +1213,20 @@ uint8_t* GroupMessageResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .messageservice.ResultCode result = 1;
-  if (this->_internal_has_result()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::result(this),
-        _Internal::result(this).GetCachedSize(), target, stream);
+  // int32 error_code = 1;
+  if (this->_internal_error_code() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_error_code(), target);
+  }
+
+  // string error_msg = 2;
+  if (!this->_internal_error_msg().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error_msg().data(), static_cast<int>(this->_internal_error_msg().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "messageservice.GroupMessageResponse.error_msg");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_error_msg(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1362,11 +1245,16 @@ size_t GroupMessageResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .messageservice.ResultCode result = 1;
-  if (this->_internal_has_result()) {
+  // string error_msg = 2;
+  if (!this->_internal_error_msg().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.result_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error_msg());
+  }
+
+  // int32 error_code = 1;
+  if (this->_internal_error_code() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_error_code());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1387,9 +1275,11 @@ void GroupMessageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, c
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_result()) {
-    _this->_internal_mutable_result()->::messageservice::ResultCode::MergeFrom(
-        from._internal_result());
+  if (!from._internal_error_msg().empty()) {
+    _this->_internal_set_error_msg(from._internal_error_msg());
+  }
+  if (from._internal_error_code() != 0) {
+    _this->_internal_set_error_code(from._internal_error_code());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1407,11 +1297,247 @@ bool GroupMessageResponse::IsInitialized() const {
 
 void GroupMessageResponse::InternalSwap(GroupMessageResponse* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.result_, other->_impl_.result_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.error_msg_, lhs_arena,
+      &other->_impl_.error_msg_, rhs_arena
+  );
+  swap(_impl_.error_code_, other->_impl_.error_code_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GroupMessageResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_messege_2eproto_getter, &descriptor_table_messege_2eproto_once,
+      file_level_metadata_messege_2eproto[3]);
+}
+
+// ===================================================================
+
+class StoreOfflineMessageRequest::_Internal {
+ public:
+};
+
+StoreOfflineMessageRequest::StoreOfflineMessageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:messageservice.StoreOfflineMessageRequest)
+}
+StoreOfflineMessageRequest::StoreOfflineMessageRequest(const StoreOfflineMessageRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  StoreOfflineMessageRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.message_){}
+    , decltype(_impl_.user_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_message().empty()) {
+    _this->_impl_.message_.Set(from._internal_message(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.user_id_ = from._impl_.user_id_;
+  // @@protoc_insertion_point(copy_constructor:messageservice.StoreOfflineMessageRequest)
+}
+
+inline void StoreOfflineMessageRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.message_){}
+    , decltype(_impl_.user_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.message_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+StoreOfflineMessageRequest::~StoreOfflineMessageRequest() {
+  // @@protoc_insertion_point(destructor:messageservice.StoreOfflineMessageRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void StoreOfflineMessageRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.message_.Destroy();
+}
+
+void StoreOfflineMessageRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void StoreOfflineMessageRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:messageservice.StoreOfflineMessageRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.message_.ClearToEmpty();
+  _impl_.user_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* StoreOfflineMessageRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 user_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.user_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string message = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_message();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "messageservice.StoreOfflineMessageRequest.message"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* StoreOfflineMessageRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:messageservice.StoreOfflineMessageRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 user_id = 1;
+  if (this->_internal_user_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_user_id(), target);
+  }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "messageservice.StoreOfflineMessageRequest.message");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_message(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:messageservice.StoreOfflineMessageRequest)
+  return target;
+}
+
+size_t StoreOfflineMessageRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:messageservice.StoreOfflineMessageRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  // int32 user_id = 1;
+  if (this->_internal_user_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_user_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StoreOfflineMessageRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    StoreOfflineMessageRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StoreOfflineMessageRequest::GetClassData() const { return &_class_data_; }
+
+
+void StoreOfflineMessageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<StoreOfflineMessageRequest*>(&to_msg);
+  auto& from = static_cast<const StoreOfflineMessageRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:messageservice.StoreOfflineMessageRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_message().empty()) {
+    _this->_internal_set_message(from._internal_message());
+  }
+  if (from._internal_user_id() != 0) {
+    _this->_internal_set_user_id(from._internal_user_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void StoreOfflineMessageRequest::CopyFrom(const StoreOfflineMessageRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:messageservice.StoreOfflineMessageRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StoreOfflineMessageRequest::IsInitialized() const {
+  return true;
+}
+
+void StoreOfflineMessageRequest::InternalSwap(StoreOfflineMessageRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.message_, lhs_arena,
+      &other->_impl_.message_, rhs_arena
+  );
+  swap(_impl_.user_id_, other->_impl_.user_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata StoreOfflineMessageRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_messege_2eproto_getter, &descriptor_table_messege_2eproto_once,
       file_level_metadata_messege_2eproto[4]);
@@ -1419,29 +1545,259 @@ void GroupMessageResponse::InternalSwap(GroupMessageResponse* other) {
 
 // ===================================================================
 
-class OfflineMessagesRequest::_Internal {
+class StoreOfflineMessageResponse::_Internal {
  public:
 };
 
-OfflineMessagesRequest::OfflineMessagesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+StoreOfflineMessageResponse::StoreOfflineMessageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:messageservice.OfflineMessagesRequest)
+  // @@protoc_insertion_point(arena_constructor:messageservice.StoreOfflineMessageResponse)
 }
-OfflineMessagesRequest::OfflineMessagesRequest(const OfflineMessagesRequest& from)
+StoreOfflineMessageResponse::StoreOfflineMessageResponse(const StoreOfflineMessageResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  OfflineMessagesRequest* const _this = this; (void)_this;
+  StoreOfflineMessageResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.error_msg_){}
+    , decltype(_impl_.error_code_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.error_msg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_error_msg().empty()) {
+    _this->_impl_.error_msg_.Set(from._internal_error_msg(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.error_code_ = from._impl_.error_code_;
+  // @@protoc_insertion_point(copy_constructor:messageservice.StoreOfflineMessageResponse)
+}
+
+inline void StoreOfflineMessageResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.error_msg_){}
+    , decltype(_impl_.error_code_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.error_msg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+StoreOfflineMessageResponse::~StoreOfflineMessageResponse() {
+  // @@protoc_insertion_point(destructor:messageservice.StoreOfflineMessageResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void StoreOfflineMessageResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.error_msg_.Destroy();
+}
+
+void StoreOfflineMessageResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void StoreOfflineMessageResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:messageservice.StoreOfflineMessageResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.error_msg_.ClearToEmpty();
+  _impl_.error_code_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* StoreOfflineMessageResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 error_code = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.error_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string error_msg = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_error_msg();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "messageservice.StoreOfflineMessageResponse.error_msg"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* StoreOfflineMessageResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:messageservice.StoreOfflineMessageResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 error_code = 1;
+  if (this->_internal_error_code() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_error_code(), target);
+  }
+
+  // string error_msg = 2;
+  if (!this->_internal_error_msg().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error_msg().data(), static_cast<int>(this->_internal_error_msg().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "messageservice.StoreOfflineMessageResponse.error_msg");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_error_msg(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:messageservice.StoreOfflineMessageResponse)
+  return target;
+}
+
+size_t StoreOfflineMessageResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:messageservice.StoreOfflineMessageResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string error_msg = 2;
+  if (!this->_internal_error_msg().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error_msg());
+  }
+
+  // int32 error_code = 1;
+  if (this->_internal_error_code() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_error_code());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StoreOfflineMessageResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    StoreOfflineMessageResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StoreOfflineMessageResponse::GetClassData() const { return &_class_data_; }
+
+
+void StoreOfflineMessageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<StoreOfflineMessageResponse*>(&to_msg);
+  auto& from = static_cast<const StoreOfflineMessageResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:messageservice.StoreOfflineMessageResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_error_msg().empty()) {
+    _this->_internal_set_error_msg(from._internal_error_msg());
+  }
+  if (from._internal_error_code() != 0) {
+    _this->_internal_set_error_code(from._internal_error_code());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void StoreOfflineMessageResponse::CopyFrom(const StoreOfflineMessageResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:messageservice.StoreOfflineMessageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool StoreOfflineMessageResponse::IsInitialized() const {
+  return true;
+}
+
+void StoreOfflineMessageResponse::InternalSwap(StoreOfflineMessageResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.error_msg_, lhs_arena,
+      &other->_impl_.error_msg_, rhs_arena
+  );
+  swap(_impl_.error_code_, other->_impl_.error_code_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata StoreOfflineMessageResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_messege_2eproto_getter, &descriptor_table_messege_2eproto_once,
+      file_level_metadata_messege_2eproto[5]);
+}
+
+// ===================================================================
+
+class GetOfflineMessagesRequest::_Internal {
+ public:
+};
+
+GetOfflineMessagesRequest::GetOfflineMessagesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:messageservice.GetOfflineMessagesRequest)
+}
+GetOfflineMessagesRequest::GetOfflineMessagesRequest(const GetOfflineMessagesRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetOfflineMessagesRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.user_id_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _this->_impl_.user_id_ = from._impl_.user_id_;
-  // @@protoc_insertion_point(copy_constructor:messageservice.OfflineMessagesRequest)
+  // @@protoc_insertion_point(copy_constructor:messageservice.GetOfflineMessagesRequest)
 }
 
-inline void OfflineMessagesRequest::SharedCtor(
+inline void GetOfflineMessagesRequest::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -1451,8 +1807,8 @@ inline void OfflineMessagesRequest::SharedCtor(
   };
 }
 
-OfflineMessagesRequest::~OfflineMessagesRequest() {
-  // @@protoc_insertion_point(destructor:messageservice.OfflineMessagesRequest)
+GetOfflineMessagesRequest::~GetOfflineMessagesRequest() {
+  // @@protoc_insertion_point(destructor:messageservice.GetOfflineMessagesRequest)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1460,16 +1816,16 @@ OfflineMessagesRequest::~OfflineMessagesRequest() {
   SharedDtor();
 }
 
-inline void OfflineMessagesRequest::SharedDtor() {
+inline void GetOfflineMessagesRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void OfflineMessagesRequest::SetCachedSize(int size) const {
+void GetOfflineMessagesRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void OfflineMessagesRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:messageservice.OfflineMessagesRequest)
+void GetOfflineMessagesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:messageservice.GetOfflineMessagesRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1478,7 +1834,7 @@ void OfflineMessagesRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* OfflineMessagesRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetOfflineMessagesRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -1515,9 +1871,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* OfflineMessagesRequest::_InternalSerialize(
+uint8_t* GetOfflineMessagesRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:messageservice.OfflineMessagesRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:messageservice.GetOfflineMessagesRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1531,12 +1887,12 @@ uint8_t* OfflineMessagesRequest::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:messageservice.OfflineMessagesRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:messageservice.GetOfflineMessagesRequest)
   return target;
 }
 
-size_t OfflineMessagesRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:messageservice.OfflineMessagesRequest)
+size_t GetOfflineMessagesRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:messageservice.GetOfflineMessagesRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1551,17 +1907,17 @@ size_t OfflineMessagesRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData OfflineMessagesRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetOfflineMessagesRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    OfflineMessagesRequest::MergeImpl
+    GetOfflineMessagesRequest::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*OfflineMessagesRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetOfflineMessagesRequest::GetClassData() const { return &_class_data_; }
 
 
-void OfflineMessagesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<OfflineMessagesRequest*>(&to_msg);
-  auto& from = static_cast<const OfflineMessagesRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:messageservice.OfflineMessagesRequest)
+void GetOfflineMessagesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetOfflineMessagesRequest*>(&to_msg);
+  auto& from = static_cast<const GetOfflineMessagesRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:messageservice.GetOfflineMessagesRequest)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1572,74 +1928,81 @@ void OfflineMessagesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg,
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void OfflineMessagesRequest::CopyFrom(const OfflineMessagesRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:messageservice.OfflineMessagesRequest)
+void GetOfflineMessagesRequest::CopyFrom(const GetOfflineMessagesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:messageservice.GetOfflineMessagesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool OfflineMessagesRequest::IsInitialized() const {
+bool GetOfflineMessagesRequest::IsInitialized() const {
   return true;
 }
 
-void OfflineMessagesRequest::InternalSwap(OfflineMessagesRequest* other) {
+void GetOfflineMessagesRequest::InternalSwap(GetOfflineMessagesRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_.user_id_, other->_impl_.user_id_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata OfflineMessagesRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetOfflineMessagesRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_messege_2eproto_getter, &descriptor_table_messege_2eproto_once,
-      file_level_metadata_messege_2eproto[5]);
+      file_level_metadata_messege_2eproto[6]);
 }
 
 // ===================================================================
 
-class OfflineMessagesResponse::_Internal {
+class GetOfflineMessagesResponse::_Internal {
  public:
-  static const ::messageservice::ResultCode& result(const OfflineMessagesResponse* msg);
 };
 
-const ::messageservice::ResultCode&
-OfflineMessagesResponse::_Internal::result(const OfflineMessagesResponse* msg) {
-  return *msg->_impl_.result_;
-}
-OfflineMessagesResponse::OfflineMessagesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+GetOfflineMessagesResponse::GetOfflineMessagesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:messageservice.OfflineMessagesResponse)
+  // @@protoc_insertion_point(arena_constructor:messageservice.GetOfflineMessagesResponse)
 }
-OfflineMessagesResponse::OfflineMessagesResponse(const OfflineMessagesResponse& from)
+GetOfflineMessagesResponse::GetOfflineMessagesResponse(const GetOfflineMessagesResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  OfflineMessagesResponse* const _this = this; (void)_this;
+  GetOfflineMessagesResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.messages_){from._impl_.messages_}
-    , decltype(_impl_.result_){nullptr}
+    , decltype(_impl_.error_msg_){}
+    , decltype(_impl_.error_code_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_result()) {
-    _this->_impl_.result_ = new ::messageservice::ResultCode(*from._impl_.result_);
+  _impl_.error_msg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_error_msg().empty()) {
+    _this->_impl_.error_msg_.Set(from._internal_error_msg(), 
+      _this->GetArenaForAllocation());
   }
-  // @@protoc_insertion_point(copy_constructor:messageservice.OfflineMessagesResponse)
+  _this->_impl_.error_code_ = from._impl_.error_code_;
+  // @@protoc_insertion_point(copy_constructor:messageservice.GetOfflineMessagesResponse)
 }
 
-inline void OfflineMessagesResponse::SharedCtor(
+inline void GetOfflineMessagesResponse::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.messages_){arena}
-    , decltype(_impl_.result_){nullptr}
+    , decltype(_impl_.error_msg_){}
+    , decltype(_impl_.error_code_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
+  _impl_.error_msg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
-OfflineMessagesResponse::~OfflineMessagesResponse() {
-  // @@protoc_insertion_point(destructor:messageservice.OfflineMessagesResponse)
+GetOfflineMessagesResponse::~GetOfflineMessagesResponse() {
+  // @@protoc_insertion_point(destructor:messageservice.GetOfflineMessagesResponse)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1647,55 +2010,64 @@ OfflineMessagesResponse::~OfflineMessagesResponse() {
   SharedDtor();
 }
 
-inline void OfflineMessagesResponse::SharedDtor() {
+inline void GetOfflineMessagesResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.messages_.~RepeatedPtrField();
-  if (this != internal_default_instance()) delete _impl_.result_;
+  _impl_.error_msg_.Destroy();
 }
 
-void OfflineMessagesResponse::SetCachedSize(int size) const {
+void GetOfflineMessagesResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void OfflineMessagesResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:messageservice.OfflineMessagesResponse)
+void GetOfflineMessagesResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:messageservice.GetOfflineMessagesResponse)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.messages_.Clear();
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+  _impl_.error_msg_.ClearToEmpty();
+  _impl_.error_code_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* OfflineMessagesResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetOfflineMessagesResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .messageservice.ResultCode result = 1;
+      // int32 error_code = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_result(), ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.error_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated bytes messages = 2;
+      // string error_msg = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_error_msg();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "messageservice.GetOfflineMessagesResponse.error_msg"));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated string messages = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
             auto str = _internal_add_messages();
             ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
             CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "messageservice.GetOfflineMessagesResponse.messages"));
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -1722,104 +2094,130 @@ failure:
 #undef CHK_
 }
 
-uint8_t* OfflineMessagesResponse::_InternalSerialize(
+uint8_t* GetOfflineMessagesResponse::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:messageservice.OfflineMessagesResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:messageservice.GetOfflineMessagesResponse)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .messageservice.ResultCode result = 1;
-  if (this->_internal_has_result()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::result(this),
-        _Internal::result(this).GetCachedSize(), target, stream);
+  // int32 error_code = 1;
+  if (this->_internal_error_code() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_error_code(), target);
   }
 
-  // repeated bytes messages = 2;
+  // string error_msg = 2;
+  if (!this->_internal_error_msg().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error_msg().data(), static_cast<int>(this->_internal_error_msg().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "messageservice.GetOfflineMessagesResponse.error_msg");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_error_msg(), target);
+  }
+
+  // repeated string messages = 3;
   for (int i = 0, n = this->_internal_messages_size(); i < n; i++) {
     const auto& s = this->_internal_messages(i);
-    target = stream->WriteBytes(2, s, target);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "messageservice.GetOfflineMessagesResponse.messages");
+    target = stream->WriteString(3, s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:messageservice.OfflineMessagesResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:messageservice.GetOfflineMessagesResponse)
   return target;
 }
 
-size_t OfflineMessagesResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:messageservice.OfflineMessagesResponse)
+size_t GetOfflineMessagesResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:messageservice.GetOfflineMessagesResponse)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated bytes messages = 2;
+  // repeated string messages = 3;
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.messages_.size());
   for (int i = 0, n = _impl_.messages_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
       _impl_.messages_.Get(i));
   }
 
-  // .messageservice.ResultCode result = 1;
-  if (this->_internal_has_result()) {
+  // string error_msg = 2;
+  if (!this->_internal_error_msg().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.result_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error_msg());
+  }
+
+  // int32 error_code = 1;
+  if (this->_internal_error_code() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_error_code());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData OfflineMessagesResponse::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetOfflineMessagesResponse::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    OfflineMessagesResponse::MergeImpl
+    GetOfflineMessagesResponse::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*OfflineMessagesResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetOfflineMessagesResponse::GetClassData() const { return &_class_data_; }
 
 
-void OfflineMessagesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<OfflineMessagesResponse*>(&to_msg);
-  auto& from = static_cast<const OfflineMessagesResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:messageservice.OfflineMessagesResponse)
+void GetOfflineMessagesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetOfflineMessagesResponse*>(&to_msg);
+  auto& from = static_cast<const GetOfflineMessagesResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:messageservice.GetOfflineMessagesResponse)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   _this->_impl_.messages_.MergeFrom(from._impl_.messages_);
-  if (from._internal_has_result()) {
-    _this->_internal_mutable_result()->::messageservice::ResultCode::MergeFrom(
-        from._internal_result());
+  if (!from._internal_error_msg().empty()) {
+    _this->_internal_set_error_msg(from._internal_error_msg());
+  }
+  if (from._internal_error_code() != 0) {
+    _this->_internal_set_error_code(from._internal_error_code());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void OfflineMessagesResponse::CopyFrom(const OfflineMessagesResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:messageservice.OfflineMessagesResponse)
+void GetOfflineMessagesResponse::CopyFrom(const GetOfflineMessagesResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:messageservice.GetOfflineMessagesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool OfflineMessagesResponse::IsInitialized() const {
+bool GetOfflineMessagesResponse::IsInitialized() const {
   return true;
 }
 
-void OfflineMessagesResponse::InternalSwap(OfflineMessagesResponse* other) {
+void GetOfflineMessagesResponse::InternalSwap(GetOfflineMessagesResponse* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.messages_.InternalSwap(&other->_impl_.messages_);
-  swap(_impl_.result_, other->_impl_.result_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.error_msg_, lhs_arena,
+      &other->_impl_.error_msg_, rhs_arena
+  );
+  swap(_impl_.error_code_, other->_impl_.error_code_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata OfflineMessagesResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetOfflineMessagesResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_messege_2eproto_getter, &descriptor_table_messege_2eproto_once,
-      file_level_metadata_messege_2eproto[6]);
+      file_level_metadata_messege_2eproto[7]);
 }
 
 // ===================================================================
@@ -1997,20 +2395,15 @@ void RemoveOfflineMessagesRequest::InternalSwap(RemoveOfflineMessagesRequest* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveOfflineMessagesRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_messege_2eproto_getter, &descriptor_table_messege_2eproto_once,
-      file_level_metadata_messege_2eproto[7]);
+      file_level_metadata_messege_2eproto[8]);
 }
 
 // ===================================================================
 
 class RemoveOfflineMessagesResponse::_Internal {
  public:
-  static const ::messageservice::ResultCode& result(const RemoveOfflineMessagesResponse* msg);
 };
 
-const ::messageservice::ResultCode&
-RemoveOfflineMessagesResponse::_Internal::result(const RemoveOfflineMessagesResponse* msg) {
-  return *msg->_impl_.result_;
-}
 RemoveOfflineMessagesResponse::RemoveOfflineMessagesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -2021,13 +2414,20 @@ RemoveOfflineMessagesResponse::RemoveOfflineMessagesResponse(const RemoveOffline
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   RemoveOfflineMessagesResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.result_){nullptr}
+      decltype(_impl_.error_msg_){}
+    , decltype(_impl_.error_code_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_result()) {
-    _this->_impl_.result_ = new ::messageservice::ResultCode(*from._impl_.result_);
+  _impl_.error_msg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_error_msg().empty()) {
+    _this->_impl_.error_msg_.Set(from._internal_error_msg(), 
+      _this->GetArenaForAllocation());
   }
+  _this->_impl_.error_code_ = from._impl_.error_code_;
   // @@protoc_insertion_point(copy_constructor:messageservice.RemoveOfflineMessagesResponse)
 }
 
@@ -2036,9 +2436,14 @@ inline void RemoveOfflineMessagesResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.result_){nullptr}
+      decltype(_impl_.error_msg_){}
+    , decltype(_impl_.error_code_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
+  _impl_.error_msg_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 RemoveOfflineMessagesResponse::~RemoveOfflineMessagesResponse() {
@@ -2052,7 +2457,7 @@ RemoveOfflineMessagesResponse::~RemoveOfflineMessagesResponse() {
 
 inline void RemoveOfflineMessagesResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.result_;
+  _impl_.error_msg_.Destroy();
 }
 
 void RemoveOfflineMessagesResponse::SetCachedSize(int size) const {
@@ -2065,10 +2470,8 @@ void RemoveOfflineMessagesResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+  _impl_.error_msg_.ClearToEmpty();
+  _impl_.error_code_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2078,11 +2481,21 @@ const char* RemoveOfflineMessagesResponse::_InternalParse(const char* ptr, ::_pb
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .messageservice.ResultCode result = 1;
+      // int32 error_code = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_result(), ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.error_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string error_msg = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_error_msg();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "messageservice.RemoveOfflineMessagesResponse.error_msg"));
         } else
           goto handle_unusual;
         continue;
@@ -2115,11 +2528,20 @@ uint8_t* RemoveOfflineMessagesResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .messageservice.ResultCode result = 1;
-  if (this->_internal_has_result()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::result(this),
-        _Internal::result(this).GetCachedSize(), target, stream);
+  // int32 error_code = 1;
+  if (this->_internal_error_code() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_error_code(), target);
+  }
+
+  // string error_msg = 2;
+  if (!this->_internal_error_msg().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_error_msg().data(), static_cast<int>(this->_internal_error_msg().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "messageservice.RemoveOfflineMessagesResponse.error_msg");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_error_msg(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2138,11 +2560,16 @@ size_t RemoveOfflineMessagesResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .messageservice.ResultCode result = 1;
-  if (this->_internal_has_result()) {
+  // string error_msg = 2;
+  if (!this->_internal_error_msg().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.result_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_error_msg());
+  }
+
+  // int32 error_code = 1;
+  if (this->_internal_error_code() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_error_code());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2163,9 +2590,11 @@ void RemoveOfflineMessagesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& 
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_result()) {
-    _this->_internal_mutable_result()->::messageservice::ResultCode::MergeFrom(
-        from._internal_result());
+  if (!from._internal_error_msg().empty()) {
+    _this->_internal_set_error_msg(from._internal_error_msg());
+  }
+  if (from._internal_error_code() != 0) {
+    _this->_internal_set_error_code(from._internal_error_code());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2183,14 +2612,20 @@ bool RemoveOfflineMessagesResponse::IsInitialized() const {
 
 void RemoveOfflineMessagesResponse::InternalSwap(RemoveOfflineMessagesResponse* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.result_, other->_impl_.result_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.error_msg_, lhs_arena,
+      &other->_impl_.error_msg_, rhs_arena
+  );
+  swap(_impl_.error_code_, other->_impl_.error_code_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveOfflineMessagesResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_messege_2eproto_getter, &descriptor_table_messege_2eproto_once,
-      file_level_metadata_messege_2eproto[8]);
+      file_level_metadata_messege_2eproto[9]);
 }
 
 // ===================================================================
@@ -2222,9 +2657,17 @@ void MessageService::SendGroupMessage(::PROTOBUF_NAMESPACE_ID::RpcController* co
   done->Run();
 }
 
+void MessageService::StoreOfflineMessage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                         const ::messageservice::StoreOfflineMessageRequest*,
+                         ::messageservice::StoreOfflineMessageResponse*,
+                         ::google::protobuf::Closure* done) {
+  controller->SetFailed("Method StoreOfflineMessage() not implemented.");
+  done->Run();
+}
+
 void MessageService::GetOfflineMessages(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                         const ::messageservice::OfflineMessagesRequest*,
-                         ::messageservice::OfflineMessagesResponse*,
+                         const ::messageservice::GetOfflineMessagesRequest*,
+                         ::messageservice::GetOfflineMessagesResponse*,
                          ::google::protobuf::Closure* done) {
   controller->SetFailed("Method GetOfflineMessages() not implemented.");
   done->Run();
@@ -2262,14 +2705,22 @@ void MessageService::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor*
              done);
       break;
     case 2:
-      GetOfflineMessages(controller,
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::messageservice::OfflineMessagesRequest*>(
+      StoreOfflineMessage(controller,
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::messageservice::StoreOfflineMessageRequest*>(
                  request),
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::messageservice::OfflineMessagesResponse*>(
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::messageservice::StoreOfflineMessageResponse*>(
                  response),
              done);
       break;
     case 3:
+      GetOfflineMessages(controller,
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::messageservice::GetOfflineMessagesRequest*>(
+                 request),
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::messageservice::GetOfflineMessagesResponse*>(
+                 response),
+             done);
+      break;
+    case 4:
       RemoveOfflineMessages(controller,
              ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::messageservice::RemoveOfflineMessagesRequest*>(
                  request),
@@ -2292,8 +2743,10 @@ const ::PROTOBUF_NAMESPACE_ID::Message& MessageService::GetRequestPrototype(
     case 1:
       return ::messageservice::GroupMessageRequest::default_instance();
     case 2:
-      return ::messageservice::OfflineMessagesRequest::default_instance();
+      return ::messageservice::StoreOfflineMessageRequest::default_instance();
     case 3:
+      return ::messageservice::GetOfflineMessagesRequest::default_instance();
+    case 4:
       return ::messageservice::RemoveOfflineMessagesRequest::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
@@ -2311,8 +2764,10 @@ const ::PROTOBUF_NAMESPACE_ID::Message& MessageService::GetResponsePrototype(
     case 1:
       return ::messageservice::GroupMessageResponse::default_instance();
     case 2:
-      return ::messageservice::OfflineMessagesResponse::default_instance();
+      return ::messageservice::StoreOfflineMessageResponse::default_instance();
     case 3:
+      return ::messageservice::GetOfflineMessagesResponse::default_instance();
+    case 4:
       return ::messageservice::RemoveOfflineMessagesResponse::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
@@ -2346,28 +2801,31 @@ void MessageService_Stub::SendGroupMessage(::PROTOBUF_NAMESPACE_ID::RpcControlle
   channel_->CallMethod(descriptor()->method(1),
                        controller, request, response, done);
 }
-void MessageService_Stub::GetOfflineMessages(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                              const ::messageservice::OfflineMessagesRequest* request,
-                              ::messageservice::OfflineMessagesResponse* response,
+void MessageService_Stub::StoreOfflineMessage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                              const ::messageservice::StoreOfflineMessageRequest* request,
+                              ::messageservice::StoreOfflineMessageResponse* response,
                               ::google::protobuf::Closure* done) {
   channel_->CallMethod(descriptor()->method(2),
+                       controller, request, response, done);
+}
+void MessageService_Stub::GetOfflineMessages(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                              const ::messageservice::GetOfflineMessagesRequest* request,
+                              ::messageservice::GetOfflineMessagesResponse* response,
+                              ::google::protobuf::Closure* done) {
+  channel_->CallMethod(descriptor()->method(3),
                        controller, request, response, done);
 }
 void MessageService_Stub::RemoveOfflineMessages(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                               const ::messageservice::RemoveOfflineMessagesRequest* request,
                               ::messageservice::RemoveOfflineMessagesResponse* response,
                               ::google::protobuf::Closure* done) {
-  channel_->CallMethod(descriptor()->method(3),
+  channel_->CallMethod(descriptor()->method(4),
                        controller, request, response, done);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace messageservice
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::messageservice::ResultCode*
-Arena::CreateMaybeMessage< ::messageservice::ResultCode >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::messageservice::ResultCode >(arena);
-}
 template<> PROTOBUF_NOINLINE ::messageservice::OneToOneMessageRequest*
 Arena::CreateMaybeMessage< ::messageservice::OneToOneMessageRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::messageservice::OneToOneMessageRequest >(arena);
@@ -2384,13 +2842,21 @@ template<> PROTOBUF_NOINLINE ::messageservice::GroupMessageResponse*
 Arena::CreateMaybeMessage< ::messageservice::GroupMessageResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::messageservice::GroupMessageResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::messageservice::OfflineMessagesRequest*
-Arena::CreateMaybeMessage< ::messageservice::OfflineMessagesRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::messageservice::OfflineMessagesRequest >(arena);
+template<> PROTOBUF_NOINLINE ::messageservice::StoreOfflineMessageRequest*
+Arena::CreateMaybeMessage< ::messageservice::StoreOfflineMessageRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::messageservice::StoreOfflineMessageRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::messageservice::OfflineMessagesResponse*
-Arena::CreateMaybeMessage< ::messageservice::OfflineMessagesResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::messageservice::OfflineMessagesResponse >(arena);
+template<> PROTOBUF_NOINLINE ::messageservice::StoreOfflineMessageResponse*
+Arena::CreateMaybeMessage< ::messageservice::StoreOfflineMessageResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::messageservice::StoreOfflineMessageResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::messageservice::GetOfflineMessagesRequest*
+Arena::CreateMaybeMessage< ::messageservice::GetOfflineMessagesRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::messageservice::GetOfflineMessagesRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::messageservice::GetOfflineMessagesResponse*
+Arena::CreateMaybeMessage< ::messageservice::GetOfflineMessagesResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::messageservice::GetOfflineMessagesResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::messageservice::RemoveOfflineMessagesRequest*
 Arena::CreateMaybeMessage< ::messageservice::RemoveOfflineMessagesRequest >(Arena* arena) {

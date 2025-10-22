@@ -1,0 +1,7 @@
+20251022 13:50:48.023128Z 23322 INFO  ServiceMonitor created for UserService - monitor.cc:14
+20251022 13:50:48.023137Z 23322 INFO  Monitor initialized for UserService - serverbase.cc:53
+20251022 13:50:48.023138Z 23322 INFO  CircuitBreaker created with failureThreshold=5, timeoutMs=5000, halfOpenRetryCount=3 - circuitbreaker.cc:16
+20251022 13:50:48.023139Z 23322 INFO  Circuit breaker initialized for UserService - serverbase.cc:59
+20251022 13:50:48.023139Z 23322 INFO  ServiceBase created for UserService on 127.0.0.1:8081 - serverbase.cc:20
+Starting service: UserService on 127.0.0.1:8081
+20251022 13:50:48.023293Z 23322 FATAL Another EventLoop 0x7FFF7DADBD00 exists in this thread 23322 - EventLoop.cc:80

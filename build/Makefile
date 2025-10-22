@@ -195,6 +195,71 @@ user_service/fast:
 .PHONY : user_service/fast
 
 #=============================================================================
+# Target rules for targets named user_rpc_service
+
+# Build rule for target.
+user_rpc_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 user_rpc_service
+.PHONY : user_rpc_service
+
+# fast build rule for target.
+user_rpc_service/fast:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build.make dist/rpcservice/user_service/CMakeFiles/user_rpc_service.dir/build
+.PHONY : user_rpc_service/fast
+
+#=============================================================================
+# Target rules for targets named message_service
+
+# Build rule for target.
+message_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 message_service
+.PHONY : message_service
+
+# fast build rule for target.
+message_service/fast:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/message/CMakeFiles/message_service.dir/build.make dist/rpcservice/message/CMakeFiles/message_service.dir/build
+.PHONY : message_service/fast
+
+#=============================================================================
+# Target rules for targets named message_rpc_service
+
+# Build rule for target.
+message_rpc_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 message_rpc_service
+.PHONY : message_rpc_service
+
+# fast build rule for target.
+message_rpc_service/fast:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/build.make dist/rpcservice/message/CMakeFiles/message_rpc_service.dir/build
+.PHONY : message_rpc_service/fast
+
+#=============================================================================
+# Target rules for targets named relation_service
+
+# Build rule for target.
+relation_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 relation_service
+.PHONY : relation_service
+
+# fast build rule for target.
+relation_service/fast:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/build.make dist/rpcservice/relation_service/CMakeFiles/relation_service.dir/build
+.PHONY : relation_service/fast
+
+#=============================================================================
+# Target rules for targets named relation_rpc_service
+
+# Build rule for target.
+relation_rpc_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 relation_rpc_service
+.PHONY : relation_rpc_service
+
+# fast build rule for target.
+relation_rpc_service/fast:
+	$(MAKE) $(MAKESILENT) -f dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/build.make dist/rpcservice/relation_service/CMakeFiles/relation_rpc_service.dir/build
+.PHONY : relation_rpc_service/fast
+
+#=============================================================================
 # Target rules for targets named gateway_service
 
 # Build rule for target.
@@ -217,10 +282,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... client"
 	@echo "... gateway_service"
+	@echo "... message_rpc_service"
+	@echo "... message_service"
 	@echo "... mprpc"
 	@echo "... proto_c"
+	@echo "... relation_rpc_service"
+	@echo "... relation_service"
 	@echo "... server"
 	@echo "... service_base"
+	@echo "... user_rpc_service"
 	@echo "... user_service"
 .PHONY : help
 

@@ -46,18 +46,18 @@ struct TableStruct_messege_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_messege_2eproto;
 namespace messageservice {
+class GetOfflineMessagesRequest;
+struct GetOfflineMessagesRequestDefaultTypeInternal;
+extern GetOfflineMessagesRequestDefaultTypeInternal _GetOfflineMessagesRequest_default_instance_;
+class GetOfflineMessagesResponse;
+struct GetOfflineMessagesResponseDefaultTypeInternal;
+extern GetOfflineMessagesResponseDefaultTypeInternal _GetOfflineMessagesResponse_default_instance_;
 class GroupMessageRequest;
 struct GroupMessageRequestDefaultTypeInternal;
 extern GroupMessageRequestDefaultTypeInternal _GroupMessageRequest_default_instance_;
 class GroupMessageResponse;
 struct GroupMessageResponseDefaultTypeInternal;
 extern GroupMessageResponseDefaultTypeInternal _GroupMessageResponse_default_instance_;
-class OfflineMessagesRequest;
-struct OfflineMessagesRequestDefaultTypeInternal;
-extern OfflineMessagesRequestDefaultTypeInternal _OfflineMessagesRequest_default_instance_;
-class OfflineMessagesResponse;
-struct OfflineMessagesResponseDefaultTypeInternal;
-extern OfflineMessagesResponseDefaultTypeInternal _OfflineMessagesResponse_default_instance_;
 class OneToOneMessageRequest;
 struct OneToOneMessageRequestDefaultTypeInternal;
 extern OneToOneMessageRequestDefaultTypeInternal _OneToOneMessageRequest_default_instance_;
@@ -70,188 +70,28 @@ extern RemoveOfflineMessagesRequestDefaultTypeInternal _RemoveOfflineMessagesReq
 class RemoveOfflineMessagesResponse;
 struct RemoveOfflineMessagesResponseDefaultTypeInternal;
 extern RemoveOfflineMessagesResponseDefaultTypeInternal _RemoveOfflineMessagesResponse_default_instance_;
-class ResultCode;
-struct ResultCodeDefaultTypeInternal;
-extern ResultCodeDefaultTypeInternal _ResultCode_default_instance_;
+class StoreOfflineMessageRequest;
+struct StoreOfflineMessageRequestDefaultTypeInternal;
+extern StoreOfflineMessageRequestDefaultTypeInternal _StoreOfflineMessageRequest_default_instance_;
+class StoreOfflineMessageResponse;
+struct StoreOfflineMessageResponseDefaultTypeInternal;
+extern StoreOfflineMessageResponseDefaultTypeInternal _StoreOfflineMessageResponse_default_instance_;
 }  // namespace messageservice
 PROTOBUF_NAMESPACE_OPEN
+template<> ::messageservice::GetOfflineMessagesRequest* Arena::CreateMaybeMessage<::messageservice::GetOfflineMessagesRequest>(Arena*);
+template<> ::messageservice::GetOfflineMessagesResponse* Arena::CreateMaybeMessage<::messageservice::GetOfflineMessagesResponse>(Arena*);
 template<> ::messageservice::GroupMessageRequest* Arena::CreateMaybeMessage<::messageservice::GroupMessageRequest>(Arena*);
 template<> ::messageservice::GroupMessageResponse* Arena::CreateMaybeMessage<::messageservice::GroupMessageResponse>(Arena*);
-template<> ::messageservice::OfflineMessagesRequest* Arena::CreateMaybeMessage<::messageservice::OfflineMessagesRequest>(Arena*);
-template<> ::messageservice::OfflineMessagesResponse* Arena::CreateMaybeMessage<::messageservice::OfflineMessagesResponse>(Arena*);
 template<> ::messageservice::OneToOneMessageRequest* Arena::CreateMaybeMessage<::messageservice::OneToOneMessageRequest>(Arena*);
 template<> ::messageservice::OneToOneMessageResponse* Arena::CreateMaybeMessage<::messageservice::OneToOneMessageResponse>(Arena*);
 template<> ::messageservice::RemoveOfflineMessagesRequest* Arena::CreateMaybeMessage<::messageservice::RemoveOfflineMessagesRequest>(Arena*);
 template<> ::messageservice::RemoveOfflineMessagesResponse* Arena::CreateMaybeMessage<::messageservice::RemoveOfflineMessagesResponse>(Arena*);
-template<> ::messageservice::ResultCode* Arena::CreateMaybeMessage<::messageservice::ResultCode>(Arena*);
+template<> ::messageservice::StoreOfflineMessageRequest* Arena::CreateMaybeMessage<::messageservice::StoreOfflineMessageRequest>(Arena*);
+template<> ::messageservice::StoreOfflineMessageResponse* Arena::CreateMaybeMessage<::messageservice::StoreOfflineMessageResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace messageservice {
 
 // ===================================================================
-
-class ResultCode final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:messageservice.ResultCode) */ {
- public:
-  inline ResultCode() : ResultCode(nullptr) {}
-  ~ResultCode() override;
-  explicit PROTOBUF_CONSTEXPR ResultCode(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  ResultCode(const ResultCode& from);
-  ResultCode(ResultCode&& from) noexcept
-    : ResultCode() {
-    *this = ::std::move(from);
-  }
-
-  inline ResultCode& operator=(const ResultCode& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ResultCode& operator=(ResultCode&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ResultCode& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const ResultCode* internal_default_instance() {
-    return reinterpret_cast<const ResultCode*>(
-               &_ResultCode_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(ResultCode& a, ResultCode& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(ResultCode* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ResultCode* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  ResultCode* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<ResultCode>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const ResultCode& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const ResultCode& from) {
-    ResultCode::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ResultCode* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "messageservice.ResultCode";
-  }
-  protected:
-  explicit ResultCode(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kErrmsgFieldNumber = 2,
-    kErrcodeFieldNumber = 1,
-  };
-  // bytes errmsg = 2;
-  void clear_errmsg();
-  const std::string& errmsg() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_errmsg(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_errmsg();
-  PROTOBUF_NODISCARD std::string* release_errmsg();
-  void set_allocated_errmsg(std::string* errmsg);
-  private:
-  const std::string& _internal_errmsg() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_errmsg(const std::string& value);
-  std::string* _internal_mutable_errmsg();
-  public:
-
-  // int32 errcode = 1;
-  void clear_errcode();
-  int32_t errcode() const;
-  void set_errcode(int32_t value);
-  private:
-  int32_t _internal_errcode() const;
-  void _internal_set_errcode(int32_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:messageservice.ResultCode)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr errmsg_;
-    int32_t errcode_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_messege_2eproto;
-};
-// -------------------------------------------------------------------
 
 class OneToOneMessageRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:messageservice.OneToOneMessageRequest) */ {
@@ -301,7 +141,7 @@ class OneToOneMessageRequest final :
                &_OneToOneMessageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    0;
 
   friend void swap(OneToOneMessageRequest& a, OneToOneMessageRequest& b) {
     a.Swap(&b);
@@ -378,7 +218,7 @@ class OneToOneMessageRequest final :
     kFromIdFieldNumber = 1,
     kToIdFieldNumber = 2,
   };
-  // bytes message = 3;
+  // string message = 3;
   void clear_message();
   const std::string& message() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -476,7 +316,7 @@ class OneToOneMessageResponse final :
                &_OneToOneMessageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    1;
 
   friend void swap(OneToOneMessageResponse& a, OneToOneMessageResponse& b) {
     a.Swap(&b);
@@ -549,25 +389,31 @@ class OneToOneMessageResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kErrorMsgFieldNumber = 2,
+    kErrorCodeFieldNumber = 1,
   };
-  // .messageservice.ResultCode result = 1;
-  bool has_result() const;
+  // string error_msg = 2;
+  void clear_error_msg();
+  const std::string& error_msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_msg();
+  PROTOBUF_NODISCARD std::string* release_error_msg();
+  void set_allocated_error_msg(std::string* error_msg);
   private:
-  bool _internal_has_result() const;
+  const std::string& _internal_error_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_msg(const std::string& value);
+  std::string* _internal_mutable_error_msg();
   public:
-  void clear_result();
-  const ::messageservice::ResultCode& result() const;
-  PROTOBUF_NODISCARD ::messageservice::ResultCode* release_result();
-  ::messageservice::ResultCode* mutable_result();
-  void set_allocated_result(::messageservice::ResultCode* result);
+
+  // int32 error_code = 1;
+  void clear_error_code();
+  int32_t error_code() const;
+  void set_error_code(int32_t value);
   private:
-  const ::messageservice::ResultCode& _internal_result() const;
-  ::messageservice::ResultCode* _internal_mutable_result();
+  int32_t _internal_error_code() const;
+  void _internal_set_error_code(int32_t value);
   public:
-  void unsafe_arena_set_allocated_result(
-      ::messageservice::ResultCode* result);
-  ::messageservice::ResultCode* unsafe_arena_release_result();
 
   // @@protoc_insertion_point(class_scope:messageservice.OneToOneMessageResponse)
  private:
@@ -577,7 +423,8 @@ class OneToOneMessageResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::messageservice::ResultCode* result_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_msg_;
+    int32_t error_code_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -633,7 +480,7 @@ class GroupMessageRequest final :
                &_GroupMessageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    2;
 
   friend void swap(GroupMessageRequest& a, GroupMessageRequest& b) {
     a.Swap(&b);
@@ -710,7 +557,7 @@ class GroupMessageRequest final :
     kFromIdFieldNumber = 1,
     kGroupIdFieldNumber = 2,
   };
-  // bytes message = 3;
+  // string message = 3;
   void clear_message();
   const std::string& message() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -808,7 +655,7 @@ class GroupMessageResponse final :
                &_GroupMessageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   friend void swap(GroupMessageResponse& a, GroupMessageResponse& b) {
     a.Swap(&b);
@@ -881,25 +728,31 @@ class GroupMessageResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kErrorMsgFieldNumber = 2,
+    kErrorCodeFieldNumber = 1,
   };
-  // .messageservice.ResultCode result = 1;
-  bool has_result() const;
+  // string error_msg = 2;
+  void clear_error_msg();
+  const std::string& error_msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_msg();
+  PROTOBUF_NODISCARD std::string* release_error_msg();
+  void set_allocated_error_msg(std::string* error_msg);
   private:
-  bool _internal_has_result() const;
+  const std::string& _internal_error_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_msg(const std::string& value);
+  std::string* _internal_mutable_error_msg();
   public:
-  void clear_result();
-  const ::messageservice::ResultCode& result() const;
-  PROTOBUF_NODISCARD ::messageservice::ResultCode* release_result();
-  ::messageservice::ResultCode* mutable_result();
-  void set_allocated_result(::messageservice::ResultCode* result);
+
+  // int32 error_code = 1;
+  void clear_error_code();
+  int32_t error_code() const;
+  void set_error_code(int32_t value);
   private:
-  const ::messageservice::ResultCode& _internal_result() const;
-  ::messageservice::ResultCode* _internal_mutable_result();
+  int32_t _internal_error_code() const;
+  void _internal_set_error_code(int32_t value);
   public:
-  void unsafe_arena_set_allocated_result(
-      ::messageservice::ResultCode* result);
-  ::messageservice::ResultCode* unsafe_arena_release_result();
 
   // @@protoc_insertion_point(class_scope:messageservice.GroupMessageResponse)
  private:
@@ -909,7 +762,8 @@ class GroupMessageResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::messageservice::ResultCode* result_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_msg_;
+    int32_t error_code_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -917,24 +771,24 @@ class GroupMessageResponse final :
 };
 // -------------------------------------------------------------------
 
-class OfflineMessagesRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:messageservice.OfflineMessagesRequest) */ {
+class StoreOfflineMessageRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:messageservice.StoreOfflineMessageRequest) */ {
  public:
-  inline OfflineMessagesRequest() : OfflineMessagesRequest(nullptr) {}
-  ~OfflineMessagesRequest() override;
-  explicit PROTOBUF_CONSTEXPR OfflineMessagesRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline StoreOfflineMessageRequest() : StoreOfflineMessageRequest(nullptr) {}
+  ~StoreOfflineMessageRequest() override;
+  explicit PROTOBUF_CONSTEXPR StoreOfflineMessageRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  OfflineMessagesRequest(const OfflineMessagesRequest& from);
-  OfflineMessagesRequest(OfflineMessagesRequest&& from) noexcept
-    : OfflineMessagesRequest() {
+  StoreOfflineMessageRequest(const StoreOfflineMessageRequest& from);
+  StoreOfflineMessageRequest(StoreOfflineMessageRequest&& from) noexcept
+    : StoreOfflineMessageRequest() {
     *this = ::std::move(from);
   }
 
-  inline OfflineMessagesRequest& operator=(const OfflineMessagesRequest& from) {
+  inline StoreOfflineMessageRequest& operator=(const StoreOfflineMessageRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline OfflineMessagesRequest& operator=(OfflineMessagesRequest&& from) noexcept {
+  inline StoreOfflineMessageRequest& operator=(StoreOfflineMessageRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -957,20 +811,20 @@ class OfflineMessagesRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const OfflineMessagesRequest& default_instance() {
+  static const StoreOfflineMessageRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const OfflineMessagesRequest* internal_default_instance() {
-    return reinterpret_cast<const OfflineMessagesRequest*>(
-               &_OfflineMessagesRequest_default_instance_);
+  static inline const StoreOfflineMessageRequest* internal_default_instance() {
+    return reinterpret_cast<const StoreOfflineMessageRequest*>(
+               &_StoreOfflineMessageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
-  friend void swap(OfflineMessagesRequest& a, OfflineMessagesRequest& b) {
+  friend void swap(StoreOfflineMessageRequest& a, StoreOfflineMessageRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(OfflineMessagesRequest* other) {
+  inline void Swap(StoreOfflineMessageRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -983,7 +837,7 @@ class OfflineMessagesRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(OfflineMessagesRequest* other) {
+  void UnsafeArenaSwap(StoreOfflineMessageRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -991,14 +845,14 @@ class OfflineMessagesRequest final :
 
   // implements Message ----------------------------------------------
 
-  OfflineMessagesRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<OfflineMessagesRequest>(arena);
+  StoreOfflineMessageRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StoreOfflineMessageRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const OfflineMessagesRequest& from);
+  void CopyFrom(const StoreOfflineMessageRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const OfflineMessagesRequest& from) {
-    OfflineMessagesRequest::MergeImpl(*this, from);
+  void MergeFrom( const StoreOfflineMessageRequest& from) {
+    StoreOfflineMessageRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -1016,15 +870,343 @@ class OfflineMessagesRequest final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(OfflineMessagesRequest* other);
+  void InternalSwap(StoreOfflineMessageRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "messageservice.OfflineMessagesRequest";
+    return "messageservice.StoreOfflineMessageRequest";
   }
   protected:
-  explicit OfflineMessagesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit StoreOfflineMessageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMessageFieldNumber = 2,
+    kUserIdFieldNumber = 1,
+  };
+  // string message = 2;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // int32 user_id = 1;
+  void clear_user_id();
+  int32_t user_id() const;
+  void set_user_id(int32_t value);
+  private:
+  int32_t _internal_user_id() const;
+  void _internal_set_user_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:messageservice.StoreOfflineMessageRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+    int32_t user_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_messege_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StoreOfflineMessageResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:messageservice.StoreOfflineMessageResponse) */ {
+ public:
+  inline StoreOfflineMessageResponse() : StoreOfflineMessageResponse(nullptr) {}
+  ~StoreOfflineMessageResponse() override;
+  explicit PROTOBUF_CONSTEXPR StoreOfflineMessageResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  StoreOfflineMessageResponse(const StoreOfflineMessageResponse& from);
+  StoreOfflineMessageResponse(StoreOfflineMessageResponse&& from) noexcept
+    : StoreOfflineMessageResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline StoreOfflineMessageResponse& operator=(const StoreOfflineMessageResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StoreOfflineMessageResponse& operator=(StoreOfflineMessageResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StoreOfflineMessageResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StoreOfflineMessageResponse* internal_default_instance() {
+    return reinterpret_cast<const StoreOfflineMessageResponse*>(
+               &_StoreOfflineMessageResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(StoreOfflineMessageResponse& a, StoreOfflineMessageResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StoreOfflineMessageResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StoreOfflineMessageResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StoreOfflineMessageResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<StoreOfflineMessageResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const StoreOfflineMessageResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const StoreOfflineMessageResponse& from) {
+    StoreOfflineMessageResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StoreOfflineMessageResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "messageservice.StoreOfflineMessageResponse";
+  }
+  protected:
+  explicit StoreOfflineMessageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kErrorMsgFieldNumber = 2,
+    kErrorCodeFieldNumber = 1,
+  };
+  // string error_msg = 2;
+  void clear_error_msg();
+  const std::string& error_msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_msg();
+  PROTOBUF_NODISCARD std::string* release_error_msg();
+  void set_allocated_error_msg(std::string* error_msg);
+  private:
+  const std::string& _internal_error_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_msg(const std::string& value);
+  std::string* _internal_mutable_error_msg();
+  public:
+
+  // int32 error_code = 1;
+  void clear_error_code();
+  int32_t error_code() const;
+  void set_error_code(int32_t value);
+  private:
+  int32_t _internal_error_code() const;
+  void _internal_set_error_code(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:messageservice.StoreOfflineMessageResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_msg_;
+    int32_t error_code_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_messege_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetOfflineMessagesRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:messageservice.GetOfflineMessagesRequest) */ {
+ public:
+  inline GetOfflineMessagesRequest() : GetOfflineMessagesRequest(nullptr) {}
+  ~GetOfflineMessagesRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetOfflineMessagesRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetOfflineMessagesRequest(const GetOfflineMessagesRequest& from);
+  GetOfflineMessagesRequest(GetOfflineMessagesRequest&& from) noexcept
+    : GetOfflineMessagesRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetOfflineMessagesRequest& operator=(const GetOfflineMessagesRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetOfflineMessagesRequest& operator=(GetOfflineMessagesRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetOfflineMessagesRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetOfflineMessagesRequest* internal_default_instance() {
+    return reinterpret_cast<const GetOfflineMessagesRequest*>(
+               &_GetOfflineMessagesRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(GetOfflineMessagesRequest& a, GetOfflineMessagesRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetOfflineMessagesRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetOfflineMessagesRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetOfflineMessagesRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetOfflineMessagesRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetOfflineMessagesRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetOfflineMessagesRequest& from) {
+    GetOfflineMessagesRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetOfflineMessagesRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "messageservice.GetOfflineMessagesRequest";
+  }
+  protected:
+  explicit GetOfflineMessagesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -1049,7 +1231,7 @@ class OfflineMessagesRequest final :
   void _internal_set_user_id(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:messageservice.OfflineMessagesRequest)
+  // @@protoc_insertion_point(class_scope:messageservice.GetOfflineMessagesRequest)
  private:
   class _Internal;
 
@@ -1065,24 +1247,24 @@ class OfflineMessagesRequest final :
 };
 // -------------------------------------------------------------------
 
-class OfflineMessagesResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:messageservice.OfflineMessagesResponse) */ {
+class GetOfflineMessagesResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:messageservice.GetOfflineMessagesResponse) */ {
  public:
-  inline OfflineMessagesResponse() : OfflineMessagesResponse(nullptr) {}
-  ~OfflineMessagesResponse() override;
-  explicit PROTOBUF_CONSTEXPR OfflineMessagesResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline GetOfflineMessagesResponse() : GetOfflineMessagesResponse(nullptr) {}
+  ~GetOfflineMessagesResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetOfflineMessagesResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  OfflineMessagesResponse(const OfflineMessagesResponse& from);
-  OfflineMessagesResponse(OfflineMessagesResponse&& from) noexcept
-    : OfflineMessagesResponse() {
+  GetOfflineMessagesResponse(const GetOfflineMessagesResponse& from);
+  GetOfflineMessagesResponse(GetOfflineMessagesResponse&& from) noexcept
+    : GetOfflineMessagesResponse() {
     *this = ::std::move(from);
   }
 
-  inline OfflineMessagesResponse& operator=(const OfflineMessagesResponse& from) {
+  inline GetOfflineMessagesResponse& operator=(const GetOfflineMessagesResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline OfflineMessagesResponse& operator=(OfflineMessagesResponse&& from) noexcept {
+  inline GetOfflineMessagesResponse& operator=(GetOfflineMessagesResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1105,20 +1287,20 @@ class OfflineMessagesResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const OfflineMessagesResponse& default_instance() {
+  static const GetOfflineMessagesResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const OfflineMessagesResponse* internal_default_instance() {
-    return reinterpret_cast<const OfflineMessagesResponse*>(
-               &_OfflineMessagesResponse_default_instance_);
+  static inline const GetOfflineMessagesResponse* internal_default_instance() {
+    return reinterpret_cast<const GetOfflineMessagesResponse*>(
+               &_GetOfflineMessagesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
-  friend void swap(OfflineMessagesResponse& a, OfflineMessagesResponse& b) {
+  friend void swap(GetOfflineMessagesResponse& a, GetOfflineMessagesResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(OfflineMessagesResponse* other) {
+  inline void Swap(GetOfflineMessagesResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1131,7 +1313,7 @@ class OfflineMessagesResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(OfflineMessagesResponse* other) {
+  void UnsafeArenaSwap(GetOfflineMessagesResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1139,14 +1321,14 @@ class OfflineMessagesResponse final :
 
   // implements Message ----------------------------------------------
 
-  OfflineMessagesResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<OfflineMessagesResponse>(arena);
+  GetOfflineMessagesResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetOfflineMessagesResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const OfflineMessagesResponse& from);
+  void CopyFrom(const GetOfflineMessagesResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const OfflineMessagesResponse& from) {
-    OfflineMessagesResponse::MergeImpl(*this, from);
+  void MergeFrom( const GetOfflineMessagesResponse& from) {
+    GetOfflineMessagesResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -1164,15 +1346,15 @@ class OfflineMessagesResponse final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(OfflineMessagesResponse* other);
+  void InternalSwap(GetOfflineMessagesResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "messageservice.OfflineMessagesResponse";
+    return "messageservice.GetOfflineMessagesResponse";
   }
   protected:
-  explicit OfflineMessagesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit GetOfflineMessagesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -1186,10 +1368,11 @@ class OfflineMessagesResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMessagesFieldNumber = 2,
-    kResultFieldNumber = 1,
+    kMessagesFieldNumber = 3,
+    kErrorMsgFieldNumber = 2,
+    kErrorCodeFieldNumber = 1,
   };
-  // repeated bytes messages = 2;
+  // repeated string messages = 3;
   int messages_size() const;
   private:
   int _internal_messages_size() const;
@@ -1200,12 +1383,12 @@ class OfflineMessagesResponse final :
   void set_messages(int index, const std::string& value);
   void set_messages(int index, std::string&& value);
   void set_messages(int index, const char* value);
-  void set_messages(int index, const void* value, size_t size);
+  void set_messages(int index, const char* value, size_t size);
   std::string* add_messages();
   void add_messages(const std::string& value);
   void add_messages(std::string&& value);
   void add_messages(const char* value);
-  void add_messages(const void* value, size_t size);
+  void add_messages(const char* value, size_t size);
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& messages() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_messages();
   private:
@@ -1213,25 +1396,30 @@ class OfflineMessagesResponse final :
   std::string* _internal_add_messages();
   public:
 
-  // .messageservice.ResultCode result = 1;
-  bool has_result() const;
+  // string error_msg = 2;
+  void clear_error_msg();
+  const std::string& error_msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_msg();
+  PROTOBUF_NODISCARD std::string* release_error_msg();
+  void set_allocated_error_msg(std::string* error_msg);
   private:
-  bool _internal_has_result() const;
+  const std::string& _internal_error_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_msg(const std::string& value);
+  std::string* _internal_mutable_error_msg();
   public:
-  void clear_result();
-  const ::messageservice::ResultCode& result() const;
-  PROTOBUF_NODISCARD ::messageservice::ResultCode* release_result();
-  ::messageservice::ResultCode* mutable_result();
-  void set_allocated_result(::messageservice::ResultCode* result);
-  private:
-  const ::messageservice::ResultCode& _internal_result() const;
-  ::messageservice::ResultCode* _internal_mutable_result();
-  public:
-  void unsafe_arena_set_allocated_result(
-      ::messageservice::ResultCode* result);
-  ::messageservice::ResultCode* unsafe_arena_release_result();
 
-  // @@protoc_insertion_point(class_scope:messageservice.OfflineMessagesResponse)
+  // int32 error_code = 1;
+  void clear_error_code();
+  int32_t error_code() const;
+  void set_error_code(int32_t value);
+  private:
+  int32_t _internal_error_code() const;
+  void _internal_set_error_code(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:messageservice.GetOfflineMessagesResponse)
  private:
   class _Internal;
 
@@ -1240,7 +1428,8 @@ class OfflineMessagesResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> messages_;
-    ::messageservice::ResultCode* result_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_msg_;
+    int32_t error_code_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1296,7 +1485,7 @@ class RemoveOfflineMessagesRequest final :
                &_RemoveOfflineMessagesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(RemoveOfflineMessagesRequest& a, RemoveOfflineMessagesRequest& b) {
     a.Swap(&b);
@@ -1444,7 +1633,7 @@ class RemoveOfflineMessagesResponse final :
                &_RemoveOfflineMessagesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(RemoveOfflineMessagesResponse& a, RemoveOfflineMessagesResponse& b) {
     a.Swap(&b);
@@ -1517,25 +1706,31 @@ class RemoveOfflineMessagesResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kErrorMsgFieldNumber = 2,
+    kErrorCodeFieldNumber = 1,
   };
-  // .messageservice.ResultCode result = 1;
-  bool has_result() const;
+  // string error_msg = 2;
+  void clear_error_msg();
+  const std::string& error_msg() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_error_msg(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_error_msg();
+  PROTOBUF_NODISCARD std::string* release_error_msg();
+  void set_allocated_error_msg(std::string* error_msg);
   private:
-  bool _internal_has_result() const;
+  const std::string& _internal_error_msg() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_msg(const std::string& value);
+  std::string* _internal_mutable_error_msg();
   public:
-  void clear_result();
-  const ::messageservice::ResultCode& result() const;
-  PROTOBUF_NODISCARD ::messageservice::ResultCode* release_result();
-  ::messageservice::ResultCode* mutable_result();
-  void set_allocated_result(::messageservice::ResultCode* result);
+
+  // int32 error_code = 1;
+  void clear_error_code();
+  int32_t error_code() const;
+  void set_error_code(int32_t value);
   private:
-  const ::messageservice::ResultCode& _internal_result() const;
-  ::messageservice::ResultCode* _internal_mutable_result();
+  int32_t _internal_error_code() const;
+  void _internal_set_error_code(int32_t value);
   public:
-  void unsafe_arena_set_allocated_result(
-      ::messageservice::ResultCode* result);
-  ::messageservice::ResultCode* unsafe_arena_release_result();
 
   // @@protoc_insertion_point(class_scope:messageservice.RemoveOfflineMessagesResponse)
  private:
@@ -1545,7 +1740,8 @@ class RemoveOfflineMessagesResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::messageservice::ResultCode* result_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_msg_;
+    int32_t error_code_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1574,9 +1770,13 @@ class MessageService : public ::PROTOBUF_NAMESPACE_ID::Service {
                        const ::messageservice::GroupMessageRequest* request,
                        ::messageservice::GroupMessageResponse* response,
                        ::google::protobuf::Closure* done);
+  virtual void StoreOfflineMessage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::messageservice::StoreOfflineMessageRequest* request,
+                       ::messageservice::StoreOfflineMessageResponse* response,
+                       ::google::protobuf::Closure* done);
   virtual void GetOfflineMessages(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                       const ::messageservice::OfflineMessagesRequest* request,
-                       ::messageservice::OfflineMessagesResponse* response,
+                       const ::messageservice::GetOfflineMessagesRequest* request,
+                       ::messageservice::GetOfflineMessagesResponse* response,
                        ::google::protobuf::Closure* done);
   virtual void RemoveOfflineMessages(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::messageservice::RemoveOfflineMessagesRequest* request,
@@ -1619,9 +1819,13 @@ class MessageService_Stub : public MessageService {
                        const ::messageservice::GroupMessageRequest* request,
                        ::messageservice::GroupMessageResponse* response,
                        ::google::protobuf::Closure* done);
+  void StoreOfflineMessage(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
+                       const ::messageservice::StoreOfflineMessageRequest* request,
+                       ::messageservice::StoreOfflineMessageResponse* response,
+                       ::google::protobuf::Closure* done);
   void GetOfflineMessages(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                       const ::messageservice::OfflineMessagesRequest* request,
-                       ::messageservice::OfflineMessagesResponse* response,
+                       const ::messageservice::GetOfflineMessagesRequest* request,
+                       ::messageservice::GetOfflineMessagesResponse* response,
                        ::google::protobuf::Closure* done);
   void RemoveOfflineMessages(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::messageservice::RemoveOfflineMessagesRequest* request,
@@ -1643,80 +1847,6 @@ class MessageService_Stub : public MessageService {
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// ResultCode
-
-// int32 errcode = 1;
-inline void ResultCode::clear_errcode() {
-  _impl_.errcode_ = 0;
-}
-inline int32_t ResultCode::_internal_errcode() const {
-  return _impl_.errcode_;
-}
-inline int32_t ResultCode::errcode() const {
-  // @@protoc_insertion_point(field_get:messageservice.ResultCode.errcode)
-  return _internal_errcode();
-}
-inline void ResultCode::_internal_set_errcode(int32_t value) {
-  
-  _impl_.errcode_ = value;
-}
-inline void ResultCode::set_errcode(int32_t value) {
-  _internal_set_errcode(value);
-  // @@protoc_insertion_point(field_set:messageservice.ResultCode.errcode)
-}
-
-// bytes errmsg = 2;
-inline void ResultCode::clear_errmsg() {
-  _impl_.errmsg_.ClearToEmpty();
-}
-inline const std::string& ResultCode::errmsg() const {
-  // @@protoc_insertion_point(field_get:messageservice.ResultCode.errmsg)
-  return _internal_errmsg();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void ResultCode::set_errmsg(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.errmsg_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:messageservice.ResultCode.errmsg)
-}
-inline std::string* ResultCode::mutable_errmsg() {
-  std::string* _s = _internal_mutable_errmsg();
-  // @@protoc_insertion_point(field_mutable:messageservice.ResultCode.errmsg)
-  return _s;
-}
-inline const std::string& ResultCode::_internal_errmsg() const {
-  return _impl_.errmsg_.Get();
-}
-inline void ResultCode::_internal_set_errmsg(const std::string& value) {
-  
-  _impl_.errmsg_.Set(value, GetArenaForAllocation());
-}
-inline std::string* ResultCode::_internal_mutable_errmsg() {
-  
-  return _impl_.errmsg_.Mutable(GetArenaForAllocation());
-}
-inline std::string* ResultCode::release_errmsg() {
-  // @@protoc_insertion_point(field_release:messageservice.ResultCode.errmsg)
-  return _impl_.errmsg_.Release();
-}
-inline void ResultCode::set_allocated_errmsg(std::string* errmsg) {
-  if (errmsg != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.errmsg_.SetAllocated(errmsg, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.errmsg_.IsDefault()) {
-    _impl_.errmsg_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:messageservice.ResultCode.errmsg)
-}
-
-// -------------------------------------------------------------------
-
 // OneToOneMessageRequest
 
 // int32 from_id = 1;
@@ -1759,7 +1889,7 @@ inline void OneToOneMessageRequest::set_to_id(int32_t value) {
   // @@protoc_insertion_point(field_set:messageservice.OneToOneMessageRequest.to_id)
 }
 
-// bytes message = 3;
+// string message = 3;
 inline void OneToOneMessageRequest::clear_message() {
   _impl_.message_.ClearToEmpty();
 }
@@ -1771,7 +1901,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void OneToOneMessageRequest::set_message(ArgT0&& arg0, ArgT... args) {
  
- _impl_.message_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:messageservice.OneToOneMessageRequest.message)
 }
 inline std::string* OneToOneMessageRequest::mutable_message() {
@@ -1813,94 +1943,74 @@ inline void OneToOneMessageRequest::set_allocated_message(std::string* message) 
 
 // OneToOneMessageResponse
 
-// .messageservice.ResultCode result = 1;
-inline bool OneToOneMessageResponse::_internal_has_result() const {
-  return this != internal_default_instance() && _impl_.result_ != nullptr;
+// int32 error_code = 1;
+inline void OneToOneMessageResponse::clear_error_code() {
+  _impl_.error_code_ = 0;
 }
-inline bool OneToOneMessageResponse::has_result() const {
-  return _internal_has_result();
+inline int32_t OneToOneMessageResponse::_internal_error_code() const {
+  return _impl_.error_code_;
 }
-inline void OneToOneMessageResponse::clear_result() {
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+inline int32_t OneToOneMessageResponse::error_code() const {
+  // @@protoc_insertion_point(field_get:messageservice.OneToOneMessageResponse.error_code)
+  return _internal_error_code();
 }
-inline const ::messageservice::ResultCode& OneToOneMessageResponse::_internal_result() const {
-  const ::messageservice::ResultCode* p = _impl_.result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::messageservice::ResultCode&>(
-      ::messageservice::_ResultCode_default_instance_);
+inline void OneToOneMessageResponse::_internal_set_error_code(int32_t value) {
+  
+  _impl_.error_code_ = value;
 }
-inline const ::messageservice::ResultCode& OneToOneMessageResponse::result() const {
-  // @@protoc_insertion_point(field_get:messageservice.OneToOneMessageResponse.result)
-  return _internal_result();
+inline void OneToOneMessageResponse::set_error_code(int32_t value) {
+  _internal_set_error_code(value);
+  // @@protoc_insertion_point(field_set:messageservice.OneToOneMessageResponse.error_code)
 }
-inline void OneToOneMessageResponse::unsafe_arena_set_allocated_result(
-    ::messageservice::ResultCode* result) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.result_);
-  }
-  _impl_.result_ = result;
-  if (result) {
+
+// string error_msg = 2;
+inline void OneToOneMessageResponse::clear_error_msg() {
+  _impl_.error_msg_.ClearToEmpty();
+}
+inline const std::string& OneToOneMessageResponse::error_msg() const {
+  // @@protoc_insertion_point(field_get:messageservice.OneToOneMessageResponse.error_msg)
+  return _internal_error_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void OneToOneMessageResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:messageservice.OneToOneMessageResponse.error_msg)
+}
+inline std::string* OneToOneMessageResponse::mutable_error_msg() {
+  std::string* _s = _internal_mutable_error_msg();
+  // @@protoc_insertion_point(field_mutable:messageservice.OneToOneMessageResponse.error_msg)
+  return _s;
+}
+inline const std::string& OneToOneMessageResponse::_internal_error_msg() const {
+  return _impl_.error_msg_.Get();
+}
+inline void OneToOneMessageResponse::_internal_set_error_msg(const std::string& value) {
+  
+  _impl_.error_msg_.Set(value, GetArenaForAllocation());
+}
+inline std::string* OneToOneMessageResponse::_internal_mutable_error_msg() {
+  
+  return _impl_.error_msg_.Mutable(GetArenaForAllocation());
+}
+inline std::string* OneToOneMessageResponse::release_error_msg() {
+  // @@protoc_insertion_point(field_release:messageservice.OneToOneMessageResponse.error_msg)
+  return _impl_.error_msg_.Release();
+}
+inline void OneToOneMessageResponse::set_allocated_error_msg(std::string* error_msg) {
+  if (error_msg != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:messageservice.OneToOneMessageResponse.result)
-}
-inline ::messageservice::ResultCode* OneToOneMessageResponse::release_result() {
-  
-  ::messageservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  _impl_.error_msg_.SetAllocated(error_msg, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_msg_.IsDefault()) {
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::messageservice::ResultCode* OneToOneMessageResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:messageservice.OneToOneMessageResponse.result)
-  
-  ::messageservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-  return temp;
-}
-inline ::messageservice::ResultCode* OneToOneMessageResponse::_internal_mutable_result() {
-  
-  if (_impl_.result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::messageservice::ResultCode>(GetArenaForAllocation());
-    _impl_.result_ = p;
-  }
-  return _impl_.result_;
-}
-inline ::messageservice::ResultCode* OneToOneMessageResponse::mutable_result() {
-  ::messageservice::ResultCode* _msg = _internal_mutable_result();
-  // @@protoc_insertion_point(field_mutable:messageservice.OneToOneMessageResponse.result)
-  return _msg;
-}
-inline void OneToOneMessageResponse::set_allocated_result(::messageservice::ResultCode* result) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.result_;
-  }
-  if (result) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(result);
-    if (message_arena != submessage_arena) {
-      result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, result, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:messageservice.OneToOneMessageResponse.result)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:messageservice.OneToOneMessageResponse.error_msg)
 }
 
 // -------------------------------------------------------------------
@@ -1947,7 +2057,7 @@ inline void GroupMessageRequest::set_group_id(int32_t value) {
   // @@protoc_insertion_point(field_set:messageservice.GroupMessageRequest.group_id)
 }
 
-// bytes message = 3;
+// string message = 3;
 inline void GroupMessageRequest::clear_message() {
   _impl_.message_.ClearToEmpty();
 }
@@ -1959,7 +2069,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void GroupMessageRequest::set_message(ArgT0&& arg0, ArgT... args) {
  
- _impl_.message_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ _impl_.message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:messageservice.GroupMessageRequest.message)
 }
 inline std::string* GroupMessageRequest::mutable_message() {
@@ -2001,286 +2111,394 @@ inline void GroupMessageRequest::set_allocated_message(std::string* message) {
 
 // GroupMessageResponse
 
-// .messageservice.ResultCode result = 1;
-inline bool GroupMessageResponse::_internal_has_result() const {
-  return this != internal_default_instance() && _impl_.result_ != nullptr;
+// int32 error_code = 1;
+inline void GroupMessageResponse::clear_error_code() {
+  _impl_.error_code_ = 0;
 }
-inline bool GroupMessageResponse::has_result() const {
-  return _internal_has_result();
+inline int32_t GroupMessageResponse::_internal_error_code() const {
+  return _impl_.error_code_;
 }
-inline void GroupMessageResponse::clear_result() {
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+inline int32_t GroupMessageResponse::error_code() const {
+  // @@protoc_insertion_point(field_get:messageservice.GroupMessageResponse.error_code)
+  return _internal_error_code();
 }
-inline const ::messageservice::ResultCode& GroupMessageResponse::_internal_result() const {
-  const ::messageservice::ResultCode* p = _impl_.result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::messageservice::ResultCode&>(
-      ::messageservice::_ResultCode_default_instance_);
+inline void GroupMessageResponse::_internal_set_error_code(int32_t value) {
+  
+  _impl_.error_code_ = value;
 }
-inline const ::messageservice::ResultCode& GroupMessageResponse::result() const {
-  // @@protoc_insertion_point(field_get:messageservice.GroupMessageResponse.result)
-  return _internal_result();
+inline void GroupMessageResponse::set_error_code(int32_t value) {
+  _internal_set_error_code(value);
+  // @@protoc_insertion_point(field_set:messageservice.GroupMessageResponse.error_code)
 }
-inline void GroupMessageResponse::unsafe_arena_set_allocated_result(
-    ::messageservice::ResultCode* result) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.result_);
-  }
-  _impl_.result_ = result;
-  if (result) {
+
+// string error_msg = 2;
+inline void GroupMessageResponse::clear_error_msg() {
+  _impl_.error_msg_.ClearToEmpty();
+}
+inline const std::string& GroupMessageResponse::error_msg() const {
+  // @@protoc_insertion_point(field_get:messageservice.GroupMessageResponse.error_msg)
+  return _internal_error_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GroupMessageResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:messageservice.GroupMessageResponse.error_msg)
+}
+inline std::string* GroupMessageResponse::mutable_error_msg() {
+  std::string* _s = _internal_mutable_error_msg();
+  // @@protoc_insertion_point(field_mutable:messageservice.GroupMessageResponse.error_msg)
+  return _s;
+}
+inline const std::string& GroupMessageResponse::_internal_error_msg() const {
+  return _impl_.error_msg_.Get();
+}
+inline void GroupMessageResponse::_internal_set_error_msg(const std::string& value) {
+  
+  _impl_.error_msg_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GroupMessageResponse::_internal_mutable_error_msg() {
+  
+  return _impl_.error_msg_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GroupMessageResponse::release_error_msg() {
+  // @@protoc_insertion_point(field_release:messageservice.GroupMessageResponse.error_msg)
+  return _impl_.error_msg_.Release();
+}
+inline void GroupMessageResponse::set_allocated_error_msg(std::string* error_msg) {
+  if (error_msg != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:messageservice.GroupMessageResponse.result)
-}
-inline ::messageservice::ResultCode* GroupMessageResponse::release_result() {
-  
-  ::messageservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  _impl_.error_msg_.SetAllocated(error_msg, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_msg_.IsDefault()) {
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::messageservice::ResultCode* GroupMessageResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:messageservice.GroupMessageResponse.result)
-  
-  ::messageservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-  return temp;
-}
-inline ::messageservice::ResultCode* GroupMessageResponse::_internal_mutable_result() {
-  
-  if (_impl_.result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::messageservice::ResultCode>(GetArenaForAllocation());
-    _impl_.result_ = p;
-  }
-  return _impl_.result_;
-}
-inline ::messageservice::ResultCode* GroupMessageResponse::mutable_result() {
-  ::messageservice::ResultCode* _msg = _internal_mutable_result();
-  // @@protoc_insertion_point(field_mutable:messageservice.GroupMessageResponse.result)
-  return _msg;
-}
-inline void GroupMessageResponse::set_allocated_result(::messageservice::ResultCode* result) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.result_;
-  }
-  if (result) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(result);
-    if (message_arena != submessage_arena) {
-      result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, result, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:messageservice.GroupMessageResponse.result)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:messageservice.GroupMessageResponse.error_msg)
 }
 
 // -------------------------------------------------------------------
 
-// OfflineMessagesRequest
+// StoreOfflineMessageRequest
 
 // int32 user_id = 1;
-inline void OfflineMessagesRequest::clear_user_id() {
+inline void StoreOfflineMessageRequest::clear_user_id() {
   _impl_.user_id_ = 0;
 }
-inline int32_t OfflineMessagesRequest::_internal_user_id() const {
+inline int32_t StoreOfflineMessageRequest::_internal_user_id() const {
   return _impl_.user_id_;
 }
-inline int32_t OfflineMessagesRequest::user_id() const {
-  // @@protoc_insertion_point(field_get:messageservice.OfflineMessagesRequest.user_id)
+inline int32_t StoreOfflineMessageRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:messageservice.StoreOfflineMessageRequest.user_id)
   return _internal_user_id();
 }
-inline void OfflineMessagesRequest::_internal_set_user_id(int32_t value) {
+inline void StoreOfflineMessageRequest::_internal_set_user_id(int32_t value) {
   
   _impl_.user_id_ = value;
 }
-inline void OfflineMessagesRequest::set_user_id(int32_t value) {
+inline void StoreOfflineMessageRequest::set_user_id(int32_t value) {
   _internal_set_user_id(value);
-  // @@protoc_insertion_point(field_set:messageservice.OfflineMessagesRequest.user_id)
+  // @@protoc_insertion_point(field_set:messageservice.StoreOfflineMessageRequest.user_id)
+}
+
+// string message = 2;
+inline void StoreOfflineMessageRequest::clear_message() {
+  _impl_.message_.ClearToEmpty();
+}
+inline const std::string& StoreOfflineMessageRequest::message() const {
+  // @@protoc_insertion_point(field_get:messageservice.StoreOfflineMessageRequest.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StoreOfflineMessageRequest::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:messageservice.StoreOfflineMessageRequest.message)
+}
+inline std::string* StoreOfflineMessageRequest::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:messageservice.StoreOfflineMessageRequest.message)
+  return _s;
+}
+inline const std::string& StoreOfflineMessageRequest::_internal_message() const {
+  return _impl_.message_.Get();
+}
+inline void StoreOfflineMessageRequest::_internal_set_message(const std::string& value) {
+  
+  _impl_.message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StoreOfflineMessageRequest::_internal_mutable_message() {
+  
+  return _impl_.message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StoreOfflineMessageRequest::release_message() {
+  // @@protoc_insertion_point(field_release:messageservice.StoreOfflineMessageRequest.message)
+  return _impl_.message_.Release();
+}
+inline void StoreOfflineMessageRequest::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.message_.SetAllocated(message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.message_.IsDefault()) {
+    _impl_.message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:messageservice.StoreOfflineMessageRequest.message)
 }
 
 // -------------------------------------------------------------------
 
-// OfflineMessagesResponse
+// StoreOfflineMessageResponse
 
-// .messageservice.ResultCode result = 1;
-inline bool OfflineMessagesResponse::_internal_has_result() const {
-  return this != internal_default_instance() && _impl_.result_ != nullptr;
+// int32 error_code = 1;
+inline void StoreOfflineMessageResponse::clear_error_code() {
+  _impl_.error_code_ = 0;
 }
-inline bool OfflineMessagesResponse::has_result() const {
-  return _internal_has_result();
+inline int32_t StoreOfflineMessageResponse::_internal_error_code() const {
+  return _impl_.error_code_;
 }
-inline void OfflineMessagesResponse::clear_result() {
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+inline int32_t StoreOfflineMessageResponse::error_code() const {
+  // @@protoc_insertion_point(field_get:messageservice.StoreOfflineMessageResponse.error_code)
+  return _internal_error_code();
 }
-inline const ::messageservice::ResultCode& OfflineMessagesResponse::_internal_result() const {
-  const ::messageservice::ResultCode* p = _impl_.result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::messageservice::ResultCode&>(
-      ::messageservice::_ResultCode_default_instance_);
-}
-inline const ::messageservice::ResultCode& OfflineMessagesResponse::result() const {
-  // @@protoc_insertion_point(field_get:messageservice.OfflineMessagesResponse.result)
-  return _internal_result();
-}
-inline void OfflineMessagesResponse::unsafe_arena_set_allocated_result(
-    ::messageservice::ResultCode* result) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.result_);
-  }
-  _impl_.result_ = result;
-  if (result) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:messageservice.OfflineMessagesResponse.result)
-}
-inline ::messageservice::ResultCode* OfflineMessagesResponse::release_result() {
+inline void StoreOfflineMessageResponse::_internal_set_error_code(int32_t value) {
   
-  ::messageservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
+  _impl_.error_code_ = value;
 }
-inline ::messageservice::ResultCode* OfflineMessagesResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:messageservice.OfflineMessagesResponse.result)
-  
-  ::messageservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-  return temp;
-}
-inline ::messageservice::ResultCode* OfflineMessagesResponse::_internal_mutable_result() {
-  
-  if (_impl_.result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::messageservice::ResultCode>(GetArenaForAllocation());
-    _impl_.result_ = p;
-  }
-  return _impl_.result_;
-}
-inline ::messageservice::ResultCode* OfflineMessagesResponse::mutable_result() {
-  ::messageservice::ResultCode* _msg = _internal_mutable_result();
-  // @@protoc_insertion_point(field_mutable:messageservice.OfflineMessagesResponse.result)
-  return _msg;
-}
-inline void OfflineMessagesResponse::set_allocated_result(::messageservice::ResultCode* result) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.result_;
-  }
-  if (result) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(result);
-    if (message_arena != submessage_arena) {
-      result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, result, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:messageservice.OfflineMessagesResponse.result)
+inline void StoreOfflineMessageResponse::set_error_code(int32_t value) {
+  _internal_set_error_code(value);
+  // @@protoc_insertion_point(field_set:messageservice.StoreOfflineMessageResponse.error_code)
 }
 
-// repeated bytes messages = 2;
-inline int OfflineMessagesResponse::_internal_messages_size() const {
-  return _impl_.messages_.size();
+// string error_msg = 2;
+inline void StoreOfflineMessageResponse::clear_error_msg() {
+  _impl_.error_msg_.ClearToEmpty();
 }
-inline int OfflineMessagesResponse::messages_size() const {
-  return _internal_messages_size();
+inline const std::string& StoreOfflineMessageResponse::error_msg() const {
+  // @@protoc_insertion_point(field_get:messageservice.StoreOfflineMessageResponse.error_msg)
+  return _internal_error_msg();
 }
-inline void OfflineMessagesResponse::clear_messages() {
-  _impl_.messages_.Clear();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void StoreOfflineMessageResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:messageservice.StoreOfflineMessageResponse.error_msg)
 }
-inline std::string* OfflineMessagesResponse::add_messages() {
-  std::string* _s = _internal_add_messages();
-  // @@protoc_insertion_point(field_add_mutable:messageservice.OfflineMessagesResponse.messages)
+inline std::string* StoreOfflineMessageResponse::mutable_error_msg() {
+  std::string* _s = _internal_mutable_error_msg();
+  // @@protoc_insertion_point(field_mutable:messageservice.StoreOfflineMessageResponse.error_msg)
   return _s;
 }
-inline const std::string& OfflineMessagesResponse::_internal_messages(int index) const {
+inline const std::string& StoreOfflineMessageResponse::_internal_error_msg() const {
+  return _impl_.error_msg_.Get();
+}
+inline void StoreOfflineMessageResponse::_internal_set_error_msg(const std::string& value) {
+  
+  _impl_.error_msg_.Set(value, GetArenaForAllocation());
+}
+inline std::string* StoreOfflineMessageResponse::_internal_mutable_error_msg() {
+  
+  return _impl_.error_msg_.Mutable(GetArenaForAllocation());
+}
+inline std::string* StoreOfflineMessageResponse::release_error_msg() {
+  // @@protoc_insertion_point(field_release:messageservice.StoreOfflineMessageResponse.error_msg)
+  return _impl_.error_msg_.Release();
+}
+inline void StoreOfflineMessageResponse::set_allocated_error_msg(std::string* error_msg) {
+  if (error_msg != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.error_msg_.SetAllocated(error_msg, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_msg_.IsDefault()) {
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:messageservice.StoreOfflineMessageResponse.error_msg)
+}
+
+// -------------------------------------------------------------------
+
+// GetOfflineMessagesRequest
+
+// int32 user_id = 1;
+inline void GetOfflineMessagesRequest::clear_user_id() {
+  _impl_.user_id_ = 0;
+}
+inline int32_t GetOfflineMessagesRequest::_internal_user_id() const {
+  return _impl_.user_id_;
+}
+inline int32_t GetOfflineMessagesRequest::user_id() const {
+  // @@protoc_insertion_point(field_get:messageservice.GetOfflineMessagesRequest.user_id)
+  return _internal_user_id();
+}
+inline void GetOfflineMessagesRequest::_internal_set_user_id(int32_t value) {
+  
+  _impl_.user_id_ = value;
+}
+inline void GetOfflineMessagesRequest::set_user_id(int32_t value) {
+  _internal_set_user_id(value);
+  // @@protoc_insertion_point(field_set:messageservice.GetOfflineMessagesRequest.user_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetOfflineMessagesResponse
+
+// int32 error_code = 1;
+inline void GetOfflineMessagesResponse::clear_error_code() {
+  _impl_.error_code_ = 0;
+}
+inline int32_t GetOfflineMessagesResponse::_internal_error_code() const {
+  return _impl_.error_code_;
+}
+inline int32_t GetOfflineMessagesResponse::error_code() const {
+  // @@protoc_insertion_point(field_get:messageservice.GetOfflineMessagesResponse.error_code)
+  return _internal_error_code();
+}
+inline void GetOfflineMessagesResponse::_internal_set_error_code(int32_t value) {
+  
+  _impl_.error_code_ = value;
+}
+inline void GetOfflineMessagesResponse::set_error_code(int32_t value) {
+  _internal_set_error_code(value);
+  // @@protoc_insertion_point(field_set:messageservice.GetOfflineMessagesResponse.error_code)
+}
+
+// string error_msg = 2;
+inline void GetOfflineMessagesResponse::clear_error_msg() {
+  _impl_.error_msg_.ClearToEmpty();
+}
+inline const std::string& GetOfflineMessagesResponse::error_msg() const {
+  // @@protoc_insertion_point(field_get:messageservice.GetOfflineMessagesResponse.error_msg)
+  return _internal_error_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void GetOfflineMessagesResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:messageservice.GetOfflineMessagesResponse.error_msg)
+}
+inline std::string* GetOfflineMessagesResponse::mutable_error_msg() {
+  std::string* _s = _internal_mutable_error_msg();
+  // @@protoc_insertion_point(field_mutable:messageservice.GetOfflineMessagesResponse.error_msg)
+  return _s;
+}
+inline const std::string& GetOfflineMessagesResponse::_internal_error_msg() const {
+  return _impl_.error_msg_.Get();
+}
+inline void GetOfflineMessagesResponse::_internal_set_error_msg(const std::string& value) {
+  
+  _impl_.error_msg_.Set(value, GetArenaForAllocation());
+}
+inline std::string* GetOfflineMessagesResponse::_internal_mutable_error_msg() {
+  
+  return _impl_.error_msg_.Mutable(GetArenaForAllocation());
+}
+inline std::string* GetOfflineMessagesResponse::release_error_msg() {
+  // @@protoc_insertion_point(field_release:messageservice.GetOfflineMessagesResponse.error_msg)
+  return _impl_.error_msg_.Release();
+}
+inline void GetOfflineMessagesResponse::set_allocated_error_msg(std::string* error_msg) {
+  if (error_msg != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.error_msg_.SetAllocated(error_msg, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_msg_.IsDefault()) {
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:messageservice.GetOfflineMessagesResponse.error_msg)
+}
+
+// repeated string messages = 3;
+inline int GetOfflineMessagesResponse::_internal_messages_size() const {
+  return _impl_.messages_.size();
+}
+inline int GetOfflineMessagesResponse::messages_size() const {
+  return _internal_messages_size();
+}
+inline void GetOfflineMessagesResponse::clear_messages() {
+  _impl_.messages_.Clear();
+}
+inline std::string* GetOfflineMessagesResponse::add_messages() {
+  std::string* _s = _internal_add_messages();
+  // @@protoc_insertion_point(field_add_mutable:messageservice.GetOfflineMessagesResponse.messages)
+  return _s;
+}
+inline const std::string& GetOfflineMessagesResponse::_internal_messages(int index) const {
   return _impl_.messages_.Get(index);
 }
-inline const std::string& OfflineMessagesResponse::messages(int index) const {
-  // @@protoc_insertion_point(field_get:messageservice.OfflineMessagesResponse.messages)
+inline const std::string& GetOfflineMessagesResponse::messages(int index) const {
+  // @@protoc_insertion_point(field_get:messageservice.GetOfflineMessagesResponse.messages)
   return _internal_messages(index);
 }
-inline std::string* OfflineMessagesResponse::mutable_messages(int index) {
-  // @@protoc_insertion_point(field_mutable:messageservice.OfflineMessagesResponse.messages)
+inline std::string* GetOfflineMessagesResponse::mutable_messages(int index) {
+  // @@protoc_insertion_point(field_mutable:messageservice.GetOfflineMessagesResponse.messages)
   return _impl_.messages_.Mutable(index);
 }
-inline void OfflineMessagesResponse::set_messages(int index, const std::string& value) {
+inline void GetOfflineMessagesResponse::set_messages(int index, const std::string& value) {
   _impl_.messages_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:messageservice.OfflineMessagesResponse.messages)
+  // @@protoc_insertion_point(field_set:messageservice.GetOfflineMessagesResponse.messages)
 }
-inline void OfflineMessagesResponse::set_messages(int index, std::string&& value) {
+inline void GetOfflineMessagesResponse::set_messages(int index, std::string&& value) {
   _impl_.messages_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:messageservice.OfflineMessagesResponse.messages)
+  // @@protoc_insertion_point(field_set:messageservice.GetOfflineMessagesResponse.messages)
 }
-inline void OfflineMessagesResponse::set_messages(int index, const char* value) {
+inline void GetOfflineMessagesResponse::set_messages(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _impl_.messages_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:messageservice.OfflineMessagesResponse.messages)
+  // @@protoc_insertion_point(field_set_char:messageservice.GetOfflineMessagesResponse.messages)
 }
-inline void OfflineMessagesResponse::set_messages(int index, const void* value, size_t size) {
+inline void GetOfflineMessagesResponse::set_messages(int index, const char* value, size_t size) {
   _impl_.messages_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:messageservice.OfflineMessagesResponse.messages)
+  // @@protoc_insertion_point(field_set_pointer:messageservice.GetOfflineMessagesResponse.messages)
 }
-inline std::string* OfflineMessagesResponse::_internal_add_messages() {
+inline std::string* GetOfflineMessagesResponse::_internal_add_messages() {
   return _impl_.messages_.Add();
 }
-inline void OfflineMessagesResponse::add_messages(const std::string& value) {
+inline void GetOfflineMessagesResponse::add_messages(const std::string& value) {
   _impl_.messages_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:messageservice.OfflineMessagesResponse.messages)
+  // @@protoc_insertion_point(field_add:messageservice.GetOfflineMessagesResponse.messages)
 }
-inline void OfflineMessagesResponse::add_messages(std::string&& value) {
+inline void GetOfflineMessagesResponse::add_messages(std::string&& value) {
   _impl_.messages_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:messageservice.OfflineMessagesResponse.messages)
+  // @@protoc_insertion_point(field_add:messageservice.GetOfflineMessagesResponse.messages)
 }
-inline void OfflineMessagesResponse::add_messages(const char* value) {
+inline void GetOfflineMessagesResponse::add_messages(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   _impl_.messages_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:messageservice.OfflineMessagesResponse.messages)
+  // @@protoc_insertion_point(field_add_char:messageservice.GetOfflineMessagesResponse.messages)
 }
-inline void OfflineMessagesResponse::add_messages(const void* value, size_t size) {
+inline void GetOfflineMessagesResponse::add_messages(const char* value, size_t size) {
   _impl_.messages_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:messageservice.OfflineMessagesResponse.messages)
+  // @@protoc_insertion_point(field_add_pointer:messageservice.GetOfflineMessagesResponse.messages)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-OfflineMessagesResponse::messages() const {
-  // @@protoc_insertion_point(field_list:messageservice.OfflineMessagesResponse.messages)
+GetOfflineMessagesResponse::messages() const {
+  // @@protoc_insertion_point(field_list:messageservice.GetOfflineMessagesResponse.messages)
   return _impl_.messages_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-OfflineMessagesResponse::mutable_messages() {
-  // @@protoc_insertion_point(field_mutable_list:messageservice.OfflineMessagesResponse.messages)
+GetOfflineMessagesResponse::mutable_messages() {
+  // @@protoc_insertion_point(field_mutable_list:messageservice.GetOfflineMessagesResponse.messages)
   return &_impl_.messages_;
 }
 
@@ -2312,99 +2530,81 @@ inline void RemoveOfflineMessagesRequest::set_user_id(int32_t value) {
 
 // RemoveOfflineMessagesResponse
 
-// .messageservice.ResultCode result = 1;
-inline bool RemoveOfflineMessagesResponse::_internal_has_result() const {
-  return this != internal_default_instance() && _impl_.result_ != nullptr;
+// int32 error_code = 1;
+inline void RemoveOfflineMessagesResponse::clear_error_code() {
+  _impl_.error_code_ = 0;
 }
-inline bool RemoveOfflineMessagesResponse::has_result() const {
-  return _internal_has_result();
+inline int32_t RemoveOfflineMessagesResponse::_internal_error_code() const {
+  return _impl_.error_code_;
 }
-inline void RemoveOfflineMessagesResponse::clear_result() {
-  if (GetArenaForAllocation() == nullptr && _impl_.result_ != nullptr) {
-    delete _impl_.result_;
-  }
-  _impl_.result_ = nullptr;
+inline int32_t RemoveOfflineMessagesResponse::error_code() const {
+  // @@protoc_insertion_point(field_get:messageservice.RemoveOfflineMessagesResponse.error_code)
+  return _internal_error_code();
 }
-inline const ::messageservice::ResultCode& RemoveOfflineMessagesResponse::_internal_result() const {
-  const ::messageservice::ResultCode* p = _impl_.result_;
-  return p != nullptr ? *p : reinterpret_cast<const ::messageservice::ResultCode&>(
-      ::messageservice::_ResultCode_default_instance_);
+inline void RemoveOfflineMessagesResponse::_internal_set_error_code(int32_t value) {
+  
+  _impl_.error_code_ = value;
 }
-inline const ::messageservice::ResultCode& RemoveOfflineMessagesResponse::result() const {
-  // @@protoc_insertion_point(field_get:messageservice.RemoveOfflineMessagesResponse.result)
-  return _internal_result();
+inline void RemoveOfflineMessagesResponse::set_error_code(int32_t value) {
+  _internal_set_error_code(value);
+  // @@protoc_insertion_point(field_set:messageservice.RemoveOfflineMessagesResponse.error_code)
 }
-inline void RemoveOfflineMessagesResponse::unsafe_arena_set_allocated_result(
-    ::messageservice::ResultCode* result) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.result_);
-  }
-  _impl_.result_ = result;
-  if (result) {
+
+// string error_msg = 2;
+inline void RemoveOfflineMessagesResponse::clear_error_msg() {
+  _impl_.error_msg_.ClearToEmpty();
+}
+inline const std::string& RemoveOfflineMessagesResponse::error_msg() const {
+  // @@protoc_insertion_point(field_get:messageservice.RemoveOfflineMessagesResponse.error_msg)
+  return _internal_error_msg();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void RemoveOfflineMessagesResponse::set_error_msg(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.error_msg_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:messageservice.RemoveOfflineMessagesResponse.error_msg)
+}
+inline std::string* RemoveOfflineMessagesResponse::mutable_error_msg() {
+  std::string* _s = _internal_mutable_error_msg();
+  // @@protoc_insertion_point(field_mutable:messageservice.RemoveOfflineMessagesResponse.error_msg)
+  return _s;
+}
+inline const std::string& RemoveOfflineMessagesResponse::_internal_error_msg() const {
+  return _impl_.error_msg_.Get();
+}
+inline void RemoveOfflineMessagesResponse::_internal_set_error_msg(const std::string& value) {
+  
+  _impl_.error_msg_.Set(value, GetArenaForAllocation());
+}
+inline std::string* RemoveOfflineMessagesResponse::_internal_mutable_error_msg() {
+  
+  return _impl_.error_msg_.Mutable(GetArenaForAllocation());
+}
+inline std::string* RemoveOfflineMessagesResponse::release_error_msg() {
+  // @@protoc_insertion_point(field_release:messageservice.RemoveOfflineMessagesResponse.error_msg)
+  return _impl_.error_msg_.Release();
+}
+inline void RemoveOfflineMessagesResponse::set_allocated_error_msg(std::string* error_msg) {
+  if (error_msg != nullptr) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:messageservice.RemoveOfflineMessagesResponse.result)
-}
-inline ::messageservice::ResultCode* RemoveOfflineMessagesResponse::release_result() {
-  
-  ::messageservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  _impl_.error_msg_.SetAllocated(error_msg, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.error_msg_.IsDefault()) {
+    _impl_.error_msg_.Set("", GetArenaForAllocation());
   }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::messageservice::ResultCode* RemoveOfflineMessagesResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:messageservice.RemoveOfflineMessagesResponse.result)
-  
-  ::messageservice::ResultCode* temp = _impl_.result_;
-  _impl_.result_ = nullptr;
-  return temp;
-}
-inline ::messageservice::ResultCode* RemoveOfflineMessagesResponse::_internal_mutable_result() {
-  
-  if (_impl_.result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::messageservice::ResultCode>(GetArenaForAllocation());
-    _impl_.result_ = p;
-  }
-  return _impl_.result_;
-}
-inline ::messageservice::ResultCode* RemoveOfflineMessagesResponse::mutable_result() {
-  ::messageservice::ResultCode* _msg = _internal_mutable_result();
-  // @@protoc_insertion_point(field_mutable:messageservice.RemoveOfflineMessagesResponse.result)
-  return _msg;
-}
-inline void RemoveOfflineMessagesResponse::set_allocated_result(::messageservice::ResultCode* result) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete _impl_.result_;
-  }
-  if (result) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(result);
-    if (message_arena != submessage_arena) {
-      result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, result, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:messageservice.RemoveOfflineMessagesResponse.result)
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:messageservice.RemoveOfflineMessagesResponse.error_msg)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

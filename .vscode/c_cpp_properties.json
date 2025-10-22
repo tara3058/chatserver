@@ -11,6 +11,7 @@
                 "${workspaceFolder}/thirdparty",
                 "${workspaceFolder}/include/server/redis",
                 "${workspaceFolder}/dist/rpcservice",
+                "${workspaceFolder}/dist/rpcservice/user_service",
                 "${workspaceFolder}/dist/proto"
             ],
             "defines": [],

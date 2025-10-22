@@ -9,9 +9,11 @@
 #include <functional>
 #include <mutex>
 #include "mprpcconsumer.h"
-#include "../user_service/include/usr_service.h"
-//#include "message_service.pb.h"
-//#include "relation_service.pb.h"
+#include "mprpccontroller.h"
+#include "usr.pb.h"
+#include "messege.pb.h"
+#include "relation.pb.h"
+#include "public.hpp"
 
 using json = nlohmann::json;
 using MsgHandler = std::function<void(const muduo::net::TcpConnectionPtr&, json&, muduo::Timestamp)>;
@@ -54,8 +56,8 @@ private:
     
     // RPC存根
     std::unique_ptr<userservice::UserService::Stub> _userStub;
-    //std::unique_ptr<messageservice::MessageService::Stub> _messageStub;
-    //std::unique_ptr<relationservice::RelationService::Stub> _relationStub;
+    std::unique_ptr<messageservice::MessageService::Stub> _messageStub;
+    std::unique_ptr<relationservice::RelationService::Stub> _relationStub;
     
     // 初始化消息处理器
     void InitMsgHandlers();

@@ -1,0 +1,8 @@
+20251022 13:50:50.025750Z 23344 INFO  ServiceMonitor created for MessageService - monitor.cc:14
+20251022 13:50:50.025755Z 23344 INFO  Monitor initialized for MessageService - serverbase.cc:53
+20251022 13:50:50.025761Z 23344 INFO  CircuitBreaker created with failureThreshold=5, timeoutMs=5000, halfOpenRetryCount=3 - circuitbreaker.cc:16
+20251022 13:50:50.025761Z 23344 INFO  Circuit breaker initialized for MessageService - serverbase.cc:59
+20251022 13:50:50.025762Z 23344 INFO  ServiceBase created for MessageService on 127.0.0.1:8082 - serverbase.cc:20
+MessageServiceImpl created
+Starting service: MessageService on 127.0.0.1:8082
+20251022 13:50:50.025831Z 23344 FATAL Another EventLoop 0x7FFC59D77E40 exists in this thread 23344 - EventLoop.cc:80

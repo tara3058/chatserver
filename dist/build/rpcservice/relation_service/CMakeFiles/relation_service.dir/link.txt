@@ -1,0 +1,1 @@
+/usr/bin/c++ -I/usr/local/include -L/usr/local/lib CMakeFiles/relation_service.dir/main.cc.o CMakeFiles/relation_service.dir/relation_service.cc.o -o relation_service   -L/home/gas/Desktop/project/chat/dist/../lib  -Wl,-rpath,/home/gas/Desktop/project/chat/dist/../lib -lservice_base -lchat_proto -lrpc -lmuduo_net -lmuduo_base -lzookeeper_mt -lmysqlclient -lpthread 

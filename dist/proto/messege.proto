@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-// 定义消息服务接口
+// 定义服务接口
 package messageservice;
 
 option cc_generic_services = true;
@@ -11,51 +11,62 @@ service MessageService {
     rpc SendOneToOneMessage(OneToOneMessageRequest) returns (OneToOneMessageResponse);
     // 发送群组消息
     rpc SendGroupMessage(GroupMessageRequest) returns (GroupMessageResponse);
+    // 存储离线消息
+    rpc StoreOfflineMessage(StoreOfflineMessageRequest) returns (StoreOfflineMessageResponse);
     // 获取离线消息
-    rpc GetOfflineMessages(OfflineMessagesRequest) returns (OfflineMessagesResponse);
+    rpc GetOfflineMessages(GetOfflineMessagesRequest) returns (GetOfflineMessagesResponse);
     // 删除离线消息
     rpc RemoveOfflineMessages(RemoveOfflineMessagesRequest) returns (RemoveOfflineMessagesResponse);
-}
-
-//错误码类型
-message ResultCode {
-    int32 errcode = 1;
-    bytes errmsg = 2;
 }
 
 // 一对一消息请求
 message OneToOneMessageRequest {
     int32 from_id = 1;         // 发送者ID
     int32 to_id = 2;           // 接收者ID
-    bytes message = 3;        // 消息内容
+    string message = 3;        // 消息内容
 }
 
 // 一对一消息响应
 message OneToOneMessageResponse {
-    ResultCode result = 1;
+    int32 error_code = 1;      // 0表示成功，非0表示失败
+    string error_msg = 2;      // 错误信息
 }
 
 // 群组消息请求
 message GroupMessageRequest {
     int32 from_id = 1;         // 发送者ID
     int32 group_id = 2;        // 群组ID
-    bytes message = 3;        // 消息内容
+    string message = 3;        // 消息内容
 }
 
 // 群组消息响应
 message GroupMessageResponse {
-    ResultCode result = 1;
+    int32 error_code = 1;      // 0表示成功，非0表示失败
+    string error_msg = 2;      // 错误信息
+}
+
+// 存储离线消息请求
+message StoreOfflineMessageRequest {
+    int32 user_id = 1;         // 用户ID
+    string message = 2;        // 消息内容
+}
+
+// 存储离线消息响应
+message StoreOfflineMessageResponse {
+    int32 error_code = 1;      // 0表示成功，非0表示失败
+    string error_msg = 2;      // 错误信息
 }
 
 // 获取离线消息请求
-message OfflineMessagesRequest {
+message GetOfflineMessagesRequest {
     int32 user_id = 1;         // 用户ID
 }
 
 // 获取离线消息响应
-message OfflineMessagesResponse {
-    ResultCode result = 1;
-    repeated bytes messages = 2; // 离线消息列表
+message GetOfflineMessagesResponse {
+    int32 error_code = 1;      // 0表示成功，非0表示失败
+    string error_msg = 2;      // 错误信息
+    repeated string messages = 3; // 离线消息列表
 }
 
 // 删除离线消息请求
@@ -65,5 +76,6 @@ message RemoveOfflineMessagesRequest {
 
 // 删除离线消息响应
 message RemoveOfflineMessagesResponse {
-    ResultCode result = 1;
+    int32 error_code = 1;      // 0表示成功，非0表示失败
+    string error_msg = 2;      // 错误信息
 }

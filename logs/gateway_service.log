@@ -1,0 +1,9 @@
+20251022 13:50:54.029735Z 23366 DEBUG EventLoop EventLoop created 0x7FFCA33E1900 in thread 23366 - EventLoop.cc:77
+20251022 13:50:54.029776Z 23366 INFO  ServiceMonitor created for GatewayService - monitor.cc:14
+20251022 13:50:54.029780Z 23366 INFO  Monitor initialized for GatewayService - serverbase.cc:53
+20251022 13:50:54.029781Z 23366 INFO  CircuitBreaker created with failureThreshold=5, timeoutMs=5000, halfOpenRetryCount=3 - circuitbreaker.cc:16
+20251022 13:50:54.029782Z 23366 INFO  Circuit breaker initialized for GatewayService - serverbase.cc:59
+20251022 13:50:54.029782Z 23366 INFO  ServiceBase created for GatewayService on 127.0.0.1:8084 - serverbase.cc:20
+20251022 13:50:54.029791Z 23366 INFO  Message handlers initialized - gateway.cc:52
+20251022 13:50:54.029792Z 23366 INFO  GatewayService created - gateway.cc:13
+Starting service: GatewayService on 127.0.0.1:8084

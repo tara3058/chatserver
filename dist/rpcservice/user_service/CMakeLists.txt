@@ -5,6 +5,7 @@ include_directories(${PROJECT_SOURCE_DIR}/proto)
 include_directories($(CMAKE_CURRENT_BINARY_DIR))
 
 set(ADDITIONAL_SRC 
+    ${PROJECT_SOURCE_DIR}/../src/server/model/offlinemsgmodel.cpp
     ${PROJECT_SOURCE_DIR}/../src/server/model/usermodel.cpp
     ${PROJECT_SOURCE_DIR}/../src/server/db/connectionpool.cpp
     ${PROJECT_SOURCE_DIR}/../src/server/db/db.cpp

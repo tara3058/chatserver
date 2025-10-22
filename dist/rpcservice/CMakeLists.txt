@@ -1,2 +1,3 @@
 add_subdirectory(user_service)
 add_subdirectory(gateway)
+add_subdirectory(message)

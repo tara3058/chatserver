@@ -22,11 +22,11 @@ public:
     void setName(string name) { this->name = name; }
     void setDesc(string desc) { this->desc = desc; }
     //获取组信息参数
-    int getId() { return this->id; }
-    string getName() { return this->name; }
-    string getDesc() { return this->desc; }
-    vector<GroupUser> &getGroupUsers() { return this->groupusers;}
-
+    int getId() const { return this->id; }
+    string getName() const { return this->name; }
+    string getDesc() const { return this->desc; }
+    const vector<GroupUser>& getGroupUsers() const { return this->groupusers;}
+    vector<GroupUser>& getGroupUsers() { return this->groupusers;}  // 非const版本
 
 private:
     int id;

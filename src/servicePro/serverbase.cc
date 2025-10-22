@@ -1,5 +1,6 @@
 #include "servicebase.h"
 #include <iostream>
+#include <muduo/base/Logging.h>
 
 ServiceBase::ServiceBase(const std::string& serviceName, 
                          const std::string& ip, 
@@ -11,6 +12,13 @@ ServiceBase::ServiceBase(const std::string& serviceName,
 {
     // 设置线程数
     _server.setThreadNum(4);
+    
+    // 初始化监控和熔断器
+    InitMonitor();
+    InitCircuitBreaker();
+    
+    LOG_INFO << "ServiceBase created for " << serviceName 
+             << " on " << ip << ":" << port;
 }
 
 void ServiceBase::Start()
@@ -37,4 +45,16 @@ void ServiceBase::Start()
 void ServiceBase::Stop()
 {
     _loop.quit();
+}
+
+void ServiceBase::InitMonitor()
+{
+    _monitor = std::make_unique<ServiceMonitor>(_serviceName);
+    LOG_INFO << "Monitor initialized for " << _serviceName;
+}
+
+void ServiceBase::InitCircuitBreaker()
+{
+    _circuitBreaker = std::make_unique<CircuitBreaker>();
+    LOG_INFO << "Circuit breaker initialized for " << _serviceName;
 }

@@ -108,7 +108,7 @@ void Chatservice::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
                     grpjs["groupname"] = group.getName();
                     grpjs["groupdesc"] = group.getDesc();
                     vector<string> uservec;
-                    for (GroupUser &groupuser : group.getGroupUsers())
+                    for (const GroupUser &groupuser : group.getGroupUsers())
                     {
                         json js;
                         js["id"] = groupuser.getId();

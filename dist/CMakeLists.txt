@@ -19,5 +19,6 @@ link_directories(${PROJECT_SOURCE_DIR}/../lib)
 
 add_subdirectory(proto)
 add_subdirectory(rpcservice/user_service)
+add_subdirectory(rpcservice/message)
+add_subdirectory(rpcservice/relation_service)
 add_subdirectory(rpcservice/gateway)
-
